@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "AI_SP500"
+version = "0.0.0"
+description = "Data Architecture to manually support a data mining solution to daily analyse the SP500 stock market index."
+authors = ["Tiago Reis <you@example.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+pyspark = "^3.5.1"
+numpy = "^1.21.0"
+pandas = "2.0.2"
+requests = "^2.32.2"
+yfinance = "0.2.43"
+python-dotenv = "^1.0.1"
+boto3 = "1.35.24"
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.29.4"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+# pip install poetry
+# poetry install
