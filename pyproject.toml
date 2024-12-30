@@ -8,12 +8,19 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.9"
 pyspark = "^3.5.1"
-numpy = "^1.21.0"
-pandas = "2.0.2"
-requests = "^2.32.2"
-yfinance = "0.2.43"
 python-dotenv = "^1.0.1"
 boto3 = "1.35.24"
+# Yahoo Finance (yfinance API)
+yfinance = "^0.2.43"
+numpy = "^1.21.0"
+pandas = "^2.0.2"
+requests = "^2.32.2"
+multitasking = "^0.0.11"
+# Yahoo Finance (Yahoo_fin API)
+yahoo-fin = "^0.8.9.1"
+pyftpdlib = "^2.0.1"
+Python-IO = "^0.3"
+requests-html = "^0.10.0"
 
 [tool.poetry.group.dev.dependencies]
 ipykernel = "^6.29.4"
