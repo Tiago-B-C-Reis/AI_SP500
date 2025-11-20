@@ -1,0 +1,49 @@
+[2025-04-03T20:17:54.105+0000] {processor.py:186} INFO - Started process (PID=96) to work on /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_sensors.py
+[2025-04-03T20:17:54.106+0000] {processor.py:914} INFO - Processing file /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_sensors.py for tasks to queue
+[2025-04-03T20:17:54.108+0000] {logging_mixin.py:190} INFO - [2025-04-03T20:17:54.108+0000] {dagbag.py:588} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_sensors.py
+[2025-04-03T20:17:54.115+0000] {processor.py:925} INFO - DAG(s) 'example_sensors' retrieved from /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_sensors.py
+[2025-04-03T20:17:54.130+0000] {logging_mixin.py:190} INFO - [2025-04-03T20:17:54.129+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-03T20:17:54.138+0000] {logging_mixin.py:190} INFO - [2025-04-03T20:17:54.137+0000] {dag.py:4180} INFO - Setting next_dagrun for example_sensors to None, run_after=None
+[2025-04-03T20:17:54.147+0000] {processor.py:208} INFO - Processing /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_sensors.py took 0.045 seconds
+[2025-04-03T20:18:24.621+0000] {processor.py:186} INFO - Started process (PID=158) to work on /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_sensors.py
+[2025-04-03T20:18:24.622+0000] {processor.py:914} INFO - Processing file /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_sensors.py for tasks to queue
+[2025-04-03T20:18:24.623+0000] {logging_mixin.py:190} INFO - [2025-04-03T20:18:24.623+0000] {dagbag.py:588} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_sensors.py
+[2025-04-03T20:18:24.629+0000] {processor.py:925} INFO - DAG(s) 'example_sensors' retrieved from /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_sensors.py
+[2025-04-03T20:18:24.651+0000] {logging_mixin.py:190} INFO - [2025-04-03T20:18:24.651+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-03T20:18:24.661+0000] {logging_mixin.py:190} INFO - [2025-04-03T20:18:24.661+0000] {dag.py:4180} INFO - Setting next_dagrun for example_sensors to None, run_after=None
+[2025-04-03T20:18:24.672+0000] {processor.py:208} INFO - Processing /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_sensors.py took 0.054 seconds
+[2025-04-03T20:18:55.772+0000] {processor.py:186} INFO - Started process (PID=220) to work on /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_sensors.py
+[2025-04-03T20:18:55.772+0000] {processor.py:914} INFO - Processing file /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_sensors.py for tasks to queue
+[2025-04-03T20:18:55.774+0000] {logging_mixin.py:190} INFO - [2025-04-03T20:18:55.774+0000] {dagbag.py:588} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_sensors.py
+[2025-04-03T20:18:55.785+0000] {processor.py:925} INFO - DAG(s) 'example_sensors' retrieved from /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_sensors.py
+[2025-04-03T20:18:55.806+0000] {logging_mixin.py:190} INFO - [2025-04-03T20:18:55.805+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-03T20:18:55.812+0000] {logging_mixin.py:190} INFO - [2025-04-03T20:18:55.812+0000] {dag.py:4180} INFO - Setting next_dagrun for example_sensors to None, run_after=None
+[2025-04-03T20:18:55.830+0000] {processor.py:208} INFO - Processing /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_sensors.py took 0.061 seconds
+[2025-04-03T20:19:26.722+0000] {processor.py:186} INFO - Started process (PID=282) to work on /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_sensors.py
+[2025-04-03T20:19:26.726+0000] {processor.py:914} INFO - Processing file /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_sensors.py for tasks to queue
+[2025-04-03T20:19:26.728+0000] {logging_mixin.py:190} INFO - [2025-04-03T20:19:26.728+0000] {dagbag.py:588} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_sensors.py
+[2025-04-03T20:19:26.741+0000] {processor.py:925} INFO - DAG(s) 'example_sensors' retrieved from /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_sensors.py
+[2025-04-03T20:19:26.757+0000] {logging_mixin.py:190} INFO - [2025-04-03T20:19:26.757+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-03T20:19:26.764+0000] {logging_mixin.py:190} INFO - [2025-04-03T20:19:26.764+0000] {dag.py:4180} INFO - Setting next_dagrun for example_sensors to None, run_after=None
+[2025-04-03T20:19:26.776+0000] {processor.py:208} INFO - Processing /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_sensors.py took 0.060 seconds
+[2025-04-03T20:19:57.722+0000] {processor.py:186} INFO - Started process (PID=344) to work on /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_sensors.py
+[2025-04-03T20:19:57.724+0000] {processor.py:914} INFO - Processing file /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_sensors.py for tasks to queue
+[2025-04-03T20:19:57.725+0000] {logging_mixin.py:190} INFO - [2025-04-03T20:19:57.725+0000] {dagbag.py:588} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_sensors.py
+[2025-04-03T20:19:57.733+0000] {processor.py:925} INFO - DAG(s) 'example_sensors' retrieved from /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_sensors.py
+[2025-04-03T20:19:57.750+0000] {logging_mixin.py:190} INFO - [2025-04-03T20:19:57.750+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-03T20:19:57.758+0000] {logging_mixin.py:190} INFO - [2025-04-03T20:19:57.758+0000] {dag.py:4180} INFO - Setting next_dagrun for example_sensors to None, run_after=None
+[2025-04-03T20:19:57.777+0000] {processor.py:208} INFO - Processing /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_sensors.py took 0.058 seconds
+[2025-04-03T20:20:28.308+0000] {processor.py:186} INFO - Started process (PID=406) to work on /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_sensors.py
+[2025-04-03T20:20:28.310+0000] {processor.py:914} INFO - Processing file /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_sensors.py for tasks to queue
+[2025-04-03T20:20:28.312+0000] {logging_mixin.py:190} INFO - [2025-04-03T20:20:28.312+0000] {dagbag.py:588} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_sensors.py
+[2025-04-03T20:20:28.320+0000] {processor.py:925} INFO - DAG(s) 'example_sensors' retrieved from /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_sensors.py
+[2025-04-03T20:20:28.337+0000] {logging_mixin.py:190} INFO - [2025-04-03T20:20:28.337+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-03T20:20:28.348+0000] {logging_mixin.py:190} INFO - [2025-04-03T20:20:28.348+0000] {dag.py:4180} INFO - Setting next_dagrun for example_sensors to None, run_after=None
+[2025-04-03T20:20:28.361+0000] {processor.py:208} INFO - Processing /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_sensors.py took 0.057 seconds
+[2025-04-03T20:21:00.150+0000] {processor.py:186} INFO - Started process (PID=468) to work on /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_sensors.py
+[2025-04-03T20:21:00.151+0000] {processor.py:914} INFO - Processing file /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_sensors.py for tasks to queue
+[2025-04-03T20:21:00.153+0000] {logging_mixin.py:190} INFO - [2025-04-03T20:21:00.152+0000] {dagbag.py:588} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_sensors.py
+[2025-04-03T20:21:00.160+0000] {processor.py:925} INFO - DAG(s) 'example_sensors' retrieved from /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_sensors.py
+[2025-04-03T20:21:00.181+0000] {logging_mixin.py:190} INFO - [2025-04-03T20:21:00.181+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-03T20:21:00.197+0000] {logging_mixin.py:190} INFO - [2025-04-03T20:21:00.197+0000] {dag.py:4180} INFO - Setting next_dagrun for example_sensors to None, run_after=None
+[2025-04-03T20:21:00.224+0000] {processor.py:208} INFO - Processing /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_sensors.py took 0.080 seconds
