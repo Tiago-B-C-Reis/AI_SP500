@@ -40,5 +40,5 @@ if __name__ == "__main__":
                 params["symbol"] = symbol
 
                 print(f"Calling → {params.get('function')} for {symbol}")
-                response = h.get_json_response(base_url, params)
-                h.load_to_s3(response)
+                #response = h.get_json_response(base_url, params)
+                #h.load_to_s3(response, object_name)

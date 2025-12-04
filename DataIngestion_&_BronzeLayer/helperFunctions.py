@@ -30,7 +30,7 @@ def get_json_response(base_url: str, params: dict) -> dict:
     time.sleep(15) # Adding a delay to respect API rate limits
     return response.json()
 
-def load_to_s3(df_to_upload):
+def load_to_s3(df_to_upload, object_name, folder_name: str = "raw"):
     """
     Loads the given DataFrame to an AWS S3 bucket using environment variables for configuration.
     """
@@ -38,7 +38,7 @@ def load_to_s3(df_to_upload):
     env_region_name = os.environ.get("REGION_NAME")
     env_bucket_name = os.environ.get("BUCKET_NAME")
     env_access_key = os.environ.get("ACCESS_KEY")
-    env_secret_access_key = os.environ.get("SECRET_ACCESS_KEY")
+    env_secret_access_key = os.environ.get("S3_SECRET_ACCESS_KEY")
 
     # Check if the environment variables are set
     if (
@@ -53,8 +53,8 @@ def load_to_s3(df_to_upload):
     else:
         aws_S3.upload_to_s3(
             df=df_to_upload,
-            s3_folder_name="SP500_Companies_List",
-            object_name="SP500_Companies",
+            s3_folder_name=folder_name,
+            object_name=object_name,
             region_name=env_region_name,
             access_key=env_access_key,
             secret_access_key=env_secret_access_key,
