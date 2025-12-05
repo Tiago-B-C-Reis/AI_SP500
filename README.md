@@ -21,14 +21,17 @@ For a visual representation of the architecture, please see the diagram below (d
 
 ## Current Progress
 
-The project is currently in its early stages, with a focus on building the **ingestion and storage layers**.
+The project is currently focused on building a robust and observable **ingestion and storage layer**. The core data pipeline is now functional.
 
-**Implemented:**
+**Key Features & Achievements:**
 
-*   **Data Ingestion:** Scripts for collecting S&P 500 company data and various economic indicators have been developed. The `DataIngestion_&_BronzeLayer` directory contains the Python scripts for fetching data from sources like Yahoo Finance (`data_yfinance.py`, `data_yahoo_fin.py`) and Alpha Vantage (`API_GeneralListCollector.py`).
-*   **Initial Data Storage:** The project is set up to store raw data. The `AI_SP500_Source` directory contains some of the initial raw data collected.
-*   **Orchestration:** An Airflow environment is set up in the `AI_SP500_Airflow` directory, ready for scheduling and managing data pipelines.
-*   **Database:** A PostgreSQL instance is configured using Docker (`PostgreSQL/docker-compose.yml`) for handling metadata and logs.
+*   **Automated Data Ingestion:** The main pipeline (`DataIngestion_&_BronzeLayer/getRequester.py`) automatically fetches financial data from the Alpha Vantage API. It dynamically reads a list of S&P 500 tickers and a set of API functions from local configuration files (`sp500_tickers.csv`, `alpha_vantage_urls.json`), making the ingestion process easily extensible.
+*   **S3 Data Lake (Bronze Layer):** All ingested raw data is uploaded to an AWS S3 bucket, establishing the "Bronze" layer of our data lake. The data is organized into folders based on its source API category (e.g., `raw/Core_Stock_APIs/`).
+*   **Database Logging:** A comprehensive logging system has been implemented. The outcome of every ingestion attempt (success or failure) is recorded in a PostgreSQL database (`s3_ingestion_logger` table). This log captures the API function, stock symbol, S3 object path, file size in bytes, and a detailed status message.
+*   **Configuration Management:** The project securely manages secrets and environment-specific settings (like API keys and credentials for AWS and PostgreSQL) using a `.env` file, which is kept out of version control.
+*   **Structured Project Layout:** The codebase is organized into Python packages (`Helper_Functions`, `DataIngestion_&_BronzeLayer`), ensuring modularity and maintainable imports.
+*   **Dependency Management:** Project dependencies are managed with Poetry, with all required libraries defined in the `pyproject.toml` file.
+*   **Database Schema:** A foundational SQL schema has been defined (`DataIngestion_&_BronzeLayer/create_table.sql`) to store the ingested financial data in a structured relational format, with tables for both metadata and time-series data points.
 
 ## Planned Roadmap
 
