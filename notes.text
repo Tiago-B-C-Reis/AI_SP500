@@ -1,2 +1,6 @@
 gemini --version
 npm install -g @google/gemini-cli@latest
+
+Next steps:
+- Polish the config file "DataIngestion_&_BronzeLayer/Data/alpha_vantage_urls.json" to have only the necessary API calls
+- 

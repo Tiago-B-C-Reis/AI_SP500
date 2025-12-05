@@ -29,7 +29,7 @@ def get_json_response(base_url: str, params: dict) -> dict:
     time.sleep(15) # Adding a delay to respect API rate limits
     return response.json()
 
-def load_json_to_s3(data_to_upload: dict, object_name: str, folder_name: str):
+def load_json_to_s3(data_to_upload: dict, object_name: str, folder_name: str) -> str:
     """
     Loads the given dictionary to an AWS S3 bucket as a JSON file using environment variables for configuration.
     Prints success or failure status.
@@ -47,7 +47,7 @@ def load_json_to_s3(data_to_upload: dict, object_name: str, folder_name: str):
         or env_access_key is None
         or env_secret_access_key is None
     ):
-        print(
+        return (
             "ERROR: Please set the environment variables: REGION_NAME, BUCKET_NAME, S3_ACCESS_KEY, S3_SECRET_ACCESS_KEY"
         )
     else:
@@ -61,6 +61,8 @@ def load_json_to_s3(data_to_upload: dict, object_name: str, folder_name: str):
                 secret_access_key=env_secret_access_key,
                 bucket_name=env_bucket_name,
             )
-            print(f"SUCCESS: JSON data '{object_name}' uploaded to S3 bucket '{env_bucket_name}' in folder '{folder_name}'.")
+            return f"SUCCESS: JSON data '{object_name}' uploaded to S3 bucket '{env_bucket_name}' in folder '{folder_name}'."
         except Exception as e:
-            print(f"ERROR: Failed to upload JSON data '{object_name}' to S3. Reason: {e}")
+            return f"ERROR: Failed to upload JSON data '{object_name}' to S3. Reason: {e}"
+
+

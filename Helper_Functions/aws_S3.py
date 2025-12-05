@@ -65,6 +65,7 @@ def upload_json_to_s3(data: dict,
     """
     # Convert the dictionary to a JSON string in memory
     json_buffer = json.dumps(data, indent=4)
+    file_size_bytes = len(json_buffer.encode('utf-8'))
 
     # Initialize S3 client
     s3_client = boto3.client(
@@ -81,7 +82,7 @@ def upload_json_to_s3(data: dict,
                                         Key=key,
                                         Body=json_buffer
                                         )
-        print(f'Successfully uploaded {object_name} to {bucket_name}/{key}')
+        print(f'Successfully uploaded {object_name} ({file_size_bytes} bytes) to {bucket_name}/{key}')
     except Exception as e:
         print(f"Error uploading file: {e}")
         return False

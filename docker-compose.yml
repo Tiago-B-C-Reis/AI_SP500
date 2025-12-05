@@ -3,7 +3,7 @@ services:
     image: postgres:latest
     container_name: postgres_db
     environment:
-      POSTGRES_DB: a_i_sp500
+      POSTGRES_DB: aisp500
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: password
     ports:

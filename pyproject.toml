@@ -24,6 +24,7 @@ yfinance = "^0.2.43"
 # Yahoo Finance (Yahoo_fin API)
 yahoo-fin = "^0.8.9.1"
 aws-s3 = "^1.0.0"
+psycopg2-binary = "^2.9.11"
 
 [tool.poetry.group.dev.dependencies]
 ipykernel = "^6.29.4"
