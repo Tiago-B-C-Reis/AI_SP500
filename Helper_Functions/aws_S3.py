@@ -4,6 +4,7 @@ import calendar
 import datetime
 import pandas as pd
 from io import StringIO
+import json
 
 
 # This function will load the data from the S3 bucket
@@ -45,6 +46,42 @@ def upload_to_s3(df: pd.DataFrame,
                                         Body=csv_buffer.getvalue()
                                         )
         print(f'Successfully uploaded {file_name}.csv to {bucket_name}/{s3_folder_name}/{file_name}.csv')
+    except Exception as e:
+        print(f"Error uploading file: {e}")
+        return False
+
+    return True
+
+
+def upload_json_to_s3(data: dict,
+                      bucket_name: str,
+                      s3_folder_name: str,
+                      object_name: str,
+                      region_name: str,
+                      access_key: str,
+                      secret_access_key: str) -> bool:
+    """
+    Uploads a dictionary to S3 as a JSON file.
+    """
+    # Convert the dictionary to a JSON string in memory
+    json_buffer = json.dumps(data, indent=4)
+
+    # Initialize S3 client
+    s3_client = boto3.client(
+        "s3",
+        region_name=region_name,
+        aws_access_key_id=access_key,
+        aws_secret_access_key=secret_access_key,
+    )
+
+    # Upload the JSON file to the specified bucket
+    try:
+        key = f"{s3_folder_name}/{object_name}"
+        response = s3_client.put_object(Bucket=bucket_name,
+                                        Key=key,
+                                        Body=json_buffer
+                                        )
+        print(f'Successfully uploaded {object_name} to {bucket_name}/{key}')
     except Exception as e:
         print(f"Error uploading file: {e}")
         return False

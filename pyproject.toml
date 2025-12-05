@@ -23,6 +23,7 @@ beautifulsoup4 = "^4.12.3"
 yfinance = "^0.2.43"
 # Yahoo Finance (Yahoo_fin API)
 yahoo-fin = "^0.8.9.1"
+aws-s3 = "^1.0.0"
 
 [tool.poetry.group.dev.dependencies]
 ipykernel = "^6.29.4"
@@ -33,3 +34,4 @@ build-backend = "poetry.core.masonry.api"
 
 # pip install poetry
 # poetry install
+# poetry update

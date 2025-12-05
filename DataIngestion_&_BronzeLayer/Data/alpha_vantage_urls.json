@@ -1,5 +1,5 @@
 {
-  "Core Stock APIs": [
+  "Core_Stock_APIs": [
     {
       "base_url": "https://www.alphavantage.co/query?",
       "params": {
@@ -74,7 +74,7 @@
       }
     }
   ],
-  "Options Data APIs": [
+  "Options_Data_APIs": [
     {
       "base_url": "https://www.alphavantage.co/query?",
       "params": {
@@ -92,7 +92,7 @@
       }
     }
   ],
-  "Fundamental Data": [
+  "Fundamental_Data": [
     {
       "base_url": "https://www.alphavantage.co/query?",
       "params": {
@@ -279,7 +279,7 @@
       }
     }
   ],
-  "Economic Indicators": [
+  "Economic_Indicators": [
     {
       "base_url": "https://www.alphavantage.co/query?",
       "params": {
@@ -356,7 +356,7 @@
       }
     }
   ],
-  "Technical Indicators": [
+  "Technical_Indicators": [
     {
       "base_url": "https://www.alphavantage.co/query?",
       "params": {

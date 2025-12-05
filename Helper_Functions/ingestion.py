@@ -4,6 +4,7 @@ import argparse
 import csv
 import os
 import time
+from . import aws_S3
 from io import StringIO
 from pathlib import Path
 from typing import Iterable
@@ -11,13 +12,11 @@ from typing import Iterable
 import requests
 from dotenv import load_dotenv
 
-import aws_S3
-from xxlimited import Str
-
 
 SCRIPT_DIR = Path(__file__).resolve().parent
-load_dotenv(SCRIPT_DIR / ".env")
-load_dotenv()  # Fallback to project-root .env if available
+dotenv_path = SCRIPT_DIR.parent / ".env"
+load_dotenv(dotenv_path)
+
 
 def get_json_response(base_url: str, params: dict) -> dict:
     params["apikey"] = os.environ.get("ALPHA_VANTAGE_API_KEY")
@@ -30,14 +29,15 @@ def get_json_response(base_url: str, params: dict) -> dict:
     time.sleep(15) # Adding a delay to respect API rate limits
     return response.json()
 
-def load_to_s3(df_to_upload, object_name, folder_name: str = "raw"):
+def load_json_to_s3(data_to_upload: dict, object_name: str, folder_name: str):
     """
-    Loads the given DataFrame to an AWS S3 bucket using environment variables for configuration.
+    Loads the given dictionary to an AWS S3 bucket as a JSON file using environment variables for configuration.
+    Prints success or failure status.
     """
 
     env_region_name = os.environ.get("REGION_NAME")
     env_bucket_name = os.environ.get("BUCKET_NAME")
-    env_access_key = os.environ.get("ACCESS_KEY")
+    env_access_key = os.environ.get("S3_ACCESS_KEY")
     env_secret_access_key = os.environ.get("S3_SECRET_ACCESS_KEY")
 
     # Check if the environment variables are set
@@ -48,15 +48,19 @@ def load_to_s3(df_to_upload, object_name, folder_name: str = "raw"):
         or env_secret_access_key is None
     ):
         print(
-            "Please set the environment variables: REGION_NAME, BUCKET_NAME, ACCESS_KEY, SECRET_ACCESS_KEY"
+            "ERROR: Please set the environment variables: REGION_NAME, BUCKET_NAME, S3_ACCESS_KEY, S3_SECRET_ACCESS_KEY"
         )
     else:
-        aws_S3.upload_to_s3(
-            df=df_to_upload,
-            s3_folder_name=folder_name,
-            object_name=object_name,
-            region_name=env_region_name,
-            access_key=env_access_key,
-            secret_access_key=env_secret_access_key,
-            bucket_name=env_bucket_name,
-        )
+        try:
+            aws_S3.upload_json_to_s3(
+                data=data_to_upload,
+                s3_folder_name=folder_name,
+                object_name=object_name,
+                region_name=env_region_name,
+                access_key=env_access_key,
+                secret_access_key=env_secret_access_key,
+                bucket_name=env_bucket_name,
+            )
+            print(f"SUCCESS: JSON data '{object_name}' uploaded to S3 bucket '{env_bucket_name}' in folder '{folder_name}'.")
+        except Exception as e:
+            print(f"ERROR: Failed to upload JSON data '{object_name}' to S3. Reason: {e}")

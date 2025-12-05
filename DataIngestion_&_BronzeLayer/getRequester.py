@@ -1,10 +1,12 @@
 import csv
 import json
+import sys
+import time
 from pathlib import Path
 
-import requests
-
-import helperFunctions as h
+# Add project root to sys.path to allow for absolute imports
+sys.path.append(str(Path(__file__).resolve().parents[1]))
+import Helper_Functions.ingestion as ingestion
 from typing import List
 from dotenv import load_dotenv
 
@@ -38,7 +40,9 @@ if __name__ == "__main__":
             for symbol in sp500_tickers:
                 params = endpoint["params"].copy()
                 params["symbol"] = symbol
+                path_folder_name = "raw/" + category_name
+                object_name = f"{params.get('function')}_{symbol}_{time.strftime('%Y%m%d%H%M%S')}.json"
 
-                print(f"Calling → {params.get('function')} for {symbol}")
-                #response = h.get_json_response(base_url, params)
-                #h.load_to_s3(response, object_name)
+                print(f"{path_folder_name} - Calling → {params.get('function')} for {symbol}, Object Name: {object_name}")
+                response = ingestion.get_json_response(base_url, params)
+                ingestion.load_json_to_s3(response, object_name, path_folder_name)
