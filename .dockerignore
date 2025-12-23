@@ -1,0 +1,11 @@
+.git
+.venv
+.idea
+__pycache__
+*.pyc
+.DS_Store
+AI_SP500_Airflow/logs
+AI_SP500_Source
+BronzeLayer
+Silver_Layer
+Logs_OLTP

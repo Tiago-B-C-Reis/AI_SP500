@@ -57,3 +57,31 @@ The following phases outline the future development of the project:
 *(This section is a placeholder and will be updated as the project matures.)*
 
 Instructions on how to set up the environment, install dependencies, and run the project will be provided here.
+
+
+## Code architecture
+
+Still working on it...
+
+**1. Containerizing Data Ingestion:**
+**Yes**, containerizing the `DataIngestion` module is an excellent idea.
+*   **Why:** It ensures reproducibility. Your ingestion scripts likely depend on specific libraries (`requests`, `yfinance`, etc.). Wrapping them in a Docker image guarantees they run exactly the same way on your machine, inside Airflow, or in the cloud.
+
+**2. Should each step be a container? (Microservices vs. Tasks)**
+Since you are using **Airflow**, you should avoid thinking of these as traditional "Microservices" (which are long-running servers waiting for requests). Instead, think of them as **Modular Tasks**.
+
+*   **Approach:** Use **Dockerized Tasks**.
+    *   Airflow triggers a container for "Data Ingestion", it runs the script, finishes the job, and shuts down.
+    *   Then Airflow triggers a container for "Bronze Layer", and so on.
+*   **Benefits:**
+    *   **Isolation:** The "Ingestion" step might need light web-scraping libraries, while the "Silver Layer" might need heavy data processing libraries (Pandas/Spark). Keeping them in separate images prevents dependency conflicts (Dependency Hell).
+    *   **Scalability:** You can allocate more CPU/RAM to the transformation container without wasting resources on the lightweight ingestion container.
+
+**Proposed Next Steps:**
+1.  [x] **Create a Dockerfile** in `DataIngestion/` to package the existing scripts.
+    *   *Command to build:* `docker build -f DataIngestion/Dockerfile -t sp500-ingestion .`
+2.  [ ] **Test** the container locally (build and run).
+3.  [x] **Integrate with Airflow**: Create a DAG that runs this container using the `DockerOperator`.
+    *   *Note:* The `ingestion_dag.py` has been created in `AI_SP500_Airflow/dags/`.
+    *   **Action Required:** Update `AI_SP500_Airflow/docker-compose.yaml` to mount the Docker socket so Airflow can spawn containers. Add `- /var/run/docker.sock:/var/run/docker.sock` to the `volumes` section of `x-airflow-common`.
+

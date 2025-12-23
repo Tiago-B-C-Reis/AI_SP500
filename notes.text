@@ -1,6 +1,15 @@
 gemini --version
 npm install -g @google/gemini-cli@latest
 
+Docker commands:
+    # arm64 version
+docker build -t tiagobcr/sp500-data-ingestion_arm64 -f DataIngestion/Dockerfile .
+docker push tiagobcr/sp500-data-ingestion_arm64:latest
+    # amd64 version
+docker buildx build --platform linux/amd64 -t tiagobcr/sp500-data-ingestion_amd64:latest -f DataIngestion/Dockerfile .
+docker push tiagobcr/sp500-data-ingestion_amd64:latest
+
+
 Next steps:
-- Polish the config file "DataIngestion_&_BronzeLayer/Data/alpha_vantage_urls.json" to have only the necessary API calls
-- 
+- add Market News & Sentiment from API and also use AI to scrap the internet for news and sentiment
+- implement the N8N workflow
