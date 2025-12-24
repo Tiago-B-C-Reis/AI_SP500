@@ -41,7 +41,7 @@ if __name__ == "__main__":
             for symbol in sp500_tickers:
                 params = endpoint["params"].copy()
                 params["symbol"] = symbol
-                path_folder_name = "raw/" + category_name
+                path_folder_name = "raw/" + category_name + "/" + params.get('function')
                 object_name = f"{params.get('function')}_{symbol}_{time.strftime('%Y%m%d%H%M%S')}.json"
 
                 print(f"{path_folder_name} - Calling → {params.get('function')} for {symbol}, Object Name: {object_name}")
