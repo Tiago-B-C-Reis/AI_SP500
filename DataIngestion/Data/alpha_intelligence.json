@@ -1,0 +1,50 @@
+{
+  "Alpha_Intelligence": [
+    {
+      "base_url": "https://www.alphavantage.co/query?",
+      "params": {
+        "function": "NEWS_SENTIMENT",
+        "time_from": "2025-12-28",
+        "sort": "RELEVANCE",
+        "limit": 50,
+        "apikey": "demo"
+      }
+    },
+    {
+      "base_url": "https://www.alphavantage.co/query?",
+      "params": {
+        "function": "EARNINGS_CALL_TRANSCRIPT",
+        "symbol": "IBM",
+        "quarter": "2025Q1",
+        "apikey": "demo"
+      }
+    },
+    {
+      "base_url": "https://www.alphavantage.co/query?",
+      "params": {
+        "function": "TOP_GAINERS_LOSERS",
+        "apikey": "demo"
+      }
+    },
+    {
+      "base_url": "https://www.alphavantage.co/query?",
+      "params": {
+        "function": "INSIDER_TRANSACTIONS",
+        "symbol": "IBM",
+        "apikey": "demo"
+      }
+    },
+    {
+      "base_url": "https://www.alphavantage.co/query?",
+      "params": {
+        "function": "ANALYTICS_FIXED_WINDOW",
+        "SYMBOLS": "IBM",
+        "RANGE": "{N}week",
+        "OHLC": "close",
+        "INTERVAL": "WEEKLY",
+        "CALCULATIONS": "MIN,MAX,MEAN,MEDIAN,CUMULATIVE_RETURN,VARIANCE(annualized=True),STDDEV(annualized=True),MAX_DRAWDOWN,HISTOGRAM,AUTOCORRELATION,COVARIANCE,CORRELATION",
+        "apikey": "demo"
+      }
+    }
+  ]
+}

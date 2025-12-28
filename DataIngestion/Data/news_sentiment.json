@@ -1,0 +1,2147 @@
+{
+    "items": "50",
+    "sentiment_score_definition": "x <= -0.35: Bearish; -0.35 < x <= -0.15: Somewhat-Bearish; -0.15 < x < 0.15: Neutral; 0.15 <= x < 0.35: Somewhat_Bullish; x >= 0.35: Bullish",
+    "relevance_score_definition": "0 < x <= 1, with a higher score indicating higher relevance.",
+    "feed": [
+        {
+            "title": "Raymond James Reaffirms Outperform on Verizon (VZ) Amid High Dividend and Cost-Cutting Strategy",
+            "url": "https://ca.finance.yahoo.com/news/raymond-james-reaffirms-outperform-verizon-180345305.html",
+            "time_published": "20251228T180838",
+            "authors": [
+                "Sheryar Siddiq"
+            ],
+            "summary": "Raymond James has reaffirmed its Outperform rating on Verizon Communications Inc. (VZ), setting a price target of $47. This positive outlook is driven by Verizon's strong dividend yield and potential for subscriber growth, supported by ongoing cost-cutting measures. The company is actively shedding ineffective initiatives and focusing on strategic improvements expected to yield results by late 2026 or early 2027, with Fixed Wireless Access (FWA) being a key area.",
+            "banner_image": null,
+            "source": "Yahoo! Finance Canada",
+            "category_within_source": "General",
+            "source_domain": "Yahoo! Finance Canada",
+            "topics": [
+                {
+                    "topic": "earnings",
+                    "relevance_score": "0.925099"
+                },
+                {
+                    "topic": "finance",
+                    "relevance_score": "0.805092"
+                },
+                {
+                    "topic": "technology",
+                    "relevance_score": "0.749736"
+                },
+                {
+                    "topic": "financial_markets",
+                    "relevance_score": "0.605215"
+                }
+            ],
+            "overall_sentiment_score": 0.221083,
+            "overall_sentiment_label": "Somewhat-Bullish",
+            "ticker_sentiment": [
+                {
+                    "ticker": "RJF",
+                    "relevance_score": "0.318413",
+                    "ticker_sentiment_score": "0.001141",
+                    "ticker_sentiment_label": "Neutral"
+                },
+                {
+                    "ticker": "VZ",
+                    "relevance_score": "1.000000",
+                    "ticker_sentiment_score": "0.417665",
+                    "ticker_sentiment_label": "Bullish"
+                }
+            ]
+        },
+        {
+            "title": "Phillip Securities Raises Oracle 2026 Capex Forecast to $50B Highlighting Confidence in OCI and Full-Stack AI Leadership",
+            "url": "https://finviz.com/news/263101/phillip-securities-raises-oracle-2026-capex-forecast-to-50b-highlighting-confidence-in-oci-and-full-stack-ai-leadership",
+            "time_published": "20251228T175641",
+            "authors": [
+                "Maham Fatima"
+            ],
+            "summary": "Phillip Securities has increased its 2026 capital expenditure forecast for Oracle (NYSE: ORCL) to $50 billion, up from $35 billion, while maintaining a Buy rating. This adjustment reflects the firm's continued confidence in Oracle's role as a specialized cloud provider through OCI and a leader in full-stack AI. The move follows strong cloud division growth in FQ2 2026, though high capital spending led to mixed results.",
+            "banner_image": "https://d2gr5kl7dt2z3t.cloudfront.net/blog/wp-content/uploads/2023/09/20060404/ORCL-insidermonkey-1695204241327.jpg",
+            "source": "Finviz",
+            "category_within_source": "General",
+            "source_domain": "Finviz",
+            "topics": [
+                {
+                    "topic": "earnings",
+                    "relevance_score": "0.902311"
+                },
+                {
+                    "topic": "financial_markets",
+                    "relevance_score": "0.833018"
+                },
+                {
+                    "topic": "technology",
+                    "relevance_score": "1.000000"
+                }
+            ],
+            "overall_sentiment_score": 0.200247,
+            "overall_sentiment_label": "Somewhat-Bullish",
+            "ticker_sentiment": [
+                {
+                    "ticker": "ORCL",
+                    "relevance_score": "1.000000",
+                    "ticker_sentiment_score": "0.219001",
+                    "ticker_sentiment_label": "Somewhat-Bullish"
+                }
+            ]
+        },
+        {
+            "title": "Intuit Inc. (INTU) Plans To Use Circle Internet And USDC Infrastructure",
+            "url": "https://finviz.com/news/263062/intuit-inc-intu-plans-to-use-circle-internet-and-usdc-infrastructure",
+            "time_published": "20251228T171700",
+            "authors": [
+                "Fatima Gulzar"
+            ],
+            "summary": "Intuit Inc. (NASDAQ: INTU) has announced a multi-year agreement with Circle Internet Group to integrate stablecoin features, specifically USDC, across its platforms like Credit Karma, QuickBooks, and TurboTax. This partnership aims to enable quicker, more affordable, and safer international money transfers and open new use cases for programmable, round-the-clock financial transactions. BMO Capital recently reaffirmed an Outperform rating for Intuit but reduced its price objective, citing solid fiscal 2026 results driven by Credit Karma and QuickBooks Online.",
+            "banner_image": "https://d2gr5kl7dt2z3t.cloudfront.net/blog/wp-content/uploads/2023/09/19184650/INTU-insidermonkey-1695163608216.jpg",
+            "source": "Finviz",
+            "category_within_source": "General",
+            "source_domain": "Finviz",
+            "topics": [
+                {
+                    "topic": "blockchain",
+                    "relevance_score": "1.000000"
+                },
+                {
+                    "topic": "financial_markets",
+                    "relevance_score": "0.945108"
+                },
+                {
+                    "topic": "technology",
+                    "relevance_score": "0.839253"
+                },
+                {
+                    "topic": "finance",
+                    "relevance_score": "0.744005"
+                }
+            ],
+            "overall_sentiment_score": 0.175468,
+            "overall_sentiment_label": "Somewhat-Bullish",
+            "ticker_sentiment": [
+                {
+                    "ticker": "INTU",
+                    "relevance_score": "1.000000",
+                    "ticker_sentiment_score": "0.290989",
+                    "ticker_sentiment_label": "Somewhat-Bullish"
+                },
+                {
+                    "ticker": "CRM",
+                    "relevance_score": "0.605196",
+                    "ticker_sentiment_score": "0.134003",
+                    "ticker_sentiment_label": "Neutral"
+                },
+                {
+                    "ticker": "MSFT",
+                    "relevance_score": "0.642441",
+                    "ticker_sentiment_score": "0.126971",
+                    "ticker_sentiment_label": "Neutral"
+                },
+                {
+                    "ticker": "ORCL",
+                    "relevance_score": "0.619620",
+                    "ticker_sentiment_score": "0.123261",
+                    "ticker_sentiment_label": "Neutral"
+                }
+            ]
+        },
+        {
+            "title": "KMX INVESTOR ALERT: Bronstein, Gewirtz & Grossman LLC",
+            "url": "https://www.globenewswire.com/news-release/2025/12/28/3210749/9788/en/KMX-INVESTOR-ALERT-Bronstein-Gewirtz-Grossman-LLC-Announces-that-CarMax-Inc-Investors-with-Substantial-Losses-Have-Opportunity-to-Lead-Class-Action-Lawsuit.html",
+            "time_published": "20251228T170205",
+            "authors": [
+                "Bronstein",
+                "Gewirtz & Grossman",
+                "LLC"
+            ],
+            "summary": "Bronstein, Gewirtz & Grossman LLC has announced a class action lawsuit against CarMax, Inc. (NYSE: KMX) on behalf of investors who purchased securities between June 20, 2025, and November 5, 2025. The lawsuit alleges that CarMax overstated its growth prospects, claiming that earlier growth was a temporary benefit from customers buying cars due to tariff speculation. Investors who suffered losses are encouraged to join the class action, with a lead plaintiff deadline of January 2, 2026.",
+            "banner_image": "https://ml.globenewswire.com/media/NjYyZGEzYjktMGNhMy00ZmUyLTllOTYtYWVlZmZhNmQzNTE3LTEwMjkyNjAtMjAyNS0xMi0yOC1lbg==/tiny/Bronstein-Gewirtz-Grossman-LLC.png",
+            "source": "GlobeNewswire",
+            "category_within_source": "General",
+            "source_domain": "GlobeNewswire",
+            "topics": [
+                {
+                    "topic": "retail_wholesale",
+                    "relevance_score": "0.854716"
+                },
+                {
+                    "topic": "finance",
+                    "relevance_score": "0.762860"
+                },
+                {
+                    "topic": "financial_markets",
+                    "relevance_score": "0.694771"
+                }
+            ],
+            "overall_sentiment_score": 0.00886,
+            "overall_sentiment_label": "Neutral",
+            "ticker_sentiment": [
+                {
+                    "ticker": "KMX",
+                    "relevance_score": "0.343317",
+                    "ticker_sentiment_score": "0.006400",
+                    "ticker_sentiment_label": "Neutral"
+                }
+            ]
+        },
+        {
+            "title": "Freeport-McMoRan (FCX) Stock Surges Toward Fresh Highs as Copper Hits Record Territory \u2014 What Investors Need Before Monday\u2019s Open",
+            "url": "https://ts2.tech/en/freeport-mcmoran-fcx-stock-surges-toward-fresh-highs-as-copper-hits-record-territory-what-investors-need-before-mondays-open/",
+            "time_published": "20251228T170153",
+            "authors": [
+                "Khadija Saeed"
+            ],
+            "summary": "Freeport-McMoRan (FCX) stock is approaching multi-month highs as copper prices reach record levels due to tight supply, tariff uncertainty, and AI-linked demand. With U.S. equities closed for the weekend, investors are analyzing the past 48 hours' developments, Wall Street forecasts, and potential factors influencing the stock when trading resumes Monday. The article details FCX's recent performance, the copper market's drivers, analyst perspectives, company-specific updates like dividends and growth strategies, and key considerations for investors before Monday's open.",
+            "banner_image": "NULL",
+            "source": "ts2.tech",
+            "category_within_source": "General",
+            "source_domain": "ts2.tech",
+            "topics": [
+                {
+                    "topic": "financial_markets",
+                    "relevance_score": "0.900653"
+                },
+                {
+                    "topic": "economy_macro",
+                    "relevance_score": "0.625509"
+                }
+            ],
+            "overall_sentiment_score": 0.455611,
+            "overall_sentiment_label": "Bullish",
+            "ticker_sentiment": [
+                {
+                    "ticker": "FCX",
+                    "relevance_score": "1.000000",
+                    "ticker_sentiment_score": "0.478104",
+                    "ticker_sentiment_label": "Bullish"
+                }
+            ]
+        },
+        {
+            "title": "Jim Cramer on Capital One: \"I Think It's Going to Be a Monster Year in 2026 for These Guys\"",
+            "url": "https://finviz.com/news/263043/jim-cramer-on-capital-one-i-think-its-going-to-be-a-monster-year-in-2026-for-these-guys",
+            "time_published": "20251228T165242",
+            "authors": [
+                "Syeda Seirut Javed"
+            ],
+            "summary": "Jim Cramer expressed bullish sentiment for Capital One Financial Corporation (NYSE: COF), predicting a \"monster year in 2026\" for the company. RGA Investment Advisors also highlighted their recent addition of COF shares to their portfolios, viewing the acquisition of Discover (DFS) as a transformative transaction that will reshape the US payments landscape. The article notes that Capital One is transitioning from a card issuer to a vertically integrated payments entity, akin to American Express.",
+            "banner_image": "https://d2gr5kl7dt2z3t.cloudfront.net/blog/wp-content/uploads/2025/01/03064902/pexels-weekendplayer-187041.jpg",
+            "source": "Finviz",
+            "category_within_source": "General",
+            "source_domain": "Finviz",
+            "topics": [
+                {
+                    "topic": "finance",
+                    "relevance_score": "0.916836"
+                },
+                {
+                    "topic": "mergers_and_acquisitions",
+                    "relevance_score": "0.801262"
+                },
+                {
+                    "topic": "financial_markets",
+                    "relevance_score": "0.743594"
+                },
+                {
+                    "topic": "earnings",
+                    "relevance_score": "0.635169"
+                },
+                {
+                    "topic": "economy_macro",
+                    "relevance_score": "0.629306"
+                }
+            ],
+            "overall_sentiment_score": 0.417553,
+            "overall_sentiment_label": "Bullish",
+            "ticker_sentiment": [
+                {
+                    "ticker": "COF",
+                    "relevance_score": "1.000000",
+                    "ticker_sentiment_score": "0.440910",
+                    "ticker_sentiment_label": "Bullish"
+                }
+            ]
+        },
+        {
+            "title": "ServiceNow, Inc. (NOW) Completes Moveworks Acquisition, Here's What You Need to Know",
+            "url": "https://finviz.com/news/263022/servicenow-inc-now-completes-moveworks-acquisition-heres-what-you-need-to-know",
+            "time_published": "20251228T163916",
+            "authors": [
+                "Talha Qureshi"
+            ],
+            "summary": "ServiceNow (NOW) has completed its acquisition of Moveworks, an AI assistant company specializing in enterprise search and conversational AI. This acquisition aims to create a unified \"AI-native front door\" for employees, combining ServiceNow's backend agentic AI with Moveworks' user-friendly natural language interactions. Despite a recent stock split and an adjusted price target by Stifel, the company maintains a Buy rating, highlighting unchanged long-term prospects.",
+            "banner_image": "https://d2gr5kl7dt2z3t.cloudfront.net/blog/wp-content/uploads/2023/09/19162416/NOW-insidermonkey-1695155054694.jpg",
+            "source": "Finviz",
+            "category_within_source": "General",
+            "source_domain": "Finviz",
+            "topics": [
+                {
+                    "topic": "mergers_and_acquisitions",
+                    "relevance_score": "0.912464"
+                },
+                {
+                    "topic": "technology",
+                    "relevance_score": "0.842761"
+                }
+            ],
+            "overall_sentiment_score": 0.410965,
+            "overall_sentiment_label": "Bullish",
+            "ticker_sentiment": [
+                {
+                    "ticker": "NOW",
+                    "relevance_score": "0.991886",
+                    "ticker_sentiment_score": "0.440822",
+                    "ticker_sentiment_label": "Bullish"
+                }
+            ]
+        },
+        {
+            "title": "Jim Cramer Calls Goldman Sachs a \"Favorite\" of His",
+            "url": "https://finviz.com/news/263045/jim-cramer-calls-goldman-sachs-a-favorite-of-his",
+            "time_published": "20251228T163157",
+            "authors": [
+                "Syeda Seirut Javed"
+            ],
+            "summary": "Jim Cramer highlighted Goldman Sachs (NYSE: GS) as a significant holding in his Charitable Trust, emphasizing its strong performance driven by deregulation. Cramer noted the company's stock was up 57%, surpassing even the Magnificent Seven's performance, and offered less risk than tech stocks. He also pointed out the positive impact of increased IPOs and acquisitions on bank stocks.",
+            "banner_image": "https://d2gr5kl7dt2z3t.cloudfront.net/blog/wp-content/uploads/2016/11/25235533/39009805_m.jpg",
+            "source": "Finviz",
+            "category_within_source": "General",
+            "source_domain": "Finviz",
+            "topics": [
+                {
+                    "topic": "finance",
+                    "relevance_score": "0.946462"
+                },
+                {
+                    "topic": "financial_markets",
+                    "relevance_score": "0.849120"
+                },
+                {
+                    "topic": "economy_macro",
+                    "relevance_score": "0.739445"
+                },
+                {
+                    "topic": "mergers_and_acquisitions",
+                    "relevance_score": "0.616004"
+                },
+                {
+                    "topic": "ipo",
+                    "relevance_score": "0.618111"
+                }
+            ],
+            "overall_sentiment_score": 0.334308,
+            "overall_sentiment_label": "Somewhat-Bullish",
+            "ticker_sentiment": [
+                {
+                    "ticker": "GS",
+                    "relevance_score": "1.000000",
+                    "ticker_sentiment_score": "0.433637",
+                    "ticker_sentiment_label": "Bullish"
+                },
+                {
+                    "ticker": "MS",
+                    "relevance_score": "0.739123",
+                    "ticker_sentiment_score": "0.339040",
+                    "ticker_sentiment_label": "Somewhat-Bullish"
+                },
+                {
+                    "ticker": "JPM",
+                    "relevance_score": "0.602878",
+                    "ticker_sentiment_score": "0.339178",
+                    "ticker_sentiment_label": "Somewhat-Bullish"
+                },
+                {
+                    "ticker": "WFC",
+                    "relevance_score": "0.638387",
+                    "ticker_sentiment_score": "0.334931",
+                    "ticker_sentiment_label": "Somewhat-Bullish"
+                },
+                {
+                    "ticker": "C",
+                    "relevance_score": "0.639790",
+                    "ticker_sentiment_score": "0.348366",
+                    "ticker_sentiment_label": "Somewhat-Bullish"
+                }
+            ]
+        },
+        {
+            "title": "Jim Cramer on Costco: \"I Am Concerned I Might Sell the Rest\"",
+            "url": "https://finviz.com/news/263026/jim-cramer-on-costco-i-am-concerned-i-might-sell-the-rest",
+            "time_published": "20251228T163143",
+            "authors": [
+                "Syeda Seirut Javed"
+            ],
+            "summary": "Jim Cramer expressed concern about Costco stock (COST), noting that it became overvalued despite his initial assessment. He mentioned selling half of the position for the Charitable Trust and is contemplating selling the rest due to his reservations about customer re-ups. Cramer also highlighted Costco's lawsuit against the Trump administration regarding tariffs, suggesting a victory could positively impact the stock.",
+            "banner_image": "https://d2gr5kl7dt2z3t.cloudfront.net/blog/wp-content/uploads/2021/06/15094142/omar-abascal-9Um7Huux0as-unsplash.jpg",
+            "source": "Finviz",
+            "category_within_source": "General",
+            "source_domain": "Finviz",
+            "topics": [
+                {
+                    "topic": "retail_wholesale",
+                    "relevance_score": "0.907498"
+                },
+                {
+                    "topic": "financial_markets",
+                    "relevance_score": "0.731495"
+                },
+                {
+                    "topic": "earnings",
+                    "relevance_score": "0.644124"
+                },
+                {
+                    "topic": "economy_macro",
+                    "relevance_score": "0.611846"
+                }
+            ],
+            "overall_sentiment_score": -0.320965,
+            "overall_sentiment_label": "Somewhat-Bearish",
+            "ticker_sentiment": [
+                {
+                    "ticker": "COST",
+                    "relevance_score": "0.980894",
+                    "ticker_sentiment_score": "-0.323591",
+                    "ticker_sentiment_label": "Somewhat-Bearish"
+                }
+            ]
+        },
+        {
+            "title": "Jim Cramer Says He Is \"Not Quite Ready Yet to Give Up on Some of These Companies Like Salesforce\"",
+            "url": "https://finviz.com/news/263036/jim-cramer-says-he-is-not-quite-ready-yet-to-give-up-on-some-of-these-companies-like-salesforce",
+            "time_published": "20251228T163143",
+            "authors": [
+                "Syeda Seirut Javed"
+            ],
+            "summary": "Jim Cramer discussed Salesforce (NYSE: CRM) and its potential in the AI space, noting that despite fears of customers developing their own software, he's \"not quite ready yet to give up\" on the company. He highlighted the success of Salesforce's Agentforce AI platform, which has already hit a $500 million run rate and could redefine the company. Cramer was bullish on the company's latest quarterly performance, emphasizing the transformative potential of Agentforce for customer service.",
+            "banner_image": "https://d2gr5kl7dt2z3t.cloudfront.net/blog/wp-content/uploads/2024/06/10142955/nicholas-cappello-Wb63zqJ5gnE-unsplash.jpg",
+            "source": "Finviz",
+            "category_within_source": "General",
+            "source_domain": "Finviz",
+            "topics": [
+                {
+                    "topic": "technology",
+                    "relevance_score": "0.800973"
+                },
+                {
+                    "topic": "earnings",
+                    "relevance_score": "0.715564"
+                },
+                {
+                    "topic": "financial_markets",
+                    "relevance_score": "0.626307"
+                },
+                {
+                    "topic": "economy_macro",
+                    "relevance_score": "0.600648"
+                }
+            ],
+            "overall_sentiment_score": 0.424242,
+            "overall_sentiment_label": "Bullish",
+            "ticker_sentiment": [
+                {
+                    "ticker": "CRM",
+                    "relevance_score": "1.000000",
+                    "ticker_sentiment_score": "0.434244",
+                    "ticker_sentiment_label": "Bullish"
+                }
+            ]
+        },
+        {
+            "title": "Jim Cramer Repeats His \"Own It, Don't Trade It\" Mantra on Apple",
+            "url": "https://finviz.com/news/263032/jim-cramer-repeats-his-own-it-dont-trade-it-mantra-on-apple",
+            "time_published": "20251228T163128",
+            "authors": [
+                "Syeda Seirut Javed"
+            ],
+            "summary": "Jim Cramer reiterated his conviction in Apple Inc. (NASDAQ: AAPL), advising investors to \"own it, don't trade it.\" He praised the company's ability to navigate trade tariffs and highlighted its significant share buyback program, which has reduced its share count by 33.7% since 2015, contributing to a 933% stock increase over the same period. Despite this, the article suggests that certain AI stocks may offer greater upside potential with less downside risk.",
+            "banner_image": "https://d2gr5kl7dt2z3t.cloudfront.net/blog/wp-content/uploads/2021/05/08130933/brandon-romanchuk-NOFyRmSQfUQ-unsplash.jpg",
+            "source": "Finviz",
+            "category_within_source": "General",
+            "source_domain": "Finviz",
+            "topics": [
+                {
+                    "topic": "technology",
+                    "relevance_score": "0.807150"
+                },
+                {
+                    "topic": "financial_markets",
+                    "relevance_score": "0.732209"
+                },
+                {
+                    "topic": "economy_macro",
+                    "relevance_score": "0.600819"
+                }
+            ],
+            "overall_sentiment_score": 0.423567,
+            "overall_sentiment_label": "Bullish",
+            "ticker_sentiment": [
+                {
+                    "ticker": "AAPL",
+                    "relevance_score": "0.989873",
+                    "ticker_sentiment_score": "0.485965",
+                    "ticker_sentiment_label": "Bullish"
+                },
+                {
+                    "ticker": "MSFT",
+                    "relevance_score": "0.648505",
+                    "ticker_sentiment_score": "0.303336",
+                    "ticker_sentiment_label": "Somewhat-Bullish"
+                }
+            ]
+        },
+        {
+            "title": "Mood ElAwadi: $1.5mm Complaint Against Wells Fargo Advisor",
+            "url": "https://www.carlsonlaw.com/mood-elawadi-wells-fargo/",
+            "time_published": "20251228T162036",
+            "authors": [
+                "Chase Carlson"
+            ],
+            "summary": "A recent investor complaint alleges that Orlando, Florida financial advisor Mood ElAwadi (CRD# 5319152) of Wells Fargo Clearing Services and Wells Fargo Advisors falsely induced an investor into a business he owned, causing $1.5 million in damages. FINRA rules prohibit brokers from misrepresenting investments or engaging in fraudulent devices. ElAwadi has 18 years of experience and is licensed in multiple states.",
+            "banner_image": "NULL",
+            "source": "Carlson Law",
+            "category_within_source": "General",
+            "source_domain": "Carlson Law",
+            "topics": [
+                {
+                    "topic": "finance",
+                    "relevance_score": "0.905492"
+                }
+            ],
+            "overall_sentiment_score": -0.31238,
+            "overall_sentiment_label": "Somewhat-Bearish",
+            "ticker_sentiment": [
+                {
+                    "ticker": "WFC",
+                    "relevance_score": "1.000000",
+                    "ticker_sentiment_score": "-0.304741",
+                    "ticker_sentiment_label": "Somewhat-Bearish"
+                }
+            ]
+        },
+        {
+            "title": "T-Mobile (TMUS) Upgraded as Subscriber Growth Outlook Improves",
+            "url": "https://www.insidermonkey.com/blog/t-mobile-tmus-upgraded-as-subscriber-growth-outlook-improves-1666696/",
+            "time_published": "20251228T161500",
+            "authors": [
+                "Sheryar Siddiq"
+            ],
+            "summary": "KeyBanc has upgraded T-Mobile US Inc. (NASDAQ:TMUS) from Underweight to Sector Weight following an improved subscriber growth outlook and updated financial projections. T-Mobile raised its FY25 outlook for postpaid net subscriber additions, core adjusted EBITDA, and net cash generated through operations, indicating expected acceleration in organic growth. Despite the upgrade, the article suggests that some AI stocks may offer greater promise and higher returns.",
+            "banner_image": "https://imonkey-blog.imgix.net/blog/wp-content/uploads/2021/02/05200340/T-mobile-TMUS-piqsels.com-id-opqbo.jpg?auto=format&fit=clip&expires=1798416000&width=480&height=280",
+            "source": "Insider Monkey",
+            "category_within_source": "General",
+            "source_domain": "Insider Monkey",
+            "topics": [
+                {
+                    "topic": "earnings",
+                    "relevance_score": "0.908662"
+                },
+                {
+                    "topic": "financial_markets",
+                    "relevance_score": "0.839201"
+                },
+                {
+                    "topic": "technology",
+                    "relevance_score": "0.730694"
+                }
+            ],
+            "overall_sentiment_score": 0.408941,
+            "overall_sentiment_label": "Bullish",
+            "ticker_sentiment": [
+                {
+                    "ticker": "TMUS",
+                    "relevance_score": "1.000000",
+                    "ticker_sentiment_score": "0.432847",
+                    "ticker_sentiment_label": "Bullish"
+                }
+            ]
+        },
+        {
+            "title": "Advanced Micro Devices (AMD) up More Than 76% YTD, Is it Still a Buy?",
+            "url": "https://finviz.com/news/263023/advanced-micro-devices-amd-up-more-than-76-ytd-is-it-still-a-buy",
+            "time_published": "20251228T161132",
+            "authors": [
+                "Talha Qureshi"
+            ],
+            "summary": "Advanced Micro Devices (AMD) has seen over 76% year-to-date growth, partly due to reports of its CEO affirming investment commitment in China and potential relaxation of export controls. Despite Wall Street maintaining a positive outlook with \"Buy\" ratings from analysts, the article suggests that other AI stocks might offer greater upside potential and less downside risk.",
+            "banner_image": "https://d2gr5kl7dt2z3t.cloudfront.net/blog/wp-content/uploads/2023/09/19160555/AMD-insidermonkey-1695153952842.jpg",
+            "source": "Finviz",
+            "category_within_source": "General",
+            "source_domain": "Finviz",
+            "topics": [
+                {
+                    "topic": "technology",
+                    "relevance_score": "1.000000"
+                },
+                {
+                    "topic": "financial_markets",
+                    "relevance_score": "0.933007"
+                }
+            ],
+            "overall_sentiment_score": 0.282669,
+            "overall_sentiment_label": "Somewhat-Bullish",
+            "ticker_sentiment": [
+                {
+                    "ticker": "AMD",
+                    "relevance_score": "1.000000",
+                    "ticker_sentiment_score": "0.443109",
+                    "ticker_sentiment_label": "Bullish"
+                },
+                {
+                    "ticker": "INTC",
+                    "relevance_score": "0.636530",
+                    "ticker_sentiment_score": "0.231200",
+                    "ticker_sentiment_label": "Somewhat-Bullish"
+                },
+                {
+                    "ticker": "NVDA",
+                    "relevance_score": "0.618568",
+                    "ticker_sentiment_score": "0.115158",
+                    "ticker_sentiment_label": "Neutral"
+                }
+            ]
+        },
+        {
+            "title": "Exxon Mobil Stock (XOM) Update: Oil\u2019s Latest Drop, Analyst Targets, and What to Watch Before Monday\u2019s Open",
+            "url": "https://ts2.tech/en/exxon-mobil-stock-xom-update-oils-latest-drop-analyst-targets-and-what-to-watch-before-mondays-open/",
+            "time_published": "20251228T160857",
+            "authors": [
+                "Khadija Saeed"
+            ],
+            "summary": "Exxon Mobil (NYSE: XOM) heads into the new week facing investor concerns over oil oversupply entering 2026, despite the company's strong capital return program and long-term targets. Investors should monitor crude prices, year-end liquidity, and macro sentiment, while analysts project modest upside for the stock. The integrated oil major's dividend and buyback strategy remains crucial for shareholder appeal amidst potential oil price pressure.",
+            "banner_image": "NULL",
+            "source": "ts2.tech",
+            "category_within_source": "General",
+            "source_domain": "ts2.tech",
+            "topics": [
+                {
+                    "topic": "financial_markets",
+                    "relevance_score": "0.900205"
+                },
+                {
+                    "topic": "earnings",
+                    "relevance_score": "0.833111"
+                },
+                {
+                    "topic": "energy_transportation",
+                    "relevance_score": "0.828159"
+                },
+                {
+                    "topic": "economy_macro",
+                    "relevance_score": "0.700509"
+                }
+            ],
+            "overall_sentiment_score": 0.1194,
+            "overall_sentiment_label": "Neutral",
+            "ticker_sentiment": [
+                {
+                    "ticker": "XOM",
+                    "relevance_score": "1.000000",
+                    "ticker_sentiment_score": "0.100775",
+                    "ticker_sentiment_label": "Neutral"
+                }
+            ]
+        },
+        {
+            "title": "AT&T (T) Positioned for Higher Share Buybacks Through 2029, Goldman Sachs Maintains Buy",
+            "url": "https://www.insidermonkey.com/blog/att-t-positioned-for-higher-share-buybacks-through-2029-goldman-sachs-maintains-buy-1666701/",
+            "time_published": "20251228T160843",
+            "authors": [
+                "Sheryar Siddiq"
+            ],
+            "summary": "Goldman Sachs maintains a \"Buy\" rating for AT&T (T), projecting higher share buybacks through 2029 due to an anticipated 8% free cash flow CAGR. This positive outlook is driven by consistent Mobility EBITDA growth and expanding fiber infrastructure. However, Wolfe Research downgraded AT&T to \"Peer Perform\" citing near-term risks from evolving market conditions and potential impacts on ARPU and subscriber growth.",
+            "banner_image": "https://imonkey-blog.imgix.net/blog/wp-content/uploads/2016/02/12055007/shutterstock_215924263.jpg?auto=format&fit=clip&expires=1798416000&width=480&height=320",
+            "source": "Insider Monkey",
+            "category_within_source": "General",
+            "source_domain": "Insider Monkey",
+            "topics": [
+                {
+                    "topic": "financial_markets",
+                    "relevance_score": "0.910667"
+                },
+                {
+                    "topic": "technology",
+                    "relevance_score": "0.801743"
+                },
+                {
+                    "topic": "earnings",
+                    "relevance_score": "0.708557"
+                }
+            ],
+            "overall_sentiment_score": 0.290112,
+            "overall_sentiment_label": "Somewhat-Bullish",
+            "ticker_sentiment": [
+                {
+                    "ticker": "T",
+                    "relevance_score": "1.000000",
+                    "ticker_sentiment_score": "0.266561",
+                    "ticker_sentiment_label": "Somewhat-Bullish"
+                },
+                {
+                    "ticker": "GS",
+                    "relevance_score": "0.617536",
+                    "ticker_sentiment_score": "0.342620",
+                    "ticker_sentiment_label": "Somewhat-Bullish"
+                }
+            ]
+        },
+        {
+            "title": "Uber Technologies (UBER) Partners With Lyft and Baidu to Launch Driverless Taxi Trials in UK",
+            "url": "https://finviz.com/news/263012/uber-technologies-uber-partners-with-lyft-and-baidu-to-launch-driverless-taxi-trials-in-uk",
+            "time_published": "20251228T160833",
+            "authors": [
+                "Talha Qureshi"
+            ],
+            "summary": "Uber Technologies, Inc. (UBER) is partnering with Lyft and Baidu to conduct driverless taxi trials in the UK starting next year, with Baidu's Apollo Go RT6 joining London's ride-hailing platforms by 2026. This initiative also involves a substantial investment from Uber and SoftBank into Wayve, a London-based startup, to test its AI-driven mapless technology. Despite increased competition in the autonomous vehicle industry, analysts remain optimistic about Uber's financial performance, anticipating it to surpass Gross Bookings and EBITDA estimates.",
+            "banner_image": "https://d2gr5kl7dt2z3t.cloudfront.net/blog/wp-content/uploads/2023/09/19154450/UBER-insidermonkey-1695152688267.jpg",
+            "source": "Finviz",
+            "category_within_source": "General",
+            "source_domain": "Finviz",
+            "topics": [
+                {
+                    "topic": "technology",
+                    "relevance_score": "0.957386"
+                },
+                {
+                    "topic": "energy_transportation",
+                    "relevance_score": "0.879468"
+                },
+                {
+                    "topic": "financial_markets",
+                    "relevance_score": "0.614865"
+                }
+            ],
+            "overall_sentiment_score": 0.425465,
+            "overall_sentiment_label": "Bullish",
+            "ticker_sentiment": [
+                {
+                    "ticker": "UBER",
+                    "relevance_score": "1.000000",
+                    "ticker_sentiment_score": "0.435315",
+                    "ticker_sentiment_label": "Bullish"
+                }
+            ]
+        },
+        {
+            "title": "IBM Turnaround Leader Louis Gerstner Dies At 83",
+            "url": "https://finimize.com/content/ibm-turnaround-leader-louis-gerstner-dies-at-83",
+            "time_published": "20251228T160800",
+            "authors": [
+                "Finimize Newsroom"
+            ],
+            "summary": "Louis Gerstner, the former CEO credited with IBM's turnaround in the 1990s, has passed away at 83. He transformed \"Big Blue\" from a struggling hardware seller into a services powerhouse, leading to an estimated 800% increase in IBM's stock during his tenure. His strategic shift towards enterprise solutions set a precedent for the tech industry's move towards recurring revenue models.",
+            "banner_image": "https://finimize.com/_next/image?url=https%3A%2F%2Ffinimize-img.imgix.net%2Fhttps%253A%252F%252Fchivas-assets.s3-eu-west-1.amazonaws.com%252Fstatic%252Fimages%252Ftag_reuters_com_2025_newsml_L6N3XY03D_210769819.jpeg%3Fixlib%3Dpython-3.1.2%26s%3Dd1c7be5e927d836ba1005ecc39d6e74d&w=3840&q=75",
+            "source": "Finimize",
+            "category_within_source": "General",
+            "source_domain": "Finimize",
+            "topics": [
+                {
+                    "topic": "technology",
+                    "relevance_score": "0.812241"
+                }
+            ],
+            "overall_sentiment_score": 0.412213,
+            "overall_sentiment_label": "Bullish",
+            "ticker_sentiment": [
+                {
+                    "ticker": "IBM",
+                    "relevance_score": "1.000000",
+                    "ticker_sentiment_score": "0.403324",
+                    "ticker_sentiment_label": "Bullish"
+                }
+            ]
+        },
+        {
+            "title": "Citigroup Stock (C) Near 2025 Highs as Markets Close for Weekend: What Investors Need to Know Before Monday\u2019s Session",
+            "url": "https://ts2.tech/en/citigroup-stock-c-near-2025-highs-as-markets-close-for-weekend-what-investors-need-to-know-before-mondays-session/",
+            "time_published": "20251228T160738",
+            "authors": [
+                "Khadija Saeed"
+            ],
+            "summary": "Citigroup Inc. (NYSE: C) stock is nearing its 2025 highs as markets close for the weekend, having rallied significantly during the year. Investors are now focused on year-end positioning, interest-rate expectations, and the bank\u2019s progress on regulatory issues, particularly given recent positive developments from the Federal Reserve and OCC. The article details Citigroup's financial standing, analyst sentiment, upcoming earnings, and macroeconomic factors that could influence its performance as trading resumes.",
+            "banner_image": "NULL",
+            "source": "ts2.tech",
+            "category_within_source": "General",
+            "source_domain": "ts2.tech",
+            "topics": [
+                {
+                    "topic": "financial_markets",
+                    "relevance_score": "0.944146"
+                },
+                {
+                    "topic": "finance",
+                    "relevance_score": "0.837724"
+                },
+                {
+                    "topic": "earnings",
+                    "relevance_score": "0.734882"
+                },
+                {
+                    "topic": "economy_monetary",
+                    "relevance_score": "0.624497"
+                },
+                {
+                    "topic": "economy_macro",
+                    "relevance_score": "0.600521"
+                }
+            ],
+            "overall_sentiment_score": 0.020466,
+            "overall_sentiment_label": "Neutral",
+            "ticker_sentiment": [
+                {
+                    "ticker": "C",
+                    "relevance_score": "0.337900",
+                    "ticker_sentiment_score": "0.027165",
+                    "ticker_sentiment_label": "Neutral"
+                }
+            ]
+        },
+        {
+            "title": "JPMorgan Chase Stock (NYSE: JPM) Near Record Highs as Weekend Crypto-Payments Scrutiny and Fed Outlook Set the Tone for the Next Session",
+            "url": "https://ts2.tech/en/jpmorgan-chase-stock-nyse-jpm-near-record-highs-as-weekend-crypto-payments-scrutiny-and-fed-outlook-set-the-tone-for-the-next-session/",
+            "time_published": "20251228T155735",
+            "authors": [
+                "Khadija Saeed"
+            ],
+            "summary": "JPMorgan Chase (NYSE: JPM) stock is trading near record highs as 2025 concludes, influenced by strong U.S. equities and recent scrutiny over crypto-linked payments. Investors are balancing the company's resilient price action and fundamental strengths with macro catalysts, including the Federal Reserve's outlook on interest rates and the upcoming January bank reporting season. Key upcoming drivers include fourth-quarter and full-year earnings reports, expense monitoring, and ongoing developments in its digital assets strategy.",
+            "banner_image": null,
+            "source": "ts2.tech",
+            "category_within_source": "General",
+            "source_domain": "ts2.tech",
+            "topics": [
+                {
+                    "topic": "financial_markets",
+                    "relevance_score": "0.900583"
+                },
+                {
+                    "topic": "economy_monetary",
+                    "relevance_score": "0.817614"
+                },
+                {
+                    "topic": "finance",
+                    "relevance_score": "0.844002"
+                },
+                {
+                    "topic": "blockchain",
+                    "relevance_score": "0.725038"
+                },
+                {
+                    "topic": "earnings",
+                    "relevance_score": "0.723685"
+                }
+            ],
+            "overall_sentiment_score": 0.138973,
+            "overall_sentiment_label": "Neutral",
+            "ticker_sentiment": [
+                {
+                    "ticker": "JPM",
+                    "relevance_score": "1.000000",
+                    "ticker_sentiment_score": "0.256367",
+                    "ticker_sentiment_label": "Somewhat-Bullish"
+                },
+                {
+                    "ticker": "MS",
+                    "relevance_score": "0.611267",
+                    "ticker_sentiment_score": "0.147702",
+                    "ticker_sentiment_label": "Neutral"
+                },
+                {
+                    "ticker": "GS",
+                    "relevance_score": "0.636045",
+                    "ticker_sentiment_score": "0.125146",
+                    "ticker_sentiment_label": "Neutral"
+                },
+                {
+                    "ticker": "AMP",
+                    "relevance_score": "0.554642",
+                    "ticker_sentiment_score": "0.113987",
+                    "ticker_sentiment_label": "Neutral"
+                },
+                {
+                    "ticker": "WFC",
+                    "relevance_score": "0.595643",
+                    "ticker_sentiment_score": "0.117812",
+                    "ticker_sentiment_label": "Neutral"
+                }
+            ]
+        },
+        {
+            "title": "AMD Stock Outlook: Advanced Micro Devices (NASDAQ: AMD) Holds Near $215 Ahead of Year-End Week as China AI Chip Sales and Fed Minutes Take Center Stage",
+            "url": "https://ts2.tech/en/amd-stock-outlook-advanced-micro-devices-nasdaq-amd-holds-near-215-ahead-of-year-end-week-as-china-ai-chip-sales-and-fed-minutes-take-center-stage/",
+            "time_published": "20251228T152306",
+            "authors": [
+                "Khadija Saeed"
+            ],
+            "summary": "Advanced Micro Devices (AMD) stock is holding near $215 as it approaches the end of 2025, with investors focused on potential China AI chip sales, intensifying AI inference competition, and macro-driven volatility from the Federal Reserve. Recent analyst updates show a shift from \"buy\" to \"hold\" by some firms, though the broader Street remains positive with an average price target around $277. The most significant factor influencing AMD's near-term trajectory is the potential for regaining access to the Chinese market for advanced AI chips, despite past export restrictions and inventory charges.",
+            "banner_image": "NULL",
+            "source": "ts2.tech",
+            "category_within_source": "General",
+            "source_domain": "ts2.tech",
+            "topics": [
+                {
+                    "topic": "earnings",
+                    "relevance_score": "0.903564"
+                },
+                {
+                    "topic": "financial_markets",
+                    "relevance_score": "0.930130"
+                },
+                {
+                    "topic": "economy_monetary",
+                    "relevance_score": "0.612760"
+                },
+                {
+                    "topic": "economy_macro",
+                    "relevance_score": "0.713317"
+                },
+                {
+                    "topic": "technology",
+                    "relevance_score": "1.000000"
+                }
+            ],
+            "overall_sentiment_score": 0.249643,
+            "overall_sentiment_label": "Somewhat-Bullish",
+            "ticker_sentiment": [
+                {
+                    "ticker": "AMD",
+                    "relevance_score": "0.955464",
+                    "ticker_sentiment_score": "0.221604",
+                    "ticker_sentiment_label": "Somewhat-Bullish"
+                }
+            ]
+        },
+        {
+            "title": "SDA Awards $1.6 Billion in Tranche 3 Tracking Layer Contracts to Rocket Lab and Northrop Grumman",
+            "url": "https://news.satnews.com/2025/12/28/sda-awards-1-6-billion-in-tranche-3-tracking-layer-contracts-to-rocket-lab-and-northrop-grumman/",
+            "time_published": "20251228T151744",
+            "authors": [
+                "NULL"
+            ],
+            "summary": "The Space Development Agency (SDA) has awarded $1.6 billion in contracts to Rocket Lab and Northrop Grumman for the Tranche 3 Tracking Layer of the Proliferated Warfighter Space Architecture. These contracts will fund the construction and operation of 36 satellites to enhance the Pentagon's ability to detect and track advanced missile threats. Rocket Lab will receive $805 million for 18 satellites, marking its largest contract, while Northrop Grumman will receive $764 million for 18 satellites, adding to its extensive involvement in the PWSA.",
+            "banner_image": "https://news.satnews.com/wp-content/uploads/2022/12/LKD_SpaceGradeIMU.gif",
+            "source": "SatNews Publishers",
+            "category_within_source": "General",
+            "source_domain": "SatNews Publishers",
+            "topics": [
+                {
+                    "topic": "technology",
+                    "relevance_score": "0.824673"
+                },
+                {
+                    "topic": "finance",
+                    "relevance_score": "0.727896"
+                },
+                {
+                    "topic": "economy_fiscal",
+                    "relevance_score": "0.600762"
+                }
+            ],
+            "overall_sentiment_score": 0.474133,
+            "overall_sentiment_label": "Bullish",
+            "ticker_sentiment": [
+                {
+                    "ticker": "NOC",
+                    "relevance_score": "1.000000",
+                    "ticker_sentiment_score": "0.494201",
+                    "ticker_sentiment_label": "Bullish"
+                }
+            ]
+        },
+        {
+            "title": "B. Riley Sees Intuitive Machines (LUNR) as Key Beneficiary of White House Order to Accelerate Lunar Missions",
+            "url": "https://ca.finance.yahoo.com/news/b-riley-sees-intuitive-machines-150537649.html",
+            "time_published": "20251228T150928",
+            "authors": [
+                "Maham Fatima"
+            ],
+            "summary": "B. Riley raised its price target for Intuitive Machines (LUNR) to $20 from $14, maintaining a Buy rating, citing the company's strong alignment with the White House's new executive order to accelerate lunar missions, including a return to the Moon by 2028 and building a lunar base by 2030. KeyBanc also initiated coverage with an Overweight rating and a $20 price target, highlighting Intuitive Machines' transition to a scalable business model focused on recurring lunar services. Conversely, Bank of America maintained an Underperform rating but increased its price target to $9.50, suggesting that the space industry's consolidation will favor a few dominant players rather than early movers.",
+            "banner_image": "https://s.yimg.com/ny/api/res/1.2/LZG2ouUXGgu63htqYbzXgA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyNjtoPTQ4O2NmPXdlYnA-/https://s.yimg.com/os/creatr-uploaded-images/2020-12/d7df1000-34e4-11eb-b6ae-ac87660fe5ee",
+            "source": "Yahoo! Finance Canada",
+            "category_within_source": "General",
+            "source_domain": "Yahoo! Finance Canada",
+            "topics": [
+                {
+                    "topic": "technology",
+                    "relevance_score": "0.846179"
+                },
+                {
+                    "topic": "financial_markets",
+                    "relevance_score": "0.736011"
+                },
+                {
+                    "topic": "finance",
+                    "relevance_score": "0.642876"
+                },
+                {
+                    "topic": "economy_fiscal",
+                    "relevance_score": "0.638377"
+                }
+            ],
+            "overall_sentiment_score": 0.005947,
+            "overall_sentiment_label": "Neutral",
+            "ticker_sentiment": [
+                {
+                    "ticker": "RILYL",
+                    "relevance_score": "0.338398",
+                    "ticker_sentiment_score": "0.032849",
+                    "ticker_sentiment_label": "Neutral"
+                }
+            ]
+        },
+        {
+            "title": "Tesla, Inc. (TSLA) Stock News Today: Robotaxi Pressure-Test, Delivery Forecasts, and What Matters Before Monday\u2019s Open",
+            "url": "https://ts2.tech/en/tesla-inc-tsla-stock-news-today-robotaxi-pressure-test-delivery-forecasts-and-what-matters-before-mondays-open/",
+            "time_published": "20251228T150857",
+            "authors": [
+                "Khadija Saeed"
+            ],
+            "summary": "Tesla (TSLA) ended the week at $475.19, with investors weighing robotaxi optionality against delivery and regulatory concerns. While robotaxi headlines are frequent, Q4 delivery forecasts around 415,000\u2013435,000, expected on January 2nd, will provide a critical hard data point. The stock's future movement is tied to balancing optimism around autonomy with the realities of regulatory scrutiny and delivery performance.",
+            "banner_image": "NULL",
+            "source": "ts2.tech",
+            "category_within_source": "General",
+            "source_domain": "ts2.tech",
+            "topics": [
+                {
+                    "topic": "earnings",
+                    "relevance_score": "0.903331"
+                },
+                {
+                    "topic": "financial_markets",
+                    "relevance_score": "0.825377"
+                },
+                {
+                    "topic": "economy_macro",
+                    "relevance_score": "0.642836"
+                },
+                {
+                    "topic": "energy_transportation",
+                    "relevance_score": "0.708481"
+                },
+                {
+                    "topic": "technology",
+                    "relevance_score": "0.801018"
+                }
+            ],
+            "overall_sentiment_score": 0.072052,
+            "overall_sentiment_label": "Neutral",
+            "ticker_sentiment": [
+                {
+                    "ticker": "TSLA",
+                    "relevance_score": "1.000000",
+                    "ticker_sentiment_score": "0.094649",
+                    "ticker_sentiment_label": "Neutral"
+                }
+            ]
+        },
+        {
+            "title": "H.C. Wainwright Reaffirms Buy on WhiteFiber (WYFI) Following Nscale Agreement",
+            "url": "https://finviz.com/news/261473/hc-wainwright-reaffirms-buy-on-whitefiber-wyfi-following-nscale-agreement",
+            "time_published": "20251228T150845",
+            "authors": [
+                "Ghazal Ahmed"
+            ],
+            "summary": "H.C. Wainwright has reaffirmed its \"Buy\" rating on WhiteFiber (WYFI) with a $34.00 price target, following WhiteFiber's major colocation agreement with Nscale. The deal involves a 10-year agreement for 40MW of IT load at WhiteFiber's NC-1 AI data center campus, generating an estimated $865M in contracted revenue. This agreement is seen by H.C. Wainwright as validation of WhiteFiber's fast-deploy model and the foundation for a long-term partnership with Nscale.",
+            "banner_image": "https://d2gr5kl7dt2z3t.cloudfront.net/blog/wp-content/uploads/2023/12/14055838/MCBS-insidermonkey-1702551516360.jpg",
+            "source": "Finviz",
+            "category_within_source": "General",
+            "source_domain": "Finviz",
+            "topics": [
+                {
+                    "topic": "financial_markets",
+                    "relevance_score": "0.947982"
+                },
+                {
+                    "topic": "technology",
+                    "relevance_score": "0.844701"
+                },
+                {
+                    "topic": "earnings",
+                    "relevance_score": "0.643128"
+                }
+            ],
+            "overall_sentiment_score": 0.564715,
+            "overall_sentiment_label": "Bullish",
+            "ticker_sentiment": [
+                {
+                    "ticker": "WYFI",
+                    "relevance_score": "1.000000",
+                    "ticker_sentiment_score": "0.833461",
+                    "ticker_sentiment_label": "Bullish"
+                },
+                {
+                    "ticker": "MSFT",
+                    "relevance_score": "0.620559",
+                    "ticker_sentiment_score": "0.325979",
+                    "ticker_sentiment_label": "Somewhat-Bullish"
+                }
+            ]
+        },
+        {
+            "title": "Is Tapestry (TPR) One of the Best Performing S&P 500 Stocks in 2025?",
+            "url": "https://www.insidermonkey.com/blog/is-tapestry-tpr-one-of-the-best-performing-sp-500-stocks-in-2025-1666326/?amp=1",
+            "time_published": "20251228T150830",
+            "authors": [
+                "Maham Fatima"
+            ],
+            "summary": "Tapestry Inc. (NYSE: TPR) is highlighted as one of the best-performing S&P 500 stocks in 2025, receiving updated price targets and \"Outperform\" or \"Overweight\" ratings from several analysts including Baird, Wells Fargo, and Jefferies. These positive outlooks are based on expectations of a more favorable consumer environment, robust revenue/earnings growth, resilient holiday spending, and potential impacts from tariff policies. Despite this, the article suggests greater promise in specific AI stocks for higher returns with limited downside risk.",
+            "banner_image": "NULL",
+            "source": "Insider Monkey",
+            "category_within_source": "General",
+            "source_domain": "Insider Monkey",
+            "topics": [
+                {
+                    "topic": "retail_wholesale",
+                    "relevance_score": "0.817344"
+                },
+                {
+                    "topic": "financial_markets",
+                    "relevance_score": "0.923181"
+                },
+                {
+                    "topic": "economy_fiscal",
+                    "relevance_score": "0.639380"
+                },
+                {
+                    "topic": "earnings",
+                    "relevance_score": "0.707571"
+                }
+            ],
+            "overall_sentiment_score": 0.396111,
+            "overall_sentiment_label": "Bullish",
+            "ticker_sentiment": [
+                {
+                    "ticker": "TPR",
+                    "relevance_score": "1.000000",
+                    "ticker_sentiment_score": "0.434455",
+                    "ticker_sentiment_label": "Bullish"
+                },
+                {
+                    "ticker": "WFC",
+                    "relevance_score": "0.629960",
+                    "ticker_sentiment_score": "0.340439",
+                    "ticker_sentiment_label": "Somewhat-Bullish"
+                }
+            ]
+        },
+        {
+            "title": "Apple Stock (AAPL) Weekend Update: China iPhone Signals, Valuation Debate, and What to Watch Before Monday\u2019s Open",
+            "url": "https://ts2.tech/en/apple-stock-aapl-weekend-update-china-iphone-signals-valuation-debate-and-what-to-watch-before-mondays-open/",
+            "time_published": "20251228T145648",
+            "authors": [
+                "Khadija Saeed"
+            ],
+            "summary": "This article provides a weekend update on Apple stock (AAPL) focusing on factors such as China iPhone demand indicators, ongoing valuation debates, and potential market impacts before Monday's open. It also discusses legal risks related to the UK App Store and the ongoing discussion among analysts concerning Apple's growth prospects and valuation. Investors are advised to monitor demand indicators, Services trends, regulatory headlines, and Apple's AI product roadmap in the lead-up to its next earnings report.",
+            "banner_image": "NULL",
+            "source": "ts2.tech",
+            "category_within_source": "General",
+            "source_domain": "ts2.tech",
+            "topics": [
+                {
+                    "topic": "financial_markets",
+                    "relevance_score": "0.942708"
+                },
+                {
+                    "topic": "technology",
+                    "relevance_score": "0.807053"
+                },
+                {
+                    "topic": "economy_macro",
+                    "relevance_score": "0.617490"
+                }
+            ],
+            "overall_sentiment_score": -0.073091,
+            "overall_sentiment_label": "Neutral",
+            "ticker_sentiment": [
+                {
+                    "ticker": "AAPL",
+                    "relevance_score": "0.991351",
+                    "ticker_sentiment_score": "0.082860",
+                    "ticker_sentiment_label": "Neutral"
+                },
+                {
+                    "ticker": "GOOGL",
+                    "relevance_score": "0.616134",
+                    "ticker_sentiment_score": "-0.077621",
+                    "ticker_sentiment_label": "Neutral"
+                },
+                {
+                    "ticker": "GOOG",
+                    "relevance_score": "0.638640",
+                    "ticker_sentiment_score": "-0.077439",
+                    "ticker_sentiment_label": "Neutral"
+                },
+                {
+                    "ticker": "SCHW",
+                    "relevance_score": "0.550848",
+                    "ticker_sentiment_score": "-0.082473",
+                    "ticker_sentiment_label": "Neutral"
+                },
+                {
+                    "ticker": "NFLX",
+                    "relevance_score": "0.572827",
+                    "ticker_sentiment_score": "-0.071549",
+                    "ticker_sentiment_label": "Neutral"
+                }
+            ]
+        },
+        {
+            "title": "Comeback Town: Huntsville didn\u2019t need UAB to win Eli Lilly \u2014 and that should terrify Birmingham",
+            "url": "https://www.al.com/news/birmingham/2025/12/comeback-town-huntsville-didnt-need-uab-to-win-eli-lilly-and-that-should-terrify-birmingham.html",
+            "time_published": "20251228T141926",
+            "authors": [
+                "David Sher",
+                "Don Erwin"
+            ],
+            "summary": "Huntsville secured a major Eli Lilly pharmaceutical plant investment of over $6 billion, bringing 3,450 jobs, prompting a critical look at Birmingham's economic development strategies. The article argues that Birmingham's flagship institution, UAB, lags in commercializing research, hindering the city's ability to attract similar high-value projects. It suggests Birmingham needs to prioritize true economic development over community development and foster regional cooperation, much like the state did for the Mercedes-Benz project in 1993.",
+            "banner_image": "https://www.al.com/resizer/v2/4KAFJ5VULZAIFP57WNREWP2RFA.jpeg?auth=0a5ca6f25b2aebfabe1c91b225f11eca0638bb7a2ed6b47597814f6197f6a80d&width=1280&smart=true&quality=90",
+            "source": "AL.com",
+            "category_within_source": "General",
+            "source_domain": "AL.com",
+            "topics": [
+                {
+                    "topic": "manufacturing",
+                    "relevance_score": "0.921579"
+                },
+                {
+                    "topic": "life_sciences",
+                    "relevance_score": "0.911122"
+                },
+                {
+                    "topic": "economy_macro",
+                    "relevance_score": "0.831076"
+                }
+            ],
+            "overall_sentiment_score": 0.635564,
+            "overall_sentiment_label": "Bullish",
+            "ticker_sentiment": [
+                {
+                    "ticker": "LLY",
+                    "relevance_score": "1.000000",
+                    "ticker_sentiment_score": "0.625830",
+                    "ticker_sentiment_label": "Bullish"
+                }
+            ]
+        },
+        {
+            "title": "BitMine Immersion Technologies (BMNR) Stock: Ethereum Staking Headlines, Valuation Crosscurrents, and What Investors Should Watch Before Monday",
+            "url": "https://ts2.tech/en/bitmine-immersion-technologies-bmnr-stock-ethereum-staking-headlines-valuation-crosscurrents-and-what-investors-should-watch-before-monday/",
+            "time_published": "20251228T140935",
+            "authors": [
+                "Khadija Saeed"
+            ],
+            "summary": "BitMine Immersion Technologies (BMNR) is facing conflicting narratives as it heads into the weekend, with fresh crypto-media coverage on its Ethereum staking move and debates over its valuation. While U.S. equities are closed, ETH's weekend performance could influence BMNR's sentiment come Monday. Investors should monitor Ethereum's price action, further details on BitMine's staking strategy, and upcoming shareholder vote on authorized shares, which may impact perceived dilution risks.",
+            "banner_image": "NULL",
+            "source": "ts2.tech",
+            "category_within_source": "General",
+            "source_domain": "ts2.tech",
+            "topics": [
+                {
+                    "topic": "blockchain",
+                    "relevance_score": "0.917728"
+                },
+                {
+                    "topic": "financial_markets",
+                    "relevance_score": "0.846071"
+                },
+                {
+                    "topic": "finance",
+                    "relevance_score": "0.735918"
+                },
+                {
+                    "topic": "technology",
+                    "relevance_score": "0.617324"
+                }
+            ],
+            "overall_sentiment_score": -0.08537,
+            "overall_sentiment_label": "Neutral",
+            "ticker_sentiment": [
+                {
+                    "ticker": "BMNR",
+                    "relevance_score": "1.000000",
+                    "ticker_sentiment_score": "-0.058955",
+                    "ticker_sentiment_label": "Neutral"
+                }
+            ]
+        },
+        {
+            "title": "Universe Pharmaceuticals Faces Uncertain Market as Growth Struggles Persist",
+            "url": "https://stockstotrade.com/news/universepharmaceuticalsinc-upc-news-2025_12_28/",
+            "time_published": "20251228T140917",
+            "authors": [
+                "Tim Bohen",
+                "Ben Sturgill",
+                "Ellis Hobbs"
+            ],
+            "summary": "Universe Pharmaceuticals (UPC) is experiencing an uncertain market despite a recent stock increase of 26.95%. The company shows strong top-line growth with $23 million in revenue and a low price-to-sales ratio, suggesting undervaluation. However, high leverage, negative return on invested capital, and significant debt levels raise concerns about financial resilience and profitability, necessitating strategic interventions to improve retained earnings and operational efficiency.",
+            "banner_image": "https://content.stockstotrade.com/wp-content/uploads/2025/12/volatile-stock-market-trends-89.png",
+            "source": "StocksToTrade",
+            "category_within_source": "General",
+            "source_domain": "StocksToTrade",
+            "topics": [
+                {
+                    "topic": "life_sciences",
+                    "relevance_score": "0.927021"
+                },
+                {
+                    "topic": "financial_markets",
+                    "relevance_score": "0.805723"
+                },
+                {
+                    "topic": "earnings",
+                    "relevance_score": "0.724328"
+                },
+                {
+                    "topic": "finance",
+                    "relevance_score": "0.626907"
+                }
+            ],
+            "overall_sentiment_score": 0.033498,
+            "overall_sentiment_label": "Neutral",
+            "ticker_sentiment": [
+                {
+                    "ticker": "UPC",
+                    "relevance_score": "1.000000",
+                    "ticker_sentiment_score": "0.012426",
+                    "ticker_sentiment_label": "Neutral"
+                }
+            ]
+        },
+        {
+            "title": "ALGT Stock in Focus: Allegiant Travel Upgraded to Hold as Analysts Debate Valuation After a 50%+ Rally",
+            "url": "https://ts2.tech/en/algt-stock-in-focus-allegiant-travel-upgraded-to-hold-as-analysts-debate-valuation-after-a-50-rally/",
+            "time_published": "20251228T130948",
+            "authors": [
+                "Shan Ahmed Khan"
+            ],
+            "summary": "Allegiant Travel Company (NASDAQ: ALGT) has been upgraded from \"Sell\" to \"Hold\" by Wall Street Zen, reflecting a broader analyst debate on its valuation after a significant six-month rally. While Raymond James also updated its rating to \"Outperform\" from \"Strong Buy\" due to stretched valuation, it notably raised its price target, indicating continued faith in the company's fundamentals. Investors are now focused on whether Allegiant can meet its Q4 operating margin guidance and maintain capacity growth without eroding yields to justify its current stock performance.",
+            "banner_image": null,
+            "source": "ts2.tech",
+            "category_within_source": "General",
+            "source_domain": "ts2.tech",
+            "topics": [
+                {
+                    "topic": "earnings",
+                    "relevance_score": "0.908933"
+                },
+                {
+                    "topic": "financial_markets",
+                    "relevance_score": "0.809335"
+                },
+                {
+                    "topic": "economy_macro",
+                    "relevance_score": "0.639617"
+                },
+                {
+                    "topic": "energy_transportation",
+                    "relevance_score": "0.731619"
+                },
+                {
+                    "topic": "finance",
+                    "relevance_score": "0.727928"
+                }
+            ],
+            "overall_sentiment_score": 0.17125,
+            "overall_sentiment_label": "Somewhat-Bullish",
+            "ticker_sentiment": [
+                {
+                    "ticker": "ALGT",
+                    "relevance_score": "1.000000",
+                    "ticker_sentiment_score": "0.196880",
+                    "ticker_sentiment_label": "Somewhat-Bullish"
+                },
+                {
+                    "ticker": "BLK",
+                    "relevance_score": "0.616492",
+                    "ticker_sentiment_score": "0.114695",
+                    "ticker_sentiment_label": "Neutral"
+                }
+            ]
+        },
+        {
+            "title": "Are SK Telecom Co., Ltd.'s (KRX:017670) Fundamentals Good Enough to Warrant Buying Given The Stock's Recent Weakness?",
+            "url": "https://simplywall.st/stocks/kr/telecom/kose-a017670/sk-telecom-shares/news/are-sk-telecom-co-ltds-krx017670-fundamentals-good-enough-to/amp",
+            "time_published": "20251228T130925",
+            "authors": [
+                "Simply Wall St"
+            ],
+            "summary": "SK Telecom (KRX:017670) has seen a 3.3% stock decline in the past three months, prompting an assessment of its fundamentals to determine if the weakness presents a buying opportunity. Despite a seemingly low ROE of 5.7% compared to the industry average, the company has achieved moderate net income growth of 5.0% over five years, partly due to a low payout ratio. Analyst forecasts anticipate an acceleration in earnings and a rise in ROE to 11%, even without changes in the payout ratio.",
+            "banner_image": null,
+            "source": "Simply Wall Street",
+            "category_within_source": "General",
+            "source_domain": "Simply Wall Street",
+            "topics": [
+                {
+                    "topic": "earnings",
+                    "relevance_score": "0.906147"
+                },
+                {
+                    "topic": "financial_markets",
+                    "relevance_score": "0.801617"
+                }
+            ],
+            "overall_sentiment_score": 0.277175,
+            "overall_sentiment_label": "Somewhat-Bullish",
+            "ticker_sentiment": [
+                {
+                    "ticker": "SKM",
+                    "relevance_score": "1.000000",
+                    "ticker_sentiment_score": "0.267630",
+                    "ticker_sentiment_label": "Somewhat-Bullish"
+                }
+            ]
+        },
+        {
+            "title": "|Paranovus Entertainment Technology Limited Received Nasdaq Delisting Notice",
+            "url": "https://www.nasdaq.com/press-release/paranovus-entertainment-technology-limited-received-nasdaq-delisting-notice-2025-12",
+            "time_published": "20251228T130918",
+            "authors": [
+                "|NULL"
+            ],
+            "summary": "|Paranovus Entertainment Technology Limited (NASDAQ: PAVS) has received a notice from Nasdaq regarding the delisting of its Class A ordinary shares due to non-compliance with the minimum bid price rule. The Company intends to appeal this determination to a hearing panel, which would temporarily stay the suspension of its securities. Paranovus recently executed a 1:100 reverse share split to regain compliance.",
+            "banner_image": "|https://mma.prnewswire.com/media/2839147/pavs_logo_Logo.jpg",
+            "source": "Nasdaq",
+            "category_within_source": "General",
+            "source_domain": "Nasdaq",
+            "topics": [
+                {
+                    "topic": "financial_markets",
+                    "relevance_score": "1.000000"
+                }
+            ],
+            "overall_sentiment_score": -0.630336,
+            "overall_sentiment_label": "Bearish",
+            "ticker_sentiment": [
+                {
+                    "ticker": "PAVS",
+                    "relevance_score": "1.000000",
+                    "ticker_sentiment_score": "-0.606869",
+                    "ticker_sentiment_label": "Bearish"
+                }
+            ]
+        },
+        {
+            "title": "Worthington Steel (NYSE:WS) Has Affirmed Its Dividend Of $0.16",
+            "url": "https://simplywall.st/stocks/us/materials/nyse-ws/worthington-steel/news/worthington-steel-nysews-has-affirmed-its-dividend-of-016/amp",
+            "time_published": "20251228T130917",
+            "authors": [
+                "Simply Wall St"
+            ],
+            "summary": "Worthington Steel (NYSE:WS) has announced a dividend of $0.16 per share, to be paid on March 27th, resulting in a 1.8% yield. The dividend is comfortably covered by both cash flow and earnings, with earnings per share forecast to rise by 26.8% over the next year. The company has a short dividend history but its low payout ratio and decent EPS growth suggest potential for future dividend increases.",
+            "banner_image": null,
+            "source": "Simply Wall Street",
+            "category_within_source": "General",
+            "source_domain": "Simply Wall Street",
+            "topics": [
+                {
+                    "topic": "earnings",
+                    "relevance_score": "0.935673"
+                },
+                {
+                    "topic": "financial_markets",
+                    "relevance_score": "0.813766"
+                },
+                {
+                    "topic": "finance",
+                    "relevance_score": "0.701838"
+                },
+                {
+                    "topic": "manufacturing",
+                    "relevance_score": "0.626166"
+                }
+            ],
+            "overall_sentiment_score": 0.526038,
+            "overall_sentiment_label": "Bullish",
+            "ticker_sentiment": [
+                {
+                    "ticker": "WS",
+                    "relevance_score": "1.000000",
+                    "ticker_sentiment_score": "0.533033",
+                    "ticker_sentiment_label": "Bullish"
+                }
+            ]
+        },
+        {
+            "title": "PineStone Asset Management Inc. Sells 479,952 Shares of Taiwan Semiconductor Manufacturing Company Ltd. $TSM",
+            "url": "https://www.marketbeat.com/instant-alerts/filing-pinestone-asset-management-inc-sells-479952-shares-of-taiwan-semiconductor-manufacturing-company-ltd-tsm-2025-12-28/",
+            "time_published": "20251228T130859",
+            "authors": [
+                "MarketBeat"
+            ],
+            "summary": "PineStone Asset Management Inc. has decreased its holdings in Taiwan Semiconductor Manufacturing Company Ltd. (NYSE:TSM) by 6.8% in the third quarter, selling 479,952 shares but still retaining 6,545,779 shares valued at approximately $1.828 billion. Despite this sale, TSMC remains PineStone's largest holding, representing 11.4% of its portfolio. Other major institutions like Bank of America and Jennison Associates have increased their stakes, contributing to an overall institutional ownership of 16.51%, reflecting strong bullish sentiment from Wall Street analysts with a consensus \"Buy\" rating and a $355.00 price target. This sentiment is fueled by an expected multi-year revenue and margin expansion driven by AI-related chip technology, with management projecting over 40% annual AI-chip revenue growth through 2029, and the company recently raised its quarterly dividend to $0.9678.",
+            "banner_image": "https://www.marketbeat.com/logos/taiwan-semiconductor-manufacturing-company-limited-logo-1200x675.png?v=20221020142229",
+            "source": "MarketBeat",
+            "category_within_source": "General",
+            "source_domain": "MarketBeat",
+            "topics": [
+                {
+                    "topic": "financial_markets",
+                    "relevance_score": "0.917897"
+                },
+                {
+                    "topic": "technology",
+                    "relevance_score": "0.847401"
+                },
+                {
+                    "topic": "earnings",
+                    "relevance_score": "0.734720"
+                },
+                {
+                    "topic": "economy_macro",
+                    "relevance_score": "0.604803"
+                },
+                {
+                    "topic": "manufacturing",
+                    "relevance_score": "0.617852"
+                }
+            ],
+            "overall_sentiment_score": 0.317875,
+            "overall_sentiment_label": "Somewhat-Bullish",
+            "ticker_sentiment": [
+                {
+                    "ticker": "TSM",
+                    "relevance_score": "1.000000",
+                    "ticker_sentiment_score": "0.413740",
+                    "ticker_sentiment_label": "Bullish"
+                },
+                {
+                    "ticker": "BAC",
+                    "relevance_score": "0.711790",
+                    "ticker_sentiment_score": "0.334768",
+                    "ticker_sentiment_label": "Somewhat-Bullish"
+                },
+                {
+                    "ticker": "AMAT",
+                    "relevance_score": "0.624999",
+                    "ticker_sentiment_score": "0.320794",
+                    "ticker_sentiment_label": "Somewhat-Bullish"
+                },
+                {
+                    "ticker": "ORCL",
+                    "relevance_score": "0.608860",
+                    "ticker_sentiment_score": "0.214394",
+                    "ticker_sentiment_label": "Somewhat-Bullish"
+                },
+                {
+                    "ticker": "AMD",
+                    "relevance_score": "0.612484",
+                    "ticker_sentiment_score": "0.209823",
+                    "ticker_sentiment_label": "Somewhat-Bullish"
+                }
+            ]
+        },
+        {
+            "title": "Who Owns Brown & Brown? Top Shareholders and Recent Insider Trades",
+            "url": "https://www.tikr.com/blog/who-owns-brown-brown-top-shareholders-and-recent-insider-trades",
+            "time_published": "20251228T130737",
+            "authors": [
+                "Nikko Henson"
+            ],
+            "summary": "Brown & Brown, Inc. (NYSE: BRO) is a leading insurance brokerage with a market value of approximately $27.6 billion. The article details the top institutional shareholders, including The Vanguard Group, J. Hyatt Brown, and Capital World Investors, noting recent changes in their holdings. It also highlights significant moves by hedge funds like Winton Group and AQR Capital Management, alongside recent insider trades, providing insight into current perceptions of the stock's valuation and growth prospects.",
+            "banner_image": "https://res.cloudinary.com/tikr/images/f_auto,q_auto,w_800/v1766909191/images/Brown-Brown-stock_87243ab2a7/Brown-Brown-stock_87243ab2a7",
+            "source": "TIKR.com",
+            "category_within_source": "General",
+            "source_domain": "TIKR.com",
+            "topics": [
+                {
+                    "topic": "financial_markets",
+                    "relevance_score": "0.949708"
+                },
+                {
+                    "topic": "finance",
+                    "relevance_score": "0.840854"
+                }
+            ],
+            "overall_sentiment_score": 0.115704,
+            "overall_sentiment_label": "Neutral",
+            "ticker_sentiment": [
+                {
+                    "ticker": "BRO",
+                    "relevance_score": "1.000000",
+                    "ticker_sentiment_score": "0.105117",
+                    "ticker_sentiment_label": "Neutral"
+                },
+                {
+                    "ticker": "BLK",
+                    "relevance_score": "0.615930",
+                    "ticker_sentiment_score": "0.147592",
+                    "ticker_sentiment_label": "Neutral"
+                },
+                {
+                    "ticker": "STT",
+                    "relevance_score": "0.648467",
+                    "ticker_sentiment_score": "0.120886",
+                    "ticker_sentiment_label": "Neutral"
+                }
+            ]
+        },
+        {
+            "title": "Valley National Advisers Inc. Raises Stock Holdings in Stryker Corporation $SYK",
+            "url": "https://www.marketbeat.com/instant-alerts/filing-valley-national-advisers-inc-raises-stock-holdings-in-stryker-corporation-syk-2025-12-28/",
+            "time_published": "20251228T130540",
+            "authors": [
+                "MarketBeat"
+            ],
+            "summary": "Valley National Advisers Inc. significantly increased its stake in Stryker Corporation (NYSE:SYK) by 2,107.3% in the third quarter, bringing their total holdings to 5,717 shares valued at $2.11 million. This increase comes as Stryker reported strong Q3 earnings, beating analyst estimates, and raised its quarterly dividend. Despite notable insider selling, institutional investors collectively own 77.09% of the company's stock.",
+            "banner_image": "https://www.marketbeat.com/logos/stryker-logo-1200x675.png",
+            "source": "MarketBeat",
+            "category_within_source": "General",
+            "source_domain": "MarketBeat",
+            "topics": [
+                {
+                    "topic": "earnings",
+                    "relevance_score": "0.947609"
+                },
+                {
+                    "topic": "financial_markets",
+                    "relevance_score": "0.804955"
+                },
+                {
+                    "topic": "life_sciences",
+                    "relevance_score": "0.714515"
+                }
+            ],
+            "overall_sentiment_score": 0.455659,
+            "overall_sentiment_label": "Bullish",
+            "ticker_sentiment": [
+                {
+                    "ticker": "SYK",
+                    "relevance_score": "1.000000",
+                    "ticker_sentiment_score": "0.498235",
+                    "ticker_sentiment_label": "Bullish"
+                }
+            ]
+        },
+        {
+            "title": "(BAM) Equity Trading Insights (BAM:CA)",
+            "url": "https://news.stocktradersdaily.com/canada/bam-equity-trading-insights_20251228_7e0115",
+            "time_published": "20251228T125200",
+            "authors": [
+                "Barry C.",
+                "Derek Curry"
+            ],
+            "summary": "This article provides equity trading insights for Brookfield Asset Management Ltd. Class A Limited Voting Shares (BAM:CA), including long-term trading plans with specific buy, target, and stop-loss prices. It also features AI-generated signals and ratings for various investment terms, highlighting triggers that may have already occurred. Additionally, the article lists numerous previous reports and analyses related to BAM dating back several months.",
+            "banner_image": "https://content-static.canada.stocktradersdaily.com/static/images/stocktraderscanada_logo.avif",
+            "source": "Stock Traders Daily",
+            "category_within_source": "General",
+            "source_domain": "Stock Traders Daily",
+            "topics": [
+                {
+                    "topic": "financial_markets",
+                    "relevance_score": "0.944345"
+                }
+            ],
+            "overall_sentiment_score": 0.129177,
+            "overall_sentiment_label": "Neutral",
+            "ticker_sentiment": [
+                {
+                    "ticker": "BAM",
+                    "relevance_score": "1.000000",
+                    "ticker_sentiment_score": "0.147375",
+                    "ticker_sentiment_label": "Neutral"
+                }
+            ]
+        },
+        {
+            "title": "B. Riley Names Lam Research (LRCX) a Top Memory Recovery Play Due to Specialized Etch Leadership",
+            "url": "https://www.insidermonkey.com/blog/b-riley-names-lam-research-lrcx-a-top-memory-recovery-play-due-to-specialized-etch-leadership-1666322/",
+            "time_published": "20251228T124600",
+            "authors": [
+                "Maham Fatima"
+            ],
+            "summary": "B. Riley has named Lam Research (LRCX) a top memory recovery play, raising its price target to $195 from $180 due to the company's specialized etch leadership. Other analysts, including Mizuho and Bank of America, also increased their price targets for Lam Research, citing optimism regarding WFE estimates and AI-driven infrastructure upgrades. Lam Research designs and manufactures semiconductor processing equipment and is recognized as one of the best-performing S&P 500 stocks in 2025.",
+            "banner_image": "https://imonkey-blog.imgix.net/blog/wp-content/uploads/2023/09/20142324/LRCX-insidermonkey-1695234202234.jpg?auto=format&fit=clip&expires=1798416000&width=480&height=269",
+            "source": "Insider Monkey",
+            "category_within_source": "General",
+            "source_domain": "Insider Monkey",
+            "topics": [
+                {
+                    "topic": "technology",
+                    "relevance_score": "0.900583"
+                },
+                {
+                    "topic": "financial_markets",
+                    "relevance_score": "0.825221"
+                },
+                {
+                    "topic": "earnings",
+                    "relevance_score": "0.715830"
+                }
+            ],
+            "overall_sentiment_score": 0.635582,
+            "overall_sentiment_label": "Bullish",
+            "ticker_sentiment": [
+                {
+                    "ticker": "LRCX",
+                    "relevance_score": "1.000000",
+                    "ticker_sentiment_score": "0.634842",
+                    "ticker_sentiment_label": "Bullish"
+                }
+            ]
+        },
+        {
+            "title": "Is Smurfit Westrock Plc (NYSE:SW) Potentially Undervalued?",
+            "url": "https://simplywall.st/stocks/us/materials/nyse-sw/smurfit-westrock/news/is-smurfit-westrock-plc-nysesw-potentially-undervalued",
+            "time_published": "20251228T121340",
+            "authors": [
+                "Simply Wall St"
+            ],
+            "summary": "Smurfit Westrock Plc (NYSE:SW) has seen a significant share price rise recently, yet its valuation suggests it remains expensive compared to its industry peers based on its P/E ratio. Despite this, the company shows strong future growth potential with expected profit doubling, hinting at higher cash flow and share valuation. Investors are advised to consider the market's current positive outlook reflecting in the stock price, and potentially wait for a price decline before investing, due to its high beta and current trading above industry multiples.",
+            "banner_image": "NULL",
+            "source": "Simply Wall Street",
+            "category_within_source": "General",
+            "source_domain": "Simply Wall Street",
+            "topics": [
+                {
+                    "topic": "financial_markets",
+                    "relevance_score": "0.926126"
+                },
+                {
+                    "topic": "earnings",
+                    "relevance_score": "0.825256"
+                }
+            ],
+            "overall_sentiment_score": 0.038349,
+            "overall_sentiment_label": "Neutral",
+            "ticker_sentiment": [
+                {
+                    "ticker": "SW",
+                    "relevance_score": "1.000000",
+                    "ticker_sentiment_score": "0.043809",
+                    "ticker_sentiment_label": "Neutral"
+                }
+            ]
+        },
+        {
+            "title": "Here's What We Like About Cardinal Health's (NYSE:CAH) Upcoming Dividend",
+            "url": "https://simplywall.st/stocks/us/healthcare/nyse-cah/cardinal-health/news/heres-what-we-like-about-cardinal-healths-nysecah-upcoming-d",
+            "time_published": "20251228T121259",
+            "authors": [
+                "Simply Wall St"
+            ],
+            "summary": "Cardinal Health (NYSE:CAH) is poised to go ex-dividend soon, offering a dividend payment of US$0.5107 per share, contributing to a 1.0% trailing yield. The company demonstrates strong dividend sustainability with a modest payout ratio of 31% from profit and 11% from free cash flow, alongside robust earnings growth of 23% per annum over the past five years. This favorable combination of rapid earnings growth, low payout ratios, and consistent dividend increases suggests Cardinal Health is a solid choice for dividend-focused investors.",
+            "banner_image": "https://images.simplywall.st/asset/chart/172207-historic-dividend-1-dark-2/1766923321838",
+            "source": "Simply Wall Street",
+            "category_within_source": "General",
+            "source_domain": "Simply Wall Street",
+            "topics": [
+                {
+                    "topic": "earnings",
+                    "relevance_score": "0.948219"
+                },
+                {
+                    "topic": "finance",
+                    "relevance_score": "0.838725"
+                },
+                {
+                    "topic": "financial_markets",
+                    "relevance_score": "0.745012"
+                },
+                {
+                    "topic": "life_sciences",
+                    "relevance_score": "0.619766"
+                }
+            ],
+            "overall_sentiment_score": 0.162458,
+            "overall_sentiment_label": "Somewhat-Bullish",
+            "ticker_sentiment": [
+                {
+                    "ticker": "CAH",
+                    "relevance_score": "0.988279",
+                    "ticker_sentiment_score": "0.422230",
+                    "ticker_sentiment_label": "Bullish"
+                },
+                {
+                    "ticker": "MCK",
+                    "relevance_score": "0.661090",
+                    "ticker_sentiment_score": "-0.087766",
+                    "ticker_sentiment_label": "Neutral"
+                },
+                {
+                    "ticker": "COR",
+                    "relevance_score": "0.641169",
+                    "ticker_sentiment_score": "0.001269",
+                    "ticker_sentiment_label": "Neutral"
+                }
+            ]
+        },
+        {
+            "title": "Is Now The Time To Look At Buying Avery Dennison Corporation (NYSE:AVY)?",
+            "url": "https://simplywall.st/stocks/us/materials/nyse-avy/avery-dennison/news/is-now-the-time-to-look-at-buying-avery-dennison-corporation-1",
+            "time_published": "20251228T121256",
+            "authors": [
+                "Simply Wall St"
+            ],
+            "summary": "Avery Dennison Corporation (NYSE:AVY) has seen a double-digit share price rise recently, nearing yearly highs. The analysis suggests its stock is fairly valued compared to industry peers based on its P/E ratio, and while not currently a bargain, its high beta offers potential future buying opportunities. The company also shows an optimistic future outlook with expected earnings growth of 34% over the next few years.",
+            "banner_image": "NULL",
+            "source": "Simply Wall Street",
+            "category_within_source": "General",
+            "source_domain": "Simply Wall Street",
+            "topics": [
+                {
+                    "topic": "earnings",
+                    "relevance_score": "1.000000"
+                },
+                {
+                    "topic": "financial_markets",
+                    "relevance_score": "0.903664"
+                },
+                {
+                    "topic": "manufacturing",
+                    "relevance_score": "0.738268"
+                }
+            ],
+            "overall_sentiment_score": 0.120302,
+            "overall_sentiment_label": "Neutral",
+            "ticker_sentiment": [
+                {
+                    "ticker": "AVY",
+                    "relevance_score": "0.988169",
+                    "ticker_sentiment_score": "0.268832",
+                    "ticker_sentiment_label": "Somewhat-Bullish"
+                },
+                {
+                    "ticker": "IP",
+                    "relevance_score": "0.608442",
+                    "ticker_sentiment_score": "0.051180",
+                    "ticker_sentiment_label": "Neutral"
+                },
+                {
+                    "ticker": "SW",
+                    "relevance_score": "0.607287",
+                    "ticker_sentiment_score": "0.050551",
+                    "ticker_sentiment_label": "Neutral"
+                }
+            ]
+        },
+        {
+            "title": "TB Alternative Assets Ltd. Has $4.90 Million Stock Holdings in ZTO Express (Cayman) Inc. $ZTO",
+            "url": "https://www.marketbeat.com/instant-alerts/filing-tb-alternative-assets-ltd-has-490-million-stock-holdings-in-zto-express-cayman-inc-zto-2025-12-28/",
+            "time_published": "20251228T121006",
+            "authors": [
+                "MarketBeat"
+            ],
+            "summary": "TB Alternative Assets Ltd. significantly increased its stake in ZTO Express (Cayman) Inc. by 208.5% in the third quarter, now holding 254,948 shares valued at approximately $4.895 million. This makes ZTO Express the 26th largest holding in TB Alternative Assets Ltd.'s portfolio. Despite ZTO Express reporting a sharp EPS miss in its last quarterly earnings, analysts maintain a \"Buy\" consensus rating with an average target price of $22.36.",
+            "banner_image": "https://www.marketbeat.com/logos/zto-express-(cayman)-inc-logo-1200x675.jpg",
+            "source": "MarketBeat",
+            "category_within_source": "General",
+            "source_domain": "MarketBeat",
+            "topics": [
+                {
+                    "topic": "earnings",
+                    "relevance_score": "0.932246"
+                },
+                {
+                    "topic": "financial_markets",
+                    "relevance_score": "0.804419"
+                },
+                {
+                    "topic": "energy_transportation",
+                    "relevance_score": "0.745961"
+                }
+            ],
+            "overall_sentiment_score": -0.135305,
+            "overall_sentiment_label": "Neutral",
+            "ticker_sentiment": [
+                {
+                    "ticker": "ZTO",
+                    "relevance_score": "1.000000",
+                    "ticker_sentiment_score": "-0.104480",
+                    "ticker_sentiment_label": "Neutral"
+                }
+            ]
+        },
+        {
+            "title": "Brookfield Real Assets Income Fund Inc. To Go Ex-Dividend On February 5th, 2026 With 0.118 USD Dividend Per Share",
+            "url": "https://news.futunn.com/en/post/66686739/brookfield-real-assets-income-fund-inc-to-go-ex-dividend",
+            "time_published": "20251228T121004",
+            "authors": [
+                "Futu News"
+            ],
+            "summary": "Brookfield Real Assets Income Fund Inc. (RA.US) is scheduled to go ex-dividend on February 5th, 2026, with a cash dividend of 0.118 USD per share. Shareholders of record on this date will receive the dividend on February 19th, 2026. The article also provides a general explanation of cash and stock dividends.",
+            "banner_image": "https://record.futunn.com/news-editor-imgs/20251228/public/17669238222533659445502.png",
+            "source": "\u5bcc\u9014\u725b\u725b",
+            "category_within_source": "General",
+            "source_domain": "\u5bcc\u9014\u725b\u725b",
+            "topics": [
+                {
+                    "topic": "earnings",
+                    "relevance_score": "1.000000"
+                },
+                {
+                    "topic": "financial_markets",
+                    "relevance_score": "0.810300"
+                }
+            ],
+            "overall_sentiment_score": 0.257354,
+            "overall_sentiment_label": "Somewhat-Bullish",
+            "ticker_sentiment": [
+                {
+                    "ticker": "RA",
+                    "relevance_score": "1.000000",
+                    "ticker_sentiment_score": "0.258672",
+                    "ticker_sentiment_label": "Somewhat-Bullish"
+                }
+            ]
+        },
+        {
+            "title": "DA Davidson Highlights Timberland Upside in Weyerhaeuser's (WY) Medium-Term Plan",
+            "url": "https://finviz.com/news/262935/da-davidson-highlights-timberland-upside-in-weyerhaeusers-wy-medium-term-plan",
+            "time_published": "20251228T120903",
+            "authors": [
+                "Vardah Gill"
+            ],
+            "summary": "DA Davidson maintained a Buy rating and $31 price target on Weyerhaeuser (WY) after its Investor Day, highlighting an expected $380 million uplift from Timberlands and Strategic Land Solutions. Additionally, Weyerhaeuser and Aymium formed a joint venture, TerraForge Biocarbon Solutions, to produce 1.5 million tons of sustainable biocarbon annually, leveraging Weyerhaeuser's timberlands and Aymium's technology. This initiative aims to convert wood fiber into biocarbon for metals manufacturing, with plans for facility expansion over the next five years.",
+            "banner_image": "https://d2gr5kl7dt2z3t.cloudfront.net/blog/wp-content/uploads/2023/10/02112031/WY-insidermonkey-1696260028833.jpg",
+            "source": "Finviz",
+            "category_within_source": "General",
+            "source_domain": "Finviz",
+            "topics": [
+                {
+                    "topic": "earnings",
+                    "relevance_score": "0.829555"
+                },
+                {
+                    "topic": "financial_markets",
+                    "relevance_score": "0.747308"
+                },
+                {
+                    "topic": "manufacturing",
+                    "relevance_score": "0.604141"
+                },
+                {
+                    "topic": "real_estate",
+                    "relevance_score": "0.612751"
+                }
+            ],
+            "overall_sentiment_score": 0.536708,
+            "overall_sentiment_label": "Bullish",
+            "ticker_sentiment": [
+                {
+                    "ticker": "WY",
+                    "relevance_score": "1.000000",
+                    "ticker_sentiment_score": "0.526826",
+                    "ticker_sentiment_label": "Bullish"
+                }
+            ]
+        },
+        {
+            "title": "Tencent Music Entertainment Group Sponsored ADR $TME Shares Sold by Matthews International Capital Management LLC",
+            "url": "https://www.marketbeat.com/instant-alerts/filing-tencent-music-entertainment-group-sponsored-adr-tme-shares-sold-by-matthews-international-capital-management-llc-2025-12-28/",
+            "time_published": "20251228T120857",
+            "authors": [
+                "MarketBeat"
+            ],
+            "summary": "Matthews International Capital Management LLC significantly reduced its stake in Tencent Music Entertainment Group (NYSE: TME) by 20.2%, selling 163,910 shares to now own 646,353 shares valued at approximately $15.09 million. Despite this, other major institutional investors like Schroder and JPMorgan increased their holdings, and Norges Bank initiated a new position, indicating mixed but largely positive institutional sentiment. Analysts maintain a \"Moderate Buy\" consensus rating with a target price of $25.79 for TME.",
+            "banner_image": "https://www.marketbeat.com/logos/tencent-music-entertainment-group-logo-1200x675.png?v=20221111121401",
+            "source": "MarketBeat",
+            "category_within_source": "General",
+            "source_domain": "MarketBeat",
+            "topics": [
+                {
+                    "topic": "finance",
+                    "relevance_score": "0.835702"
+                },
+                {
+                    "topic": "earnings",
+                    "relevance_score": "0.748774"
+                },
+                {
+                    "topic": "financial_markets",
+                    "relevance_score": "0.637721"
+                },
+                {
+                    "topic": "technology",
+                    "relevance_score": "0.606245"
+                }
+            ],
+            "overall_sentiment_score": 0.1017,
+            "overall_sentiment_label": "Neutral",
+            "ticker_sentiment": [
+                {
+                    "ticker": "TME",
+                    "relevance_score": "1.000000",
+                    "ticker_sentiment_score": "0.186064",
+                    "ticker_sentiment_label": "Somewhat-Bullish"
+                },
+                {
+                    "ticker": "JPM",
+                    "relevance_score": "0.625301",
+                    "ticker_sentiment_score": "0.241270",
+                    "ticker_sentiment_label": "Somewhat-Bullish"
+                },
+                {
+                    "ticker": "MS",
+                    "relevance_score": "0.552652",
+                    "ticker_sentiment_score": "-0.125302",
+                    "ticker_sentiment_label": "Neutral"
+                },
+                {
+                    "ticker": "BX",
+                    "relevance_score": "0.583548",
+                    "ticker_sentiment_score": "0.000692",
+                    "ticker_sentiment_label": "Neutral"
+                }
+            ]
+        },
+        {
+            "title": "Is Now The Time To Look At Buying Avery Dennison Corporation (NYSE:AVY)?",
+            "url": "https://simplywall.st/stocks/us/materials/nyse-avy/avery-dennison/news/is-now-the-time-to-look-at-buying-avery-dennison-corporation-1/amp",
+            "time_published": "20251228T120754",
+            "authors": [
+                "Simply Wall St"
+            ],
+            "summary": "Avery Dennison Corporation (NYSE:AVY) has seen a significant share price rise and is nearing yearly highs. The stock appears reasonably priced according to Simply Wall St's price multiple model, trading slightly below industry peers. With optimistic earnings growth expected of 34% in the coming years, the future outlook for Avery Dennison is positive, though its current valuation factors in much of this growth.",
+            "banner_image": "NULL",
+            "source": "Simply Wall Street",
+            "category_within_source": "General",
+            "source_domain": "Simply Wall Street",
+            "topics": [
+                {
+                    "topic": "earnings",
+                    "relevance_score": "0.949616"
+                },
+                {
+                    "topic": "financial_markets",
+                    "relevance_score": "0.817924"
+                },
+                {
+                    "topic": "economy_macro",
+                    "relevance_score": "0.613316"
+                },
+                {
+                    "topic": "manufacturing",
+                    "relevance_score": "0.636628"
+                }
+            ],
+            "overall_sentiment_score": 0.263516,
+            "overall_sentiment_label": "Somewhat-Bullish",
+            "ticker_sentiment": [
+                {
+                    "ticker": "AVY",
+                    "relevance_score": "0.973939",
+                    "ticker_sentiment_score": "0.256161",
+                    "ticker_sentiment_label": "Somewhat-Bullish"
+                }
+            ]
+        },
+        {
+            "title": "CIBC Jamaica profit plunges 88 per cent amid Hurricane",
+            "url": "https://jamaica-gleaner.com/article/business/20251228/cibc-jamaica-profit-plunges-88-cent-amid-hurricane",
+            "time_published": "20251228T120600",
+            "authors": [
+                "NULL"
+            ],
+            "summary": "CIBC Caribbean Bank Jamaica Ltd reported a significant 88% drop in profit for its October 2025 year-end, making only $45.9 million, largely due to the impact of Hurricane Melissa. The bank anticipates a potential threefold increase in the credit risk of its borrowers, but these levels are expected to remain within the Bank of Jamaica's regulated limits. Additionally, the bank noted a substantial rise in credit loss expenses and an increase in non-performing loans, though these are still considered manageable.",
+            "banner_image": "https://jamaica-gleaner.com/sites/default/files/styles/jg_article_image/public/media/article_images/2025/12/28/3312365/7496724.jpg",
+            "source": "Jamaica Gleaner",
+            "category_within_source": "General",
+            "source_domain": "Jamaica Gleaner",
+            "topics": [
+                {
+                    "topic": "earnings",
+                    "relevance_score": "0.919876"
+                },
+                {
+                    "topic": "finance",
+                    "relevance_score": "0.821206"
+                },
+                {
+                    "topic": "economy_macro",
+                    "relevance_score": "0.633502"
+                }
+            ],
+            "overall_sentiment_score": -0.409366,
+            "overall_sentiment_label": "Bearish",
+            "ticker_sentiment": [
+                {
+                    "ticker": "CM",
+                    "relevance_score": "0.925497",
+                    "ticker_sentiment_score": "-0.398040",
+                    "ticker_sentiment_label": "Bearish"
+                }
+            ]
+        },
+        {
+            "title": "NovaPoint Capital LLC Purchases Shares of 10,109 Duke Energy Corporation $DUK",
+            "url": "https://www.marketbeat.com/instant-alerts/filing-novapoint-capital-llc-purchases-shares-of-10109-duke-energy-corporation-duk-2025-12-28/",
+            "time_published": "20251228T120517",
+            "authors": [
+                "MarketBeat"
+            ],
+            "summary": "NovaPoint Capital LLC recently acquired 10,109 shares of Duke Energy Corporation (NYSE:DUK) during the third quarter, valued at approximately $1.25 million. Other hedge funds also adjusted their holdings in Duke Energy, which reported stronger-than-expected Q3 earnings of $1.81 per share on revenues of $8.54 billion. The company has a consensus \"Moderate Buy\" rating from analysts with an average target price of $136.50.",
+            "banner_image": "https://www.marketbeat.com/logos/duke-energy-corp-logo-1200x675.gif",
+            "source": "MarketBeat",
+            "category_within_source": "General",
+            "source_domain": "MarketBeat",
+            "topics": [
+                {
+                    "topic": "earnings",
+                    "relevance_score": "0.937707"
+                },
+                {
+                    "topic": "financial_markets",
+                    "relevance_score": "0.949842"
+                },
+                {
+                    "topic": "energy_transportation",
+                    "relevance_score": "0.839051"
+                },
+                {
+                    "topic": "finance",
+                    "relevance_score": "0.704911"
+                },
+                {
+                    "topic": "economy_macro",
+                    "relevance_score": "0.631432"
+                }
+            ],
+            "overall_sentiment_score": 0.3126,
+            "overall_sentiment_label": "Somewhat-Bullish",
+            "ticker_sentiment": [
+                {
+                    "ticker": "DUK",
+                    "relevance_score": "1.000000",
+                    "ticker_sentiment_score": "0.306483",
+                    "ticker_sentiment_label": "Somewhat-Bullish"
+                }
+            ]
+        },
+        {
+            "title": "NovaPoint Capital LLC Invests $1.06 Million in Stryker Corporation $SYK",
+            "url": "https://www.marketbeat.com/instant-alerts/filing-novapoint-capital-llc-invests-106-million-in-stryker-corporation-syk-2025-12-28/",
+            "time_published": "20251228T120455",
+            "authors": [
+                "MarketBeat"
+            ],
+            "summary": "NovaPoint Capital LLC has invested $1.06 million in Stryker Corporation (NYSE:SYK) by acquiring 2,857 shares. Other hedge funds have also increased their stakes, with institutional investors now owning 77.09% of the stock. Analysts currently rate Stryker as a \"Moderate Buy\" with a consensus price target of $431.84.",
+            "banner_image": "https://www.marketbeat.com/logos/stryker-logo-1200x675.png",
+            "source": "MarketBeat",
+            "category_within_source": "General",
+            "source_domain": "MarketBeat",
+            "topics": [
+                {
+                    "topic": "earnings",
+                    "relevance_score": "0.941142"
+                },
+                {
+                    "topic": "financial_markets",
+                    "relevance_score": "0.841583"
+                },
+                {
+                    "topic": "life_sciences",
+                    "relevance_score": "0.949047"
+                }
+            ],
+            "overall_sentiment_score": 0.25679,
+            "overall_sentiment_label": "Somewhat-Bullish",
+            "ticker_sentiment": [
+                {
+                    "ticker": "SYK",
+                    "relevance_score": "1.000000",
+                    "ticker_sentiment_score": "0.273732",
+                    "ticker_sentiment_label": "Somewhat-Bullish"
+                }
+            ]
+        }
+    ]
+}

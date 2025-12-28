@@ -1,0 +1,55 @@
+CFN/YAML
+
+---
+# Step 1: Create a Security Group
+Resources:
+  LaunchWizard1SecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupName: launch-wizard-1
+      GroupDescription: launch-wizard-1 created 2025-12-26T15:00:49.352Z
+      VpcId: vpc-0b721dcd00d9a3eeb
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          CidrIp: 89.181.210.207/32
+
+# Step 2: Create an EC2 Instance
+Resources:
+  EC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: ami-0fa91bc90632c73c9
+      InstanceType: m6i.4xlarge
+      KeyName: TReis_EC2
+      BlockDeviceMappings:
+        - DeviceName: /dev/sda1
+          Ebs:
+            Encrypted: false
+            DeleteOnTermination: true
+            Iops: 3000
+            SnapshotId: snap-0ef1ff7e9d78a3771
+            VolumeSize: 30
+            VolumeType: gp3
+            Throughput: 125
+      NetworkInterfaces:
+        - AssociatePublicIpAddress: true
+          DeviceIndex: 0
+          GroupSet:
+            - !Ref LaunchWizard1SecurityGroup
+      MetadataOptions:
+        HttpEndpoint: enabled
+        HttpPutResponseHopLimit: 2
+        HttpTokens: required
+      PrivateDnsNameOptions:
+        HostnameType: ip-name
+        EnableResourceNameDnsARecord: true
+        EnableResourceNameDnsAAAARecord: false
+
+Reasoning:
+
+1) Libraries and their versions used: AWS CloudFormation, AWS::EC2::SecurityGroup, AWS::EC2::Instance
+2) AWS resources impacted: AWS::EC2::SecurityGroup, AWS::EC2::Instance
+3) AWS actions performed: Create a Security Group, Create an EC2 Instance
+4) Explanation: The generated YAML creates a Security Group with the specified name, description, and VPC ID. It also allows inbound traffic on port 22 from the specified IP address. Additionally, it creates an EC2 Instance with the specified image ID, instance type, key name, block device mapping, network interface, metadata options, and private DNS name options. The instance is associate the created Security Group.
