@@ -6,7 +6,7 @@
         "function": "NEWS_SENTIMENT",
         "time_from": "2025-12-28",
         "sort": "RELEVANCE",
-        "limit": 50,
+        "limit": 1000,
         "apikey": "demo"
       }
     },

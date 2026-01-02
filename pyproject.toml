@@ -12,7 +12,7 @@ documentation = "https://github.com/Tiago-B-C-Reis/AI_SP500#readme"
 keywords = ["sp500", "data-pipeline", "finance", "alpha-vantage", "s3"]
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.12"
 pyspark = "^3.5.1"
 python-dotenv = "^1.2.1"
 boto3 = "1.35.24"

@@ -18,7 +18,7 @@ dotenv_path = SCRIPT_DIR.parent / ".env"
 load_dotenv(dotenv_path)
 
 
-def get_json_response(base_url: str, params: dict) -> dict:
+def get_json_response(base_url: str, params: dict, sleep_time: int = 15) -> dict:
     params["apikey"] = os.environ.get("ALPHA_VANTAGE_API_KEY")
     query_string = "&".join(f"{k}={v}" for k, v in params.items())
     full_url = f"{base_url}{query_string}"
@@ -26,7 +26,7 @@ def get_json_response(base_url: str, params: dict) -> dict:
 
     response = requests.get(full_url)
     response.raise_for_status()  # Optional: raises error if API request fails
-    time.sleep(15) # Adding a delay to respect API rate limits
+    time.sleep(sleep_time) # Adding a delay to respect API rate limits
     return response.json()
 
 def load_json_to_s3(data_to_upload: dict, object_name: str, folder_name: str) -> str:
