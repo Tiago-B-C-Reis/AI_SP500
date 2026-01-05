@@ -3,26 +3,9 @@
     {
       "base_url": "https://www.alphavantage.co/query?",
       "params": {
-        "function": "NEWS_SENTIMENT",
-        "time_from": "2025-12-28",
-        "sort": "RELEVANCE",
-        "limit": 1000,
-        "apikey": "demo"
-      }
-    },
-    {
-      "base_url": "https://www.alphavantage.co/query?",
-      "params": {
         "function": "EARNINGS_CALL_TRANSCRIPT",
         "symbol": "IBM",
         "quarter": "2025Q1",
-        "apikey": "demo"
-      }
-    },
-    {
-      "base_url": "https://www.alphavantage.co/query?",
-      "params": {
-        "function": "TOP_GAINERS_LOSERS",
         "apikey": "demo"
       }
     },
@@ -39,9 +22,9 @@
       "params": {
         "function": "ANALYTICS_FIXED_WINDOW",
         "SYMBOLS": "IBM",
-        "RANGE": "{N}week",
+        "RANGE": "full",
         "OHLC": "close",
-        "INTERVAL": "WEEKLY",
+        "INTERVAL": "DAILY",
         "CALCULATIONS": "MIN,MAX,MEAN,MEDIAN,CUMULATIVE_RETURN,VARIANCE(annualized=True),STDDEV(annualized=True),MAX_DRAWDOWN,HISTOGRAM,AUTOCORRELATION,COVARIANCE,CORRELATION",
         "apikey": "demo"
       }

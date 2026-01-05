@@ -44,7 +44,7 @@ if __name__ == "__main__":
             params = {
                 'function': "ANALYTICS_FIXED_WINDOW",
                 'SYMBOLS': ticker,
-                'RANGE': "1year",
+                'RANGE': "full",
                 'OHLC': "close",
                 'INTERVAL': "DAILY",
                 'CALCULATIONS': calcs,
