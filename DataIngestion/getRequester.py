@@ -52,7 +52,7 @@ if __name__ == "__main__":
                     print(f"{path_folder_name} - Calling → {params.get('function')} for {symbol}, Object Name: {object_name}")
                     try:
                         # Make the request
-                        response = ingestion.get_json_response(base_url, params)
+                        response = ingestion.get_json_response(base_url, params, sleep_time=15)
                         # Extract the json file size in bytes
                         file_size_bytes = len(json.dumps(response, indent=4).encode('utf-8'))
                         # Load the json file to S3
@@ -75,5 +75,5 @@ if __name__ == "__main__":
                             path_folder_name=path_folder_name,
                             object_name=object_name,
                             file_size_bytes=0,
-                            log_message=s3_upload_message
+                            log_message=s3_upload_message + " - " + str(e)
                         )

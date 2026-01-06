@@ -1,4 +1,3 @@
-import csv
 import json
 import sys
 import time
@@ -9,8 +8,6 @@ from datetime import datetime, timedelta
 sys.path.append(str(Path(__file__).resolve().parents[1]))
 import Helper_Functions.ingestion as ingestion
 from Helper_Functions.logger import log_to_postgres
-from typing import List
-from dotenv import load_dotenv
 
 
 def get_api_urls() -> dict:
@@ -64,7 +61,7 @@ if __name__ == "__main__":
                         path_folder_name=path_folder_name,
                         object_name=object_name,
                         file_size_bytes=0,
-                        log_message="Failed"
+                        log_message=s3_upload_message + " - " + str(e)
                     )
         
         print("Daily ingestion complete. Sleeping for 24 hours...")
