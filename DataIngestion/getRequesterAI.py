@@ -3,7 +3,7 @@ import json
 import sys
 import time
 from pathlib import Path
-from datetime import datetime, timedelta
+import datetime
 
 # Add project root to sys.path to allow for absolute imports
 sys.path.append(str(Path(__file__).resolve().parents[1]))
@@ -21,11 +21,63 @@ def get_sp500_tickers() -> list[str]:
             tickers.append(row["ticker"])
     return tickers
 
-def get_api_urls() -> dict:
-    """Reads API URLs from a JSON file."""
-    api_urls_path = Path(__file__).parent / "Data" / "alpha_intelligence.json"
+def read_json(file_name: str) -> dict:
+    """Reads a JSON file."""
+    api_urls_path = Path(__file__).parent / "Data" / file_name
     with open(api_urls_path, encoding='utf-8') as jsonfile:
         return json.load(jsonfile)
+
+def mark_data_as_processed(file_name: str, time: str, json_entry: str) -> None:
+    """
+    Adds a quarter to the 'quarters_processed' list in a JSON file.
+    Creates the file if it doesn't exist.
+    """
+    # Define the path (adjust "Data" folder as needed per your project structure)
+    file_path = Path(__file__).parent / "Data" / file_name
+    
+    # 1. Load existing data or create default structure
+    if file_path.exists():
+        try:
+            with open(file_path, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+        except json.JSONDecodeError:
+            # Handle empty or corrupted files
+            data = {json_entry: []}
+    else:
+        data = {json_entry: []}
+
+    # 2. Add quarter if not already present
+    if time not in data[json_entry]:
+        data[json_entry].append(time)
+        
+        # Optional: Sort the list so the file stays organized
+        data[json_entry].sort()
+
+        # 3. Write back to file
+        with open(file_path, 'w', encoding='utf-8') as f:
+            json.dump(data, f, indent=4)
+            
+        print(f"Updated {file_name}: Added {time}")
+    else:
+        print(f"Skipped: {time} is already in {file_name}")
+
+def get_quarters_since(start_year):
+    today = datetime.date.today()
+    current_year = today.year
+    # Calculate current quarter (1-4)
+    current_quarter = (today.month - 1) // 3 + 1
+    
+    quarters_list = []
+    
+    for year in range(start_year, current_year + 1):
+        # If it's the current year, stop at the current quarter. 
+        # Otherwise, process all 4 quarters.
+        end_q = current_quarter if year == current_year else 4
+        
+        for q in range(1, end_q + 1):
+            quarters_list.append(f"{year}Q{q}")
+            
+    return quarters_list
 
 def analytics_fixed_window(base_url: str, params: dict, sleep_time: int) -> dict:
     calculation_groups = [
@@ -73,35 +125,78 @@ def load_and_log_json(response: dict, params: dict, symbol: str, path_folder_nam
             log_message=s3_upload_message + " - " + str(e)
         )
 
-sp500_tickers = get_sp500_tickers()
-data = get_api_urls()
 
 
+# --- MAIN EXECUTION ---
 if __name__ == "__main__":
-    # Iterate over each API endpoint and make requests for each ticker
+    sp500_tickers = get_sp500_tickers()
+    data = read_json("alpha_intelligence.json")
+    # We read this once at start, but we will also re-read or update locally to stay in sync
+    processed_data = read_json("year_quarter_List.json")
+
     for category_name, endpoints in data.items():
         for endpoint in endpoints:
             base_url = endpoint["base_url"]
             params = endpoint["params"].copy()
-            # Get the year and week number as a string (e.g., "2024_W02")
+            function_name = params.get('function')
+            
+            # Common path setup
             today = datetime.date.today()
             iso_year_week = f"{today.year}_W{today.strftime('%V')}"
-            path_folder_name = "raw/" + category_name + "/" + params.get('function') + "/" + iso_year_week
+            path_folder_name = f"raw/{category_name}/{function_name}/{iso_year_week}"
 
-            for symbol in sp500_tickers:
-                object_name = f"{params.get('function')}_{symbol}_{time.strftime('%Y%m%d%H%M%S')}.json"
-                print(f"{path_folder_name} - Calling → {params.get('function')} for {symbol}, Object Name: {object_name}")
+            print(f"--- Starting endpoint: {function_name} ---")
 
-                if params.get('function') == "EARNINGS_CALL_TRANSCRIPT":
-                    params["symbol"] = symbol
-                    for quarter in 
+            # ---------------------------------------------------------------------------------
+            # CASE 1: EARNINGS (Iterate Quarter -> Then Symbol)
+            # ---------------------------------------------------------------------------------
+            if function_name == "EARNINGS_CALL_TRANSCRIPT":
+                # Generate full list of quarters since 2020
+                all_quarters = get_quarters_since(2020)
+                
+                for quarter in all_quarters:
+                    # Check if quarter is already done
+                    if quarter in processed_data["quarters_processed"]:
+                        print(f"Skipping {quarter} (Already Processed)")
+                        continue
+
+                    print(f"Processing Quarter: {quarter}")
+                    
+                    # Process ALL symbols for this quarter
+                    for symbol in sp500_tickers:
+                        params["symbol"] = symbol
                         params["quarter"] = quarter
+                        
+                        # Added quarter to object name for uniqueness
+                        object_name = f"{function_name}_{symbol}_{quarter}_{time.strftime('%Y%m%d%H%M%S')}.json"
+                        print(f"Calling {function_name} for {symbol} ({quarter})")
+
                         earnings_get_json = ingestion.get_json_response(base_url, params, sleep_time=15)
                         load_and_log_json(earnings_get_json, params, symbol, path_folder_name, object_name)
-                elif params.get('function') == "INSIDER_TRANSACTIONS":
-                    params["symbol"] = symbol
-                    insider_get_json = ingestion.get_json_response(base_url, params, sleep_time=15)
-                    load_and_log_json(insider_get_json, params, symbol, path_folder_name, object_name)
-                elif params.get('function') == "ANALYTICS_FIXED_WINDOW":
-                    analytics_get_json = analytics_fixed_window(base_url, params, sleep_time=15)
-                    load_and_log_json(analytics_get_json, params, symbol, path_folder_name, object_name)
+
+                    # CRITICAL: Only mark as processed after ALL symbols loop finishes successfully
+                    mark_data_as_processed("year_quarter_List.json", quarter, "quarters_processed")
+                    # Update local list so we don't process it again if loops are weird
+                    processed_data["quarters_processed"].append(quarter)
+
+            # ---------------------------------------------------------------------------------
+            # CASE 2: DEFAULT CASE (INSIDER_TRANSACTIONS AND EARNINGS_CALL_TRANSCRIPT)
+            # ---------------------------------------------------------------------------------
+            else:
+                if iso_year_week not in processed_data["year_week_list"]:
+                    for symbol in sp500_tickers:
+                        params["symbol"] = symbol
+                        object_name = f"{function_name}_{symbol}_{time.strftime('%Y%m%d%H%M%S')}.json"
+                        print(f"Calling {function_name} for {symbol}")
+                        if function_name == "INSIDER_TRANSACTIONS":
+                            api_response = ingestion.get_json_response(base_url, params, sleep_time=15)
+                            load_and_log_json(api_response, params, symbol, path_folder_name, object_name)
+                        elif function_name == "EARNINGS_CALL_TRANSCRIPT":
+                            api_response = analytics_fixed_window(base_url, params, sleep_time=15)
+                            load_and_log_json(api_response, params, symbol, path_folder_name, object_name)
+                    # CRITICAL: Only mark as processed after ALL symbols loop finishes successfully
+                    mark_data_as_processed("year_quarter_List.json", iso_year_week, "year_week_list")
+                    # Update local list so we don't process it again if loops are weird
+                    processed_data["year_week_list"].append(iso_year_week)
+                else:
+                    print(f"Skipping {iso_year_week} (Already Processed)")

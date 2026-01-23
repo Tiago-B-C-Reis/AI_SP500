@@ -11,5 +11,5 @@ docker push tiagobcr/sp500-data-ingestion_amd64:latest
 
 
 Next steps:
-- add Market News & Sentiment from API and also use AI to scrap the internet for news and sentiment
-- implement the N8N workflow
+- Update the dockerfile to use the latest version of the image and deploy each container on my local server
+- 
