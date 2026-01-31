@@ -21,4 +21,4 @@ RUN poetry config virtualenvs.create false \
 COPY DataIngestion/ ./
 
 # Set the default command to run the collector script
-CMD ["python", "getRequester.py"]
+CMD ["python", "getRequesterWeekly.py"]
