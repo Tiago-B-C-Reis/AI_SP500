@@ -1,0 +1,1903 @@
+{
+    "items": "50",
+    "sentiment_score_definition": "x <= -0.35: Bearish; -0.35 < x <= -0.15: Somewhat-Bearish; -0.15 < x < 0.15: Neutral; 0.15 <= x < 0.35: Somewhat_Bullish; x >= 0.35: Bullish",
+    "relevance_score_definition": "0 < x <= 1, with a higher score indicating higher relevance.",
+    "feed": [
+        {
+            "title": "Norfolk Southern Corp. stock: Citigroup sees upside potential now",
+            "url": "https://www.ad-hoc-news.de/boerse/news/ueberblick/norfolk-southern-corp-stock-citigroup-sees-upside-potential-now/69099481",
+            "time_published": "20260407T210130",
+            "authors": [
+                "Elena Harper"
+            ],
+            "summary": "Citigroup has raised its price target for Norfolk Southern Corp. (NYSE: NSC) stock to $313 from $300, indicating a 9% upside potential from recent trading levels. This update reflects the rail carrier's strong Q4 earnings, operational efficiency through Precision Scheduled Railroading, and diversified business model, despite facing cyclical headwinds and regulatory scrutiny. The consensus rating remains \"Hold,\" but analysts see potential for steady growth and fair valuation for this key player in U.S. rail freight.",
+            "banner_image": "https://mdb.ad-hoc-news.de/bild/bild-2405023_480_300.webp",
+            "source": "AD HOC NEWS",
+            "category_within_source": "General",
+            "source_domain": "AD HOC NEWS",
+            "topics": [
+                {
+                    "topic": "earnings",
+                    "relevance_score": "0.917776"
+                },
+                {
+                    "topic": "financial_markets",
+                    "relevance_score": "0.827608"
+                },
+                {
+                    "topic": "economy_macro",
+                    "relevance_score": "0.740281"
+                },
+                {
+                    "topic": "energy_transportation",
+                    "relevance_score": "0.914528"
+                }
+            ],
+            "overall_sentiment_score": 0.466467,
+            "overall_sentiment_label": "Bullish",
+            "ticker_sentiment": [
+                {
+                    "ticker": "NSC",
+                    "relevance_score": "1.000000",
+                    "ticker_sentiment_score": "0.412388",
+                    "ticker_sentiment_label": "Bullish"
+                },
+                {
+                    "ticker": "C",
+                    "relevance_score": "0.610515",
+                    "ticker_sentiment_score": "0.556269",
+                    "ticker_sentiment_label": "Bullish"
+                }
+            ]
+        },
+        {
+            "title": "Linde plc stock: Why industrial gases power your next portfolio move",
+            "url": "https://www.ad-hoc-news.de/boerse/news/ueberblick/linde-plc-stock-why-industrial-gases-power-your-next-portfolio-move/69099479",
+            "time_published": "20260407T210106",
+            "authors": [
+                "Elena Harper"
+            ],
+            "summary": "Linde plc is positioned as a key player in industrial gases, essential for clean energy and technology sectors globally. The article highlights its stable growth across U.S., European, and international markets, backed by consistent dividend increases and a strong balance sheet. Investors are encouraged to consider Linde for its essential role in clean technology and its resilient business model.",
+            "banner_image": "https://mdb.ad-hoc-news.de/bild/bild-2404990_480_300.webp",
+            "source": "AD HOC NEWS",
+            "category_within_source": "General",
+            "source_domain": "AD HOC NEWS",
+            "topics": [
+                {
+                    "topic": "earnings",
+                    "relevance_score": "0.906957"
+                },
+                {
+                    "topic": "financial_markets",
+                    "relevance_score": "0.838543"
+                },
+                {
+                    "topic": "manufacturing",
+                    "relevance_score": "0.922864"
+                },
+                {
+                    "topic": "energy_transportation",
+                    "relevance_score": "0.706166"
+                },
+                {
+                    "topic": "economy_macro",
+                    "relevance_score": "0.628285"
+                }
+            ],
+            "overall_sentiment_score": 0.432812,
+            "overall_sentiment_label": "Bullish",
+            "ticker_sentiment": [
+                {
+                    "ticker": "LIN",
+                    "relevance_score": "1.000000",
+                    "ticker_sentiment_score": "0.616603",
+                    "ticker_sentiment_label": "Bullish"
+                },
+                {
+                    "ticker": "APD",
+                    "relevance_score": "0.601257",
+                    "ticker_sentiment_score": "0.287143",
+                    "ticker_sentiment_label": "Somewhat-Bullish"
+                }
+            ]
+        },
+        {
+            "title": "Site Prep Started for New Clayton Tractor Supply",
+            "url": "https://42freeway.com/news/site-prep-started-for-new-clayton-tractor-supply/",
+            "time_published": "20260407T205300",
+            "authors": [
+                "Mark Matthews"
+            ],
+            "summary": "Site preparation has begun for a new Tractor Supply store in Clayton, New Jersey, a year after its approval. This location follows the opening of three other South Jersey Tractor Supply stores in Mantua, Pennsville, and Deptford. The new 21,960-square-foot store will be situated on Delsea Drive, targeting both homeowners and small farmers with a wide range of products.",
+            "banner_image": "https://42freeway.com/wp-content/uploads/2026/04/TractorSupplyClaytonClearing00.jpg",
+            "source": "42 Freeway",
+            "category_within_source": "General",
+            "source_domain": "42 Freeway",
+            "topics": [
+                {
+                    "topic": "real_estate",
+                    "relevance_score": "0.909616"
+                },
+                {
+                    "topic": "retail_wholesale",
+                    "relevance_score": "1.000000"
+                }
+            ],
+            "overall_sentiment_score": 0.244557,
+            "overall_sentiment_label": "Somewhat-Bullish",
+            "ticker_sentiment": [
+                {
+                    "ticker": "TSCO",
+                    "relevance_score": "1.000000",
+                    "ticker_sentiment_score": "0.315158",
+                    "ticker_sentiment_label": "Somewhat-Bullish"
+                },
+                {
+                    "ticker": "DG",
+                    "relevance_score": "0.645031",
+                    "ticker_sentiment_score": "0.123638",
+                    "ticker_sentiment_label": "Neutral"
+                }
+            ]
+        },
+        {
+            "title": "CEG Investors Have Opportunity to Join Constellation Energy Corporation Fraud Investigation with the Schall Law Firm",
+            "url": "https://aijourn.com/ceg-investors-have-opportunity-to-join-constellation-energy-corporation-fraud-investigation-with-the-schall-law-firm/",
+            "time_published": "20260407T204924",
+            "authors": [
+                "Business Wire"
+            ],
+            "summary": "The Schall Law Firm has announced an investigation into Constellation Energy Corporation (NASDAQ: CEG) for potential securities law violations. This follows Constellation's March 31, 2026 earnings outlook, which revealed lower-than-expected guidance for 2026 and a failure to announce new power data center deals, leading to a nearly 6.5% drop in stock value. Investors who suffered losses are encouraged to contact the firm to discuss their rights.",
+            "banner_image": "https://mms.businesswire.com/media/20260407426713/en/827144/22/Schall-Firm-Logo-640x360.jpg",
+            "source": "The AI Journal",
+            "category_within_source": "General",
+            "source_domain": "The AI Journal",
+            "topics": [
+                {
+                    "topic": "earnings",
+                    "relevance_score": "0.904195"
+                },
+                {
+                    "topic": "finance",
+                    "relevance_score": "0.835829"
+                },
+                {
+                    "topic": "financial_markets",
+                    "relevance_score": "0.713566"
+                },
+                {
+                    "topic": "energy_transportation",
+                    "relevance_score": "0.624708"
+                }
+            ],
+            "overall_sentiment_score": 0.019668,
+            "overall_sentiment_label": "Neutral",
+            "ticker_sentiment": [
+                {
+                    "ticker": "CEG",
+                    "relevance_score": "0.328589",
+                    "ticker_sentiment_score": "0.032397",
+                    "ticker_sentiment_label": "Neutral"
+                }
+            ]
+        },
+        {
+            "title": "U.S. Stocks: Dow Inc. falls 85 points as caution prevails over ceasefire negotiations (April 7).",
+            "url": "https://www.moomoo.com/news/post/67993009/us-stocks-dow-inc-falls-85-points-as-caution-prevails",
+            "time_published": "20260407T204835",
+            "authors": [],
+            "summary": "Dow Inc. (NYSE:DOW) experienced a decline of 85 points, closing at $56.91 on April 7th, 2026. This dip reflects investor caution amidst ongoing ceasefire negotiations, suggesting market uncertainty surrounding these geopolitical developments. The stock traded within a range of $56.66 to $57.48 throughout the day.",
+            "banner_image": null,
+            "source": "Moomoo",
+            "category_within_source": "General",
+            "source_domain": "Moomoo",
+            "topics": [
+                {
+                    "topic": "financial_markets",
+                    "relevance_score": "0.938772"
+                },
+                {
+                    "topic": "manufacturing",
+                    "relevance_score": "0.606100"
+                },
+                {
+                    "topic": "earnings",
+                    "relevance_score": "0.723490"
+                }
+            ],
+            "overall_sentiment_score": -0.644231,
+            "overall_sentiment_label": "Bearish",
+            "ticker_sentiment": [
+                {
+                    "ticker": "DOW",
+                    "relevance_score": "1.000000",
+                    "ticker_sentiment_score": "-0.635723",
+                    "ticker_sentiment_label": "Bearish"
+                }
+            ]
+        },
+        {
+            "title": "REX AI Equity Premium Income ETF (AIPI) stock price, news, quote and history",
+            "url": "https://sg.finance.yahoo.com/quote/AIPI/",
+            "time_published": "20260407T203949",
+            "authors": [],
+            "summary": "This Yahoo Finance page provides a detailed overview of the REX AI Equity Premium Income ETF (AIPI), including its current stock price, recent performance data, and key financial metrics. It highlights the ETF's investment strategy, which involves investing primarily in securities from the BITA AI Leaders Select Index, and notes its significant allocation to the technology sector. The page also offers comparative data with other related ETFs and shows a list of trending tickers in the market.",
+            "banner_image": null,
+            "source": "Yahoo Finance Singapore",
+            "category_within_source": "General",
+            "source_domain": "Yahoo Finance Singapore",
+            "topics": [
+                {
+                    "topic": "financial_markets",
+                    "relevance_score": "0.918169"
+                },
+                {
+                    "topic": "technology",
+                    "relevance_score": "0.807684"
+                },
+                {
+                    "topic": "finance",
+                    "relevance_score": "0.702357"
+                }
+            ],
+            "overall_sentiment_score": 0.083376,
+            "overall_sentiment_label": "Neutral",
+            "ticker_sentiment": [
+                {
+                    "ticker": "AIPI",
+                    "relevance_score": "1.000000",
+                    "ticker_sentiment_score": "0.103350",
+                    "ticker_sentiment_label": "Neutral"
+                }
+            ]
+        },
+        {
+            "title": "Humana, CVS Climb After Medicare Finalizes 2.48% Rate Hike (1)",
+            "url": "https://news.bloomberglaw.com/insurance/medicare-finalizes-2-48-rate-hike-for-private-insurers-in-2027",
+            "time_published": "20260407T203756",
+            "authors": [
+                "John Tozzi"
+            ],
+            "summary": "The US Medicare program will increase payments to private insurers by 2.48% in 2027, a significant improvement over earlier proposals. This final policy from the Centers for Medicare and Medicaid Services is expected to add over $13 billion to Medicare Advantage plans next year. Following the announcement, shares of major insurance companies like UnitedHealth Group, Humana, and CVS Health Corp. saw considerable gains in premarket trading.",
+            "banner_image": "https://news-api.bloomberglaw.com/v1/resize-image?url=https%3A%2F%2Fbloomberg-bna-brightspot.s3.us-east-1.amazonaws.com%2Fbd%2F89%2F92b845dc48c0ab82dd7f9bdc7c1f%2F233988226-1.jpg&width=1240&height=480&fit=cover&crop=3000x1156%2B0%2B397",
+            "source": "Bloomberg Law News",
+            "category_within_source": "General",
+            "source_domain": "Bloomberg Law News",
+            "topics": [
+                {
+                    "topic": "earnings",
+                    "relevance_score": "0.942740"
+                },
+                {
+                    "topic": "financial_markets",
+                    "relevance_score": "0.830244"
+                },
+                {
+                    "topic": "life_sciences",
+                    "relevance_score": "0.937945"
+                },
+                {
+                    "topic": "economy_fiscal",
+                    "relevance_score": "0.744520"
+                },
+                {
+                    "topic": "finance",
+                    "relevance_score": "0.607244"
+                }
+            ],
+            "overall_sentiment_score": 0.721503,
+            "overall_sentiment_label": "Bullish",
+            "ticker_sentiment": [
+                {
+                    "ticker": "HUM",
+                    "relevance_score": "0.995947",
+                    "ticker_sentiment_score": "0.719911",
+                    "ticker_sentiment_label": "Bullish"
+                },
+                {
+                    "ticker": "CVS",
+                    "relevance_score": "0.935610",
+                    "ticker_sentiment_score": "0.719499",
+                    "ticker_sentiment_label": "Bullish"
+                },
+                {
+                    "ticker": "UNH",
+                    "relevance_score": "0.890025",
+                    "ticker_sentiment_score": "0.714226",
+                    "ticker_sentiment_label": "Bullish"
+                }
+            ]
+        },
+        {
+            "title": "[Form 4] WATERS CORP /DE/ Insider Trading Activity",
+            "url": "https://www.stocktitan.net/sec-filings/WAT/form-4-waters-corp-de-insider-trading-activity-7b2aa6cb2559.html",
+            "time_published": "20260407T203704",
+            "authors": [],
+            "summary": "Waters Corp senior vice president Jianqing Bennett reported a routine tax-related disposition of 302 common shares at $304.09 per share to cover tax obligations on vested restricted stock units. Following this transaction, Bennett directly holds 6,532 shares of Waters common stock. The insider trading activity has a neutral impact and sentiment according to Rhea-AI.",
+            "banner_image": "https://www.stocktitan.net/img/logo/stock-titan-logo-header-free.png",
+            "source": "Stock Titan",
+            "category_within_source": "General",
+            "source_domain": "Stock Titan",
+            "topics": [
+                {
+                    "topic": "finance",
+                    "relevance_score": "0.931897"
+                }
+            ],
+            "overall_sentiment_score": 0.049219,
+            "overall_sentiment_label": "Neutral",
+            "ticker_sentiment": [
+                {
+                    "ticker": "WAT",
+                    "relevance_score": "1.000000",
+                    "ticker_sentiment_score": "0.021251",
+                    "ticker_sentiment_label": "Neutral"
+                }
+            ]
+        },
+        {
+            "title": "Nantahala Capital reports 692,335 shares in Assertion Holdings (ASRT)",
+            "url": "https://www.stocktitan.net/sec-filings/ASRT/schedule-13g-a-assertio-holdings-inc-amended-passive-investment-discl-513ca5a6ed6d.html",
+            "time_published": "20260407T203129",
+            "authors": [],
+            "summary": "Nantahala Capital Management, LLC, along with its managers Wilmot B. Harkey and Daniel Mack, has reported shared beneficial ownership of 692,335 shares of Assertio Holdings, Inc. (ASRT) common stock as of March 31, 2026. This represents a 10.74% stake in the company, based on 6,445,161 shares outstanding. The disclosure, made via a Schedule 13G/A filing, indicates passive investment intent, with shared voting and dispositive powers over the reported shares.",
+            "banner_image": null,
+            "source": "Stock Titan",
+            "category_within_source": "General",
+            "source_domain": "Stock Titan",
+            "topics": [
+                {
+                    "topic": "finance",
+                    "relevance_score": "0.930702"
+                },
+                {
+                    "topic": "life_sciences",
+                    "relevance_score": "0.734953"
+                },
+                {
+                    "topic": "financial_markets",
+                    "relevance_score": "0.613826"
+                }
+            ],
+            "overall_sentiment_score": 0.001593,
+            "overall_sentiment_label": "Neutral",
+            "ticker_sentiment": [
+                {
+                    "ticker": "ASRT",
+                    "relevance_score": "1.000000",
+                    "ticker_sentiment_score": "0.042643",
+                    "ticker_sentiment_label": "Neutral"
+                }
+            ]
+        },
+        {
+            "title": "CMS Energy to pair first-quarter results with 2026 outlook in webcast",
+            "url": "https://www.stocktitan.net/news/CMS/cms-energy-to-announce-2026-first-quarter-results-on-april-2jmcxaeteksf.html",
+            "time_published": "20260407T203029",
+            "authors": [
+                "NULL"
+            ],
+            "summary": "CMS Energy (NYSE: CMS) announced it would release its 2026 first-quarter results and provide a business and financial outlook on Tuesday, April 28, 2026, at 10:00 a.m. EDT. A live webcast will be available on the company's website, with an audio replay archived for 30 days. The announcement also details the company's past earnings call patterns and recent operational news.",
+            "banner_image": "https://mma.prnewswire.com/media/430503/CMS_Energy_Logo_v2.jpg",
+            "source": "Stock Titan",
+            "category_within_source": "General",
+            "source_domain": "Stock Titan",
+            "topics": [
+                {
+                    "topic": "earnings",
+                    "relevance_score": "0.903295"
+                },
+                {
+                    "topic": "financial_markets",
+                    "relevance_score": "0.643435"
+                },
+                {
+                    "topic": "energy_transportation",
+                    "relevance_score": "0.612904"
+                }
+            ],
+            "overall_sentiment_score": 0.048399,
+            "overall_sentiment_label": "Neutral",
+            "ticker_sentiment": [
+                {
+                    "ticker": "CMS",
+                    "relevance_score": "0.318659",
+                    "ticker_sentiment_score": "0.045059",
+                    "ticker_sentiment_label": "Neutral"
+                }
+            ]
+        },
+        {
+            "title": "CMS Energy to Announce 2026 First Quarter Results on April 28",
+            "url": "https://markets.ft.com/data/announce/detail?dockey=600-202604071630PR_NEWS_USPRX____DE28891-1",
+            "time_published": "20260407T203029",
+            "authors": [],
+            "summary": "CMS Energy (NYSE: CMS) announced it will provide its 2026 first-quarter results and a business and financial outlook on Tuesday, April 28, 2026, at 10:00 a.m. EDT. A webcast of the presentation will be available on the company's website, cmsenergy.com, with an audio replay archived for 30 days in the \"Investors\" section. CMS Energy is a Michigan-based energy company with Consumers Energy as its primary business.",
+            "banner_image": "https://cmsenergy.com",
+            "source": "Financial Times",
+            "category_within_source": "General",
+            "source_domain": "Financial Times",
+            "topics": [
+                {
+                    "topic": "earnings",
+                    "relevance_score": "0.933208"
+                },
+                {
+                    "topic": "energy_transportation",
+                    "relevance_score": "0.747842"
+                }
+            ],
+            "overall_sentiment_score": 0.026409,
+            "overall_sentiment_label": "Neutral",
+            "ticker_sentiment": [
+                {
+                    "ticker": "CMS",
+                    "relevance_score": "1.000000",
+                    "ticker_sentiment_score": "0.034204",
+                    "ticker_sentiment_label": "Neutral"
+                }
+            ]
+        },
+        {
+            "title": "Does Generac (GNRC) And CPower\u2019s PJM Deal Quietly Reposition Its Commercial Energy Strategy?",
+            "url": "https://simplywall.st/stocks/us/capital-goods/nyse-gnrc/generac-holdings/news/does-generac-gnrc-and-cpowers-pjm-deal-quietly-reposition-it",
+            "time_published": "20260407T203008",
+            "authors": [
+                "Simply Wall St",
+                "Sasha Jovanovic"
+            ],
+            "summary": "Generac Holdings Inc. and CPower Energy have partnered to deploy distributed generation solutions for commercial and industrial customers in PJM, including battery storage, generators, and microgrids. This collaboration aims to leverage Generac's equipment and CPower's demand response expertise to address rising electricity demand and high power prices. The deal reinforces Generac's strategy to expand its commercial and industrial energy solutions, moving beyond weather-driven residential demand while executing on data center generator opportunities and navigating risks from its clean energy segment.",
+            "banner_image": null,
+            "source": "Simply Wall Street",
+            "category_within_source": "General",
+            "source_domain": "Simply Wall Street",
+            "topics": [
+                {
+                    "topic": "earnings",
+                    "relevance_score": "0.906481"
+                },
+                {
+                    "topic": "financial_markets",
+                    "relevance_score": "0.846445"
+                },
+                {
+                    "topic": "energy_transportation",
+                    "relevance_score": "0.928274"
+                },
+                {
+                    "topic": "technology",
+                    "relevance_score": "0.641830"
+                }
+            ],
+            "overall_sentiment_score": 0.318122,
+            "overall_sentiment_label": "Somewhat-Bullish",
+            "ticker_sentiment": [
+                {
+                    "ticker": "GNRC",
+                    "relevance_score": "1.000000",
+                    "ticker_sentiment_score": "0.337918",
+                    "ticker_sentiment_label": "Somewhat-Bullish"
+                }
+            ]
+        },
+        {
+            "title": "Global Payments Inc. stock underperforms Tuesday when compared to competitors",
+            "url": "https://www.marketwatch.com/data-news/global-payments-inc-stock-underperforms-tuesday-when-compared-to-competitors-737c1ba5-aee407661029?gaa_at=eafs&gaa_n=AWEtsqejEiPZz2QQvujc-Z09mgXr05OeZfTlBKypKzbMoH70G3fF80xVmC1Y&gaa_ts=69d56eaf&gaa_sig=uwJXXlWRVRDx5XmMZQN_kjzrNZwGOxTMSCGohLqR7OCXqy_8BIeJSKXtNJFRLFvl038Ay2p0yFsssceH8OCYnw%3D%3D",
+            "time_published": "20260407T203005",
+            "authors": [
+                "MarketWatch Automation"
+            ],
+            "summary": "Global Payments Inc. (GPN) stock experienced a 3.60% decline on Tuesday, closing at $62.70, underperforming key market indices like the S&P 500 and Dow Jones Industrial Average. The company's stock is now 31.07% below its 52-week high of $90.96.",
+            "banner_image": "https://images.mktw.net/im-220105?width=700&height=466",
+            "source": "MarketWatch",
+            "category_within_source": "General",
+            "source_domain": "MarketWatch",
+            "topics": [
+                {
+                    "topic": "financial_markets",
+                    "relevance_score": "0.928218"
+                },
+                {
+                    "topic": "finance",
+                    "relevance_score": "0.725634"
+                }
+            ],
+            "overall_sentiment_score": -0.418098,
+            "overall_sentiment_label": "Bearish",
+            "ticker_sentiment": [
+                {
+                    "ticker": "GPN",
+                    "relevance_score": "1.000000",
+                    "ticker_sentiment_score": "-0.449229",
+                    "ticker_sentiment_label": "Bearish"
+                }
+            ]
+        },
+        {
+            "title": "Sysco (NYSE: SYY) to Buy Jetro for $29B \u2014 CEO Hourican Details Deal",
+            "url": "https://www.stocktitan.net/sec-filings/SYY/425-sysco-corp-business-combination-communication-f915922a715e.html",
+            "time_published": "20260407T202952",
+            "authors": [],
+            "summary": "Sysco Corporation plans to acquire Jetro Restaurant Depot for $29 billion, a move CEO Kevin Hourican believes will expand Sysco's cash-and-carry footprint, increase revenue by 20%, and free cash flow by 55%. The deal aims to leverage Jetro's low-cost model and broad assortment, especially for smaller restaurants, while also enhancing Sysco's delivery services and purchasing power. Despite an initial negative market reaction, Hourican emphasizes the strategic fit and resilience of Jetro's business model, particularly its consistent sales and profit growth.",
+            "banner_image": null,
+            "source": "Stock Titan",
+            "category_within_source": "General",
+            "source_domain": "Stock Titan",
+            "topics": [
+                {
+                    "topic": "mergers_and_acquisitions",
+                    "relevance_score": "1.000000"
+                },
+                {
+                    "topic": "retail_wholesale",
+                    "relevance_score": "0.808937"
+                },
+                {
+                    "topic": "finance",
+                    "relevance_score": "0.724318"
+                },
+                {
+                    "topic": "earnings",
+                    "relevance_score": "0.733320"
+                },
+                {
+                    "topic": "economy_macro",
+                    "relevance_score": "0.646902"
+                }
+            ],
+            "overall_sentiment_score": 0.319242,
+            "overall_sentiment_label": "Somewhat-Bullish",
+            "ticker_sentiment": [
+                {
+                    "ticker": "SYY",
+                    "relevance_score": "1.000000",
+                    "ticker_sentiment_score": "0.328199",
+                    "ticker_sentiment_label": "Somewhat-Bullish"
+                }
+            ]
+        },
+        {
+            "title": "Q1 2026 revenue jumps at Hyperscale Data (NYSE: GPUS) on Gresham and Ault Lending",
+            "url": "https://www.stocktitan.net/sec-filings/GPUS/8-k-hyperscale-data-inc-reports-material-event-394f78ba5ed7.html",
+            "time_published": "20260407T202902",
+            "authors": [],
+            "summary": "Hyperscale Data (GPUS) announced preliminary unaudited Q1 2026 consolidated revenue between $43 million and $45 million, marking a substantial 72% to 80% increase year-over-year. This growth is primarily attributed to contributions from its subsidiaries, Gresham Worldwide, post-bankruptcy, and high-margin revenue from Ault Lending. The company also reiterated its strategic pivot towards AI data centers and digital assets, with a planned divestiture of Ault Capital Group in Q2 2027.",
+            "banner_image": "https://www.stocktitan.net/img/logo/stock-titan-logo-header-free.png",
+            "source": "Stock Titan",
+            "category_within_source": "General",
+            "source_domain": "Stock Titan",
+            "topics": [
+                {
+                    "topic": "earnings",
+                    "relevance_score": "0.940936"
+                },
+                {
+                    "topic": "finance",
+                    "relevance_score": "0.826750"
+                },
+                {
+                    "topic": "technology",
+                    "relevance_score": "0.744564"
+                }
+            ],
+            "overall_sentiment_score": 0.011801,
+            "overall_sentiment_label": "Neutral",
+            "ticker_sentiment": [
+                {
+                    "ticker": "AULT",
+                    "relevance_score": "0.344718",
+                    "ticker_sentiment_score": "0.019214",
+                    "ticker_sentiment_label": "Neutral"
+                }
+            ]
+        },
+        {
+            "title": "PNC completes $119.3B community benefits plan, breezes past original goal",
+            "url": "https://www.bizjournals.com/pittsburgh/news/2026/04/07/pnc-community-benefits.html",
+            "time_published": "20260407T202854",
+            "authors": [
+                "Patty Tascarella"
+            ],
+            "summary": "PNC has concluded its $119.3 billion community investment plan, surpassing original expectations. The plan, initiated after a significant acquisition, focused on distributing funds across housing, small business, and charitable initiatives nationwide. The bank's efforts demonstrate a strong commitment to community development.",
+            "banner_image": "https://media.bizj.us/view/img/12560056/pnc-0002*320xx1825-2738-0-0.jpg",
+            "source": "The Business Journals",
+            "category_within_source": "General",
+            "source_domain": "The Business Journals",
+            "topics": [
+                {
+                    "topic": "finance",
+                    "relevance_score": "0.932670"
+                },
+                {
+                    "topic": "earnings",
+                    "relevance_score": "0.720628"
+                },
+                {
+                    "topic": "economy_fiscal",
+                    "relevance_score": "0.619032"
+                },
+                {
+                    "topic": "real_estate",
+                    "relevance_score": "0.633896"
+                }
+            ],
+            "overall_sentiment_score": 0.48361,
+            "overall_sentiment_label": "Bullish",
+            "ticker_sentiment": [
+                {
+                    "ticker": "PNC",
+                    "relevance_score": "1.000000",
+                    "ticker_sentiment_score": "0.478181",
+                    "ticker_sentiment_label": "Bullish"
+                }
+            ]
+        },
+        {
+            "title": "Adtran Holdings, Inc. / US00486H1059",
+            "url": "https://www.ad-hoc-news.de/boerse/news/stimmrechtsanteile/adtran-holdings-inc-us00486h1059/69099201",
+            "time_published": "20260407T202823",
+            "authors": [],
+            "summary": "This article reports on a major holdings notification by Adtran Holdings, Inc. to comply with the German Securities Trading Act. The notification details that The Goldman Sachs Group, Inc. has acquired/disposed of shares with voting rights, resulting in a total voting rights percentage of 10.85% as of April 1, 2026. The report includes a breakdown of direct and indirect voting rights, as well as those held through various financial instruments.",
+            "banner_image": "https://www.ad-hoc-news.de/img/logos/logo_264x69.jpg",
+            "source": "AD HOC NEWS",
+            "category_within_source": "General",
+            "source_domain": "AD HOC NEWS",
+            "topics": [
+                {
+                    "topic": "financial_markets",
+                    "relevance_score": "0.929215"
+                },
+                {
+                    "topic": "finance",
+                    "relevance_score": "0.716536"
+                }
+            ],
+            "overall_sentiment_score": 0.007105,
+            "overall_sentiment_label": "Neutral",
+            "ticker_sentiment": [
+                {
+                    "ticker": "ADTN",
+                    "relevance_score": "0.325165",
+                    "ticker_sentiment_score": "0.049357",
+                    "ticker_sentiment_label": "Neutral"
+                }
+            ]
+        },
+        {
+            "title": "Deep Track files Schedule 13G reporting 7.36M shares in ALMS (ALMS)",
+            "url": "https://www.stocktitan.net/sec-filings/ALMS/schedule-13g-alumis-inc-passive-investment-disclosure-5-d2a6bba96f72.html",
+            "time_published": "20260407T202729",
+            "authors": [],
+            "summary": "Deep Track Capital, Deep Track Biotechnology Master Fund, and David Kroin have jointly filed a Schedule 13G, reporting beneficial ownership of 7,362,035 shares of ALUMIS Inc. (ALMS). This represents 5.98% of the company's common stock as of April 7, 2026. The filing indicates shared voting and dispositive power over these shares, based on 123,139,425 shares outstanding as of March 12, 2026.",
+            "banner_image": null,
+            "source": "Stock Titan",
+            "category_within_source": "General",
+            "source_domain": "Stock Titan",
+            "topics": [
+                {
+                    "topic": "finance",
+                    "relevance_score": "0.908903"
+                },
+                {
+                    "topic": "life_sciences",
+                    "relevance_score": "0.714011"
+                }
+            ],
+            "overall_sentiment_score": 0.001309,
+            "overall_sentiment_label": "Neutral",
+            "ticker_sentiment": [
+                {
+                    "ticker": "ALMS",
+                    "relevance_score": "1.000000",
+                    "ticker_sentiment_score": "0.032584",
+                    "ticker_sentiment_label": "Neutral"
+                }
+            ]
+        },
+        {
+            "title": "MAA (NYSE: MAA) EVP French Barton reports 8,508-share ownership in Form 3",
+            "url": "https://www.stocktitan.net/sec-filings/MAA/form-3-mid-america-apartment-communities-inc-initial-statement-of-ben-8e0482f8d580.html",
+            "time_published": "20260407T202628",
+            "authors": [],
+            "summary": "MID AMERICA APARTMENT COMMUNITIES INC. EVP Investments, James Barton French, has filed an initial ownership report (Form 3) disclosing direct ownership of 8,508 shares of the company's Common Stock. This filing establishes his beneficially owned shares as of April 1, 2026, and does not indicate any recent buy or sell transactions. The report serves as a baseline for his holdings within the company.",
+            "banner_image": null,
+            "source": "Stock Titan",
+            "category_within_source": "General",
+            "source_domain": "Stock Titan",
+            "topics": [
+                {
+                    "topic": "finance",
+                    "relevance_score": "0.821266"
+                },
+                {
+                    "topic": "real_estate",
+                    "relevance_score": "0.701695"
+                },
+                {
+                    "topic": "financial_markets",
+                    "relevance_score": "0.611285"
+                }
+            ],
+            "overall_sentiment_score": 0.042332,
+            "overall_sentiment_label": "Neutral",
+            "ticker_sentiment": [
+                {
+                    "ticker": "MAA",
+                    "relevance_score": "1.000000",
+                    "ticker_sentiment_score": "0.024413",
+                    "ticker_sentiment_label": "Neutral"
+                }
+            ]
+        },
+        {
+            "title": "Aehr Test Systems reports $37.2M bookings in fiscal Q3",
+            "url": "https://www.investing.com/news/company-news/aehr-test-systems-reports-372m-bookings-in-fiscal-q3-93CH-4601415",
+            "time_published": "20260407T202615",
+            "authors": [
+                "Company News"
+            ],
+            "summary": "Aehr Test Systems (NASDAQ:AEHR) announced $37.2 million in bookings for its fiscal Q3 ended February 27, 2026, achieving a book-to-bill ratio over 3.5x. Despite a decline in net revenue and an increased GAAP net loss compared to the prior year, the company holds a backlog of $38.7 million and expects strong bookings for the second half of fiscal 2026. The company also recently secured significant orders from a new silicon photonics customer and a follow-on order from an existing one, reinforcing its position in the AI and data center markets.",
+            "banner_image": "https://i-invdn-com.investing.com/news/LYNXNPEC0E0NI_L.jpg",
+            "source": "Investing.com",
+            "category_within_source": "General",
+            "source_domain": "Investing.com",
+            "topics": [
+                {
+                    "topic": "earnings",
+                    "relevance_score": "1.000000"
+                },
+                {
+                    "topic": "technology",
+                    "relevance_score": "0.837421"
+                },
+                {
+                    "topic": "financial_markets",
+                    "relevance_score": "0.717795"
+                }
+            ],
+            "overall_sentiment_score": 0.147422,
+            "overall_sentiment_label": "Neutral",
+            "ticker_sentiment": [
+                {
+                    "ticker": "AEHR",
+                    "relevance_score": "1.000000",
+                    "ticker_sentiment_score": "0.108237",
+                    "ticker_sentiment_label": "Neutral"
+                }
+            ]
+        },
+        {
+            "title": "Intel joins Elon Musk\u2019s Terafab chip manufacturing initiative",
+            "url": "https://siliconangle.com/2026/04/07/intel-joins-elon-musks-terafab-chip-manufacturing-initiative/",
+            "time_published": "20260407T202554",
+            "authors": [
+                "Maria Deutscher"
+            ],
+            "summary": "Intel Corp. announced its participation in Elon Musk's Terafab initiative, a collaboration between SpaceX and Tesla focused on building a semiconductor manufacturing hub for AI and robotics chips. Intel's involvement, which caused its shares to climb 4%, could include plant construction, maintenance, and providing its advanced chip packaging technologies. The Terafab campus in Texas aims to produce 1 TW/year of compute and will feature two fabs for edge processors and orbital AI data center chips.",
+            "banner_image": "https://d15shllkswkct0.cloudfront.net/wp-content/blogs.dir/1/files/2026/04/Intel.jpg",
+            "source": "SiliconANGLE",
+            "category_within_source": "General",
+            "source_domain": "SiliconANGLE",
+            "topics": [
+                {
+                    "topic": "technology",
+                    "relevance_score": "1.000000"
+                },
+                {
+                    "topic": "manufacturing",
+                    "relevance_score": "0.910794"
+                }
+            ],
+            "overall_sentiment_score": 0.237946,
+            "overall_sentiment_label": "Somewhat-Bullish",
+            "ticker_sentiment": [
+                {
+                    "ticker": "INTC",
+                    "relevance_score": "1.000000",
+                    "ticker_sentiment_score": "0.417824",
+                    "ticker_sentiment_label": "Bullish"
+                },
+                {
+                    "ticker": "TSLA",
+                    "relevance_score": "0.840342",
+                    "ticker_sentiment_score": "0.335448",
+                    "ticker_sentiment_label": "Somewhat-Bullish"
+                },
+                {
+                    "ticker": "AMZN",
+                    "relevance_score": "0.619321",
+                    "ticker_sentiment_score": "0.118016",
+                    "ticker_sentiment_label": "Neutral"
+                },
+                {
+                    "ticker": "GOOGL",
+                    "relevance_score": "0.603834",
+                    "ticker_sentiment_score": "0.131988",
+                    "ticker_sentiment_label": "Neutral"
+                },
+                {
+                    "ticker": "GOOG",
+                    "relevance_score": "0.618961",
+                    "ticker_sentiment_score": "0.130873",
+                    "ticker_sentiment_label": "Neutral"
+                }
+            ]
+        },
+        {
+            "title": "Renergen Limited Helium Project hits phase 1 milestone ahead of schedule, ASP Isotopes accelerates progress",
+            "url": "https://tradersunion.com/news/companies/show/1852804-helium-project-milestone-achieved/",
+            "time_published": "20260407T202513",
+            "authors": [
+                "Ivan Andriyenko"
+            ],
+            "summary": "ASP Isotopes Inc. has completed phase 1 drilling on the Renergen Limited Helium Project four months ahead of schedule. This early completion, coupled with gas flow rates 16 times higher than previous wells, marks a significant milestone for the project. The company plans to advance to subsequent phases of the Helium Project.",
+            "banner_image": "https://files.tradersunion.com/images/twitter-news/aspisotopes/aspisotopes_01.jpg",
+            "source": "Traders Union",
+            "category_within_source": "General",
+            "source_domain": "Traders Union",
+            "topics": [
+                {
+                    "topic": "energy_transportation",
+                    "relevance_score": "0.921030"
+                },
+                {
+                    "topic": "manufacturing",
+                    "relevance_score": "0.738332"
+                }
+            ],
+            "overall_sentiment_score": 0.486144,
+            "overall_sentiment_label": "Bullish",
+            "ticker_sentiment": [
+                {
+                    "ticker": "ASPI",
+                    "relevance_score": "1.000000",
+                    "ticker_sentiment_score": "0.485235",
+                    "ticker_sentiment_label": "Bullish"
+                }
+            ]
+        },
+        {
+            "title": "Executive pay and board elections at Alkami (NASDAQ: ALKT)",
+            "url": "https://www.stocktitan.net/sec-filings/ALKT/def-14a-alkami-technology-inc-definitive-proxy-statement-b064a3030dcf.html",
+            "time_published": "20260407T202353",
+            "authors": [],
+            "summary": "Alkami Technology, Inc. (NASDAQ: ALKT) will hold its virtual annual shareholder meeting on May 19, 2026, where stockholders will vote on the election of three Class II directors, the ratification of Ernst & Young LLP as auditor, and an advisory proposal on executive compensation. The company reported 2025 GAAP revenue of $443.6 million, a 32.9% year-over-year increase, and Adjusted EBITDA of $59.1 million, while also noting a GAAP net loss of $47.7 million. Executive compensation for 2025 emphasizes a pay-for-performance approach tied to annual financial results and long-term equity incentives, with annual bonus payouts averaging 125.3% of target.",
+            "banner_image": "https://www.stocktitan.net/img/logo/stock-titan-logo-header-free.png",
+            "source": "Stock Titan",
+            "category_within_source": "General",
+            "source_domain": "Stock Titan",
+            "topics": [
+                {
+                    "topic": "earnings",
+                    "relevance_score": "0.948717"
+                },
+                {
+                    "topic": "finance",
+                    "relevance_score": "0.849470"
+                }
+            ],
+            "overall_sentiment_score": 0.150961,
+            "overall_sentiment_label": "Somewhat-Bullish",
+            "ticker_sentiment": [
+                {
+                    "ticker": "ALKT",
+                    "relevance_score": "1.000000",
+                    "ticker_sentiment_score": "0.247806",
+                    "ticker_sentiment_label": "Somewhat-Bullish"
+                },
+                {
+                    "ticker": "AXON",
+                    "relevance_score": "0.623621",
+                    "ticker_sentiment_score": "0.118229",
+                    "ticker_sentiment_label": "Neutral"
+                },
+                {
+                    "ticker": "MSFT",
+                    "relevance_score": "0.643375",
+                    "ticker_sentiment_score": "0.121703",
+                    "ticker_sentiment_label": "Neutral"
+                },
+                {
+                    "ticker": "ORCL",
+                    "relevance_score": "0.641428",
+                    "ticker_sentiment_score": "0.143329",
+                    "ticker_sentiment_label": "Neutral"
+                }
+            ]
+        },
+        {
+            "title": "How Investors May Respond To Tractor Supply (TSCO) Earnings Miss Amid Expanded FFA Community Initiatives",
+            "url": "https://simplywall.st/stocks/us/retail/nasdaq-tsco/tractor-supply/news/how-investors-may-respond-to-tractor-supply-tsco-earnings-mi",
+            "time_published": "20260407T202218",
+            "authors": [
+                "Simply Wall St",
+                "Sasha Jovanovic"
+            ],
+            "summary": "Tractor Supply Company recently reported a softer fourth quarter with revenue missing analyst expectations and weaker full-year earnings guidance. Despite this, the company continues to invest in community engagement, such as an FFA-exclusive contest, to strengthen its rural brand identity. Investors will likely weigh these near-term financial pressures against the company's long-term strategy of fostering customer loyalty and its \"Life Out Here\" community focus.",
+            "banner_image": null,
+            "source": "Simply Wall Street",
+            "category_within_source": "General",
+            "source_domain": "Simply Wall Street",
+            "topics": [
+                {
+                    "topic": "earnings",
+                    "relevance_score": "0.945944"
+                },
+                {
+                    "topic": "retail_wholesale",
+                    "relevance_score": "0.829966"
+                },
+                {
+                    "topic": "financial_markets",
+                    "relevance_score": "0.745433"
+                }
+            ],
+            "overall_sentiment_score": -0.207872,
+            "overall_sentiment_label": "Somewhat-Bearish",
+            "ticker_sentiment": [
+                {
+                    "ticker": "TSCO",
+                    "relevance_score": "1.000000",
+                    "ticker_sentiment_score": "-0.218345",
+                    "ticker_sentiment_label": "Somewhat-Bearish"
+                }
+            ]
+        },
+        {
+            "title": "Adeia to Release First Quarter 2026 Financial Results on May 4, 2026",
+            "url": "https://www.manilatimes.net/2026/04/08/tmt-newswire/globenewswire/adeia-to-release-first-quarter-2026-financial-results-on-may-4-2026/2315900",
+            "time_published": "20260407T202218",
+            "authors": [
+                "GlobeNewswire"
+            ],
+            "summary": "Adeia Inc. (Nasdaq: ADEA) announced it will release its first quarter 2026 financial results on Monday, May 4, 2026. The company will host an earnings conference call at 2:00 p.m. Pacific Time (5:00 p.m. Eastern Time) on the same day. Details for accessing the call via dial-in and webcast have been provided for interested participants.",
+            "banner_image": "https://cdnx.premiumread.com/?url=https://www.manilatimes.net/theme_manilatimes/images/TMT_1920x1008.jpg&w=1920&q=100&f=webp&v=1",
+            "source": "The Manila Times",
+            "category_within_source": "General",
+            "source_domain": "The Manila Times",
+            "topics": [
+                {
+                    "topic": "earnings",
+                    "relevance_score": "1.000000"
+                },
+                {
+                    "topic": "technology",
+                    "relevance_score": "0.837966"
+                }
+            ],
+            "overall_sentiment_score": 0.043914,
+            "overall_sentiment_label": "Neutral",
+            "ticker_sentiment": [
+                {
+                    "ticker": "ADEA",
+                    "relevance_score": "1.000000",
+                    "ticker_sentiment_score": "0.001821",
+                    "ticker_sentiment_label": "Neutral"
+                }
+            ]
+        },
+        {
+            "title": "Equifax will post March-quarter results before market open April 21",
+            "url": "https://www.stocktitan.net/news/EFX/equifax-announces-earnings-release-date-and-conference-call-for-kcpb6hjcst9s.html",
+            "time_published": "20260407T201946",
+            "authors": [],
+            "summary": "Equifax (NYSE: EFX) is scheduled to report its first-quarter 2026 financial results on April 21, 2026. The company will issue a press release and post presentation materials at 6:30 a.m. ET, followed by a conference call at 8:30 a.m. ET on the same day. An audio replay of the call will be available on their investor website starting April 22.",
+            "banner_image": "https://mma.prnewswire.com/media/448516/Equifax_jpg_Logo.jpg",
+            "source": "Stock Titan",
+            "category_within_source": "General",
+            "source_domain": "Stock Titan",
+            "topics": [
+                {
+                    "topic": "earnings",
+                    "relevance_score": "0.940650"
+                },
+                {
+                    "topic": "financial_markets",
+                    "relevance_score": "0.621758"
+                },
+                {
+                    "topic": "finance",
+                    "relevance_score": "0.612793"
+                }
+            ],
+            "overall_sentiment_score": 0.042717,
+            "overall_sentiment_label": "Neutral",
+            "ticker_sentiment": [
+                {
+                    "ticker": "EFX",
+                    "relevance_score": "1.000000",
+                    "ticker_sentiment_score": "0.033292",
+                    "ticker_sentiment_label": "Neutral"
+                }
+            ]
+        },
+        {
+            "title": "CrowdStrike Holdings Inc Stock (CRWD) Closed Up by 5.88% on Apr 7: Facts Behind the Movement",
+            "url": "https://www.tradingkey.com/news/Market-Movers/261758503-market-movers-crwd-20260407",
+            "time_published": "20260407T201534",
+            "authors": [
+                "TradingKey"
+            ],
+            "summary": "CrowdStrike Holdings Inc (CRWD) saw a 5.88% increase in its stock price on April 7, driven by several factors including an additional $500 million share repurchase authorization, a \"Buy\" consensus rating from analysts, and the unveiling of its Charlotte AI AgentWorks Ecosystem at RSA 2026. These developments, coupled with strong financial performance and overall growth in the cybersecurity sector, contributed to the positive market reaction despite some intraday volatility.",
+            "banner_image": "https://resource.tradingkey.com/cdn/images/logo/web-logo-dark.png",
+            "source": "TradingKey",
+            "category_within_source": "General",
+            "source_domain": "TradingKey",
+            "topics": [
+                {
+                    "topic": "earnings",
+                    "relevance_score": "0.921282"
+                },
+                {
+                    "topic": "financial_markets",
+                    "relevance_score": "0.821570"
+                },
+                {
+                    "topic": "technology",
+                    "relevance_score": "0.746340"
+                }
+            ],
+            "overall_sentiment_score": 0.318291,
+            "overall_sentiment_label": "Somewhat-Bullish",
+            "ticker_sentiment": [
+                {
+                    "ticker": "CRWD",
+                    "relevance_score": "1.000000",
+                    "ticker_sentiment_score": "0.721121",
+                    "ticker_sentiment_label": "Bullish"
+                },
+                {
+                    "ticker": "MSFT",
+                    "relevance_score": "0.636019",
+                    "ticker_sentiment_score": "0.115968",
+                    "ticker_sentiment_label": "Neutral"
+                },
+                {
+                    "ticker": "GOOGL",
+                    "relevance_score": "0.633826",
+                    "ticker_sentiment_score": "0.244776",
+                    "ticker_sentiment_label": "Somewhat-Bullish"
+                },
+                {
+                    "ticker": "META",
+                    "relevance_score": "0.612899",
+                    "ticker_sentiment_score": "0.141364",
+                    "ticker_sentiment_label": "Neutral"
+                }
+            ]
+        },
+        {
+            "title": "American Healthcare REIT to post Q1 results May 7, hold webcast May 8",
+            "url": "https://www.stocktitan.net/news/AHR/american-healthcare-reit-announces-dates-for-first-quarter-2026-b9azhulgt9sc.html",
+            "time_published": "20260407T201519",
+            "authors": [],
+            "summary": "American Healthcare REIT (NYSE: AHR) announced it will release its first quarter 2026 earnings on May 7, 2026, after market close, followed by a public conference call and webcast on May 8, 2026, at 10:00 a.m. PT / 1:00 p.m. ET. The company will review its Q1 2026 results, discuss recent events, and conduct a Q&A session. Investors can access the webcast or join via telephone, with a digital replay and full earnings report available on the company's Investor Relations website shortly after the call.",
+            "banner_image": "https://mma.prnewswire.com/media/1641068/American_Healthcare_REIT_logo.jpg",
+            "source": "Stock Titan",
+            "category_within_source": "General",
+            "source_domain": "Stock Titan",
+            "topics": [
+                {
+                    "topic": "earnings",
+                    "relevance_score": "1.000000"
+                },
+                {
+                    "topic": "finance",
+                    "relevance_score": "0.747710"
+                },
+                {
+                    "topic": "real_estate",
+                    "relevance_score": "0.634475"
+                }
+            ],
+            "overall_sentiment_score": 0.047147,
+            "overall_sentiment_label": "Neutral",
+            "ticker_sentiment": [
+                {
+                    "ticker": "AHR",
+                    "relevance_score": "1.000000",
+                    "ticker_sentiment_score": "0.028793",
+                    "ticker_sentiment_label": "Neutral"
+                }
+            ]
+        },
+        {
+            "title": "Essex will post quarterly results April 28, with open webcast next day",
+            "url": "https://www.stocktitan.net/news/ESS/essex-announces-release-and-conference-call-dates-for-its-first-dd98buv8jwlv.html",
+            "time_published": "20260407T201458",
+            "authors": [],
+            "summary": "Essex Property Trust, Inc. (NYSE: ESS) will release its first-quarter 2026 earnings on April 28, 2026, after market close. A conference call with senior management is scheduled for April 29, 2026, at 10:00 a.m. Pacific Time, accessible via internet or phone, with a replay available for 30 days online and 7 days digitally. Essex Property Trust is an S&P 500 REIT managing multifamily residential properties in West Coast markets.",
+            "banner_image": "https://www.stocktitan.net/img/logo/stock-titan-logo-header-free.png",
+            "source": "Stock Titan",
+            "category_within_source": "General",
+            "source_domain": "Stock Titan",
+            "topics": [
+                {
+                    "topic": "earnings",
+                    "relevance_score": "0.934971"
+                },
+                {
+                    "topic": "real_estate",
+                    "relevance_score": "0.746711"
+                }
+            ],
+            "overall_sentiment_score": 0.032723,
+            "overall_sentiment_label": "Neutral",
+            "ticker_sentiment": [
+                {
+                    "ticker": "ESS",
+                    "relevance_score": "0.318045",
+                    "ticker_sentiment_score": "0.011662",
+                    "ticker_sentiment_label": "Neutral"
+                }
+            ]
+        },
+        {
+            "title": "Seagate Technology Holdings PLC Stock (STX) Closed Up by 3.19% on Apr 7: A Full Analysis",
+            "url": "https://www.tradingkey.com/news/Market-Movers/261758501-market-movers-stx-20260407",
+            "time_published": "20260407T201451",
+            "authors": [
+                "TradingKey"
+            ],
+            "summary": "Seagate Technology Holdings PLC (STX) stock saw a 3.19% increase, outperforming the Technology Equipment sector, driven by strong demand for data storage solutions from the AI and data center sectors. The company's HAMR technology and positive analyst sentiment are key contributors to its growth. Despite some intraday volatility due to a recent downgrade and insider selling, technical and fundamental analyses show positive indicators.",
+            "banner_image": "https://resource.tradingkey.com/ai/wkrepot/885875d2-d701-4f7b-bfee-aced7b769f1c_1775592856.png",
+            "source": "TradingKey",
+            "category_within_source": "General",
+            "source_domain": "TradingKey",
+            "topics": [
+                {
+                    "topic": "earnings",
+                    "relevance_score": "0.874670"
+                },
+                {
+                    "topic": "financial_markets",
+                    "relevance_score": "0.924153"
+                },
+                {
+                    "topic": "technology",
+                    "relevance_score": "0.806813"
+                }
+            ],
+            "overall_sentiment_score": 0.084158,
+            "overall_sentiment_label": "Neutral",
+            "ticker_sentiment": [
+                {
+                    "ticker": "STX",
+                    "relevance_score": "1.000000",
+                    "ticker_sentiment_score": "0.579246",
+                    "ticker_sentiment_label": "Bullish"
+                },
+                {
+                    "ticker": "NVDA",
+                    "relevance_score": "0.674450",
+                    "ticker_sentiment_score": "0.107015",
+                    "ticker_sentiment_label": "Neutral"
+                },
+                {
+                    "ticker": "MU",
+                    "relevance_score": "0.605653",
+                    "ticker_sentiment_score": "0.016621",
+                    "ticker_sentiment_label": "Neutral"
+                },
+                {
+                    "ticker": "AAPL",
+                    "relevance_score": "0.564302",
+                    "ticker_sentiment_score": "-0.129756",
+                    "ticker_sentiment_label": "Neutral"
+                },
+                {
+                    "ticker": "JPM",
+                    "relevance_score": "0.566494",
+                    "ticker_sentiment_score": "-0.212385",
+                    "ticker_sentiment_label": "Somewhat-Bearish"
+                }
+            ]
+        },
+        {
+            "title": "Palo Alto Networks Inc Stock (PANW) Closed Up by 4.56% on Apr 7: What Signal Does It Send?",
+            "url": "https://www.tradingkey.com/news/Market-Movers/261758502-market-movers-panw-20260407",
+            "time_published": "20260407T201450",
+            "authors": [
+                "TradingKey"
+            ],
+            "summary": "Palo Alto Networks Inc (PANW) stock closed up by 4.56% on April 7, driven by CEO Nikesh Arora's $10 million stock purchase, a \"Buy\" rating from Benchmark with a $200 price target, and increasing demand in the cybersecurity sector. The company's strong next-generation security revenue growth and strategic positioning in a high-growth market, fueled by AI adoption and escalating threats, contribute to its positive outlook, despite risks such as revised guidance and potential share dilution from acquisitions.",
+            "banner_image": "https://resource.tradingkey.com/uploads/20251024/68658377675a42e2bbed98144a729ddatradingkeylogo-ed79a44cf96240a287ca1bb541f06bff.png",
+            "source": "TradingKey",
+            "category_within_source": "General",
+            "source_domain": "TradingKey",
+            "topics": [
+                {
+                    "topic": "earnings",
+                    "relevance_score": "0.948751"
+                },
+                {
+                    "topic": "financial_markets",
+                    "relevance_score": "0.913431"
+                },
+                {
+                    "topic": "technology",
+                    "relevance_score": "0.877709"
+                },
+                {
+                    "topic": "mergers_and_acquisitions",
+                    "relevance_score": "0.581644"
+                }
+            ],
+            "overall_sentiment_score": 0.52118,
+            "overall_sentiment_label": "Bullish",
+            "ticker_sentiment": [
+                {
+                    "ticker": "PANW",
+                    "relevance_score": "1.000000",
+                    "ticker_sentiment_score": "0.524291",
+                    "ticker_sentiment_label": "Bullish"
+                }
+            ]
+        },
+        {
+            "title": "Director at Andersons, Inc. (ANDE) sells 15,000 Common Stock shares",
+            "url": "https://www.stocktitan.net/sec-filings/ANDE/form-4-andersons-inc-insider-trading-activity-d09268daf649.html",
+            "time_published": "20260407T201307",
+            "authors": [],
+            "summary": "Andersons, Inc. director Patrick E. Bowe reported an open-market sale of 15,000 shares of Common Stock at $74.33 per share on April 6, 2026. This transaction amounted to an approximate sale value of $1,114,950. Following the sale, Bowe directly holds 129,874.6324 shares of the company.",
+            "banner_image": null,
+            "source": "Stock Titan",
+            "category_within_source": "General",
+            "source_domain": "Stock Titan",
+            "topics": [
+                {
+                    "topic": "financial_markets",
+                    "relevance_score": "0.906778"
+                },
+                {
+                    "topic": "finance",
+                    "relevance_score": "0.825247"
+                }
+            ],
+            "overall_sentiment_score": -0.201881,
+            "overall_sentiment_label": "Somewhat-Bearish",
+            "ticker_sentiment": [
+                {
+                    "ticker": "ANDE",
+                    "relevance_score": "1.000000",
+                    "ticker_sentiment_score": "-0.222938",
+                    "ticker_sentiment_label": "Somewhat-Bearish"
+                }
+            ]
+        },
+        {
+            "title": "Multi-Cancer Early Detection Test Added to Evexia Diagnostics Platform",
+            "url": "https://clpmag.com/disease-states/cancer/evexia-adds-onetest-multi-cancer-detection-test/",
+            "time_published": "20260407T200933",
+            "authors": [
+                "NULL"
+            ],
+            "summary": "20/20 BioLabs, Inc. has made its AI-powered OneTest for Cancer available through the Evexia Diagnostics platform, significantly expanding its reach to approximately 40,000 clinicians in the US. This collaboration integrates a multi-cancer early detection (MCED) blood test, which identifies and quantifies specific biomarkers, into existing clinical workflows to support proactive and personalized patient care. The test is processed in a CAP-accredited and CLIA-licensed laboratory, and 20/20 BioLabs also plans to launch OneTest for Longevity soon.",
+            "banner_image": "https://clpmag.com/wp-content/uploads/2026/04/disease-biomarker-1280x640.jpg",
+            "source": "Clinical Lab Products",
+            "category_within_source": "General",
+            "source_domain": "Clinical Lab Products",
+            "topics": [
+                {
+                    "topic": "life_sciences",
+                    "relevance_score": "1.000000"
+                },
+                {
+                    "topic": "technology",
+                    "relevance_score": "0.725735"
+                }
+            ],
+            "overall_sentiment_score": 0.181778,
+            "overall_sentiment_label": "Somewhat-Bullish",
+            "ticker_sentiment": [
+                {
+                    "ticker": "AIDX",
+                    "relevance_score": "0.334645",
+                    "ticker_sentiment_score": "0.029691",
+                    "ticker_sentiment_label": "Neutral"
+                },
+                {
+                    "ticker": "LH",
+                    "relevance_score": "0.642134",
+                    "ticker_sentiment_score": "0.336172",
+                    "ticker_sentiment_label": "Somewhat-Bullish"
+                }
+            ]
+        },
+        {
+            "title": "Vertical Data Inc. to Host Corporate Overview Webinar for Investors",
+            "url": "https://www.accessnewswire.com/newsroom/en/computers-technology-and-internet/vertical-data-inc.-to-host-corporate-overview-webinar-for-investo-1155815",
+            "time_published": "20260407T200549",
+            "authors": [],
+            "summary": "Vertical Data Inc. (OTCQB:VDTA) announced it will host a live corporate overview webinar on April 10, 2026, at 9:00 a.m. Pacific Time. CEO Deven Soni will discuss the company's business model, operational progress, capital markets strategy, and growth roadmap in the AI infrastructure sector, including its GPU financing platform and edge data center buildout. A live Q&A session will follow the presentation, and a replay will be available online.",
+            "banner_image": "https://storage.googleapis.com/accesswire/featureimages/1155815/.png",
+            "source": "ACCESS Newswire",
+            "category_within_source": "General",
+            "source_domain": "ACCESS Newswire",
+            "topics": [
+                {
+                    "topic": "technology",
+                    "relevance_score": "0.845801"
+                },
+                {
+                    "topic": "earnings",
+                    "relevance_score": "0.733099"
+                },
+                {
+                    "topic": "finance",
+                    "relevance_score": "0.601182"
+                }
+            ],
+            "overall_sentiment_score": 0.048238,
+            "overall_sentiment_label": "Neutral",
+            "ticker_sentiment": [
+                {
+                    "ticker": "ACCS",
+                    "relevance_score": "0.339738",
+                    "ticker_sentiment_score": "0.018023",
+                    "ticker_sentiment_label": "Neutral"
+                }
+            ]
+        },
+        {
+            "title": "ROLLINS, INC. SCHEDULES DATE FOR RELEASE OF FIRST QUARTER 2026 FINANCIAL RESULTS",
+            "url": "https://markets.ft.com/data/announce/detail?dockey=600-202604071605PR_NEWS_USPRX____CL28859-1",
+            "time_published": "20260407T200525",
+            "authors": [],
+            "summary": "Rollins, Inc. announced it will release its first-quarter 2026 financial results after market close on Wednesday, April 22, 2026. The company will also host a conference call on Thursday, April 23, 2026, at 8:30 a.m. Eastern Time, to discuss the results. Interested parties can access the call via phone or live webcast on the company's investor relations website, with a replay available for 180 days.",
+            "banner_image": "https://mma.prnewswire.com/media/2257900/Rollins___Logo.jpg",
+            "source": "Financial Times",
+            "category_within_source": "General",
+            "source_domain": "Financial Times",
+            "topics": [
+                {
+                    "topic": "earnings",
+                    "relevance_score": "0.922629"
+                },
+                {
+                    "topic": "finance",
+                    "relevance_score": "0.608038"
+                }
+            ],
+            "overall_sentiment_score": 0.006815,
+            "overall_sentiment_label": "Neutral",
+            "ticker_sentiment": [
+                {
+                    "ticker": "ROL",
+                    "relevance_score": "1.000000",
+                    "ticker_sentiment_score": "0.039694",
+                    "ticker_sentiment_label": "Neutral"
+                }
+            ]
+        },
+        {
+            "title": "AI and data center demand drives $37.2M in orders at Aehr Test",
+            "url": "https://www.stocktitan.net/news/AEHR/aehr-test-systems-reports-over-37-million-in-quarterly-bookings-c2kk0h6rtihx.html",
+            "time_published": "20260407T200515",
+            "authors": [],
+            "summary": "Aehr Test Systems reported strong quarterly bookings of $37.2 million for Q3 fiscal 2026, driven by high demand for its wafer-level burn-in (WLBI) and package-level burn-in (PLBI) solutions for AI and data center applications. Despite this, the company saw a decline in Q3 revenue to $10.3 million and a widened GAAP net loss of $3.2 million compared to the previous year. Aehr reaffirmed its second-half fiscal 2026 revenue guidance and anticipates significant growth in fiscal 2027, propelled by an expanding installed base in AI, silicon photonics, and power semiconductors.",
+            "banner_image": "https://app.accessnewswire.com/img.ashx?id=1155697",
+            "source": "Stock Titan",
+            "category_within_source": "General",
+            "source_domain": "Stock Titan",
+            "topics": [
+                {
+                    "topic": "earnings",
+                    "relevance_score": "0.932420"
+                },
+                {
+                    "topic": "technology",
+                    "relevance_score": "0.832541"
+                }
+            ],
+            "overall_sentiment_score": 0.018514,
+            "overall_sentiment_label": "Neutral",
+            "ticker_sentiment": [
+                {
+                    "ticker": "AEHR",
+                    "relevance_score": "0.324580",
+                    "ticker_sentiment_score": "0.019201",
+                    "ticker_sentiment_label": "Neutral"
+                }
+            ]
+        },
+        {
+            "title": "Arista Networks to Announce Q1 2026 Financial Results on Tuesday, May 5, 2026",
+            "url": "https://www.businesswire.com/news/home/20260407513593/en/Arista-Networks-to-Announce-Q1-2026-Financial-Results-on-Tuesday-May-5-2026",
+            "time_published": "20260407T200511",
+            "authors": [],
+            "summary": "Arista Networks (NYSE: ANET) will release its financial results for the first quarter of 2026 on Tuesday, May 5, 2026, after U.S. markets close, followed by a conference call. The company also announced its participation in several upcoming investor events in May and June 2026, including the Needham Technology, Media & Consumer Conference, J.P. Morgan Global Technology, Media and Communications Conference, William Blair 46th Annual Growth Stock Conference, and Bank of America Global Technology Conference.",
+            "banner_image": "https://mms.businesswire.com/media/20260407513593/en/336704/4/Arista_Logo_Transparent_Blue.jpg",
+            "source": "Business Wire",
+            "category_within_source": "General",
+            "source_domain": "Business Wire",
+            "topics": [
+                {
+                    "topic": "earnings",
+                    "relevance_score": "1.000000"
+                },
+                {
+                    "topic": "technology",
+                    "relevance_score": "0.804096"
+                },
+                {
+                    "topic": "finance",
+                    "relevance_score": "0.602888"
+                }
+            ],
+            "overall_sentiment_score": 0.020154,
+            "overall_sentiment_label": "Neutral",
+            "ticker_sentiment": [
+                {
+                    "ticker": "ANET",
+                    "relevance_score": "1.000000",
+                    "ticker_sentiment_score": "0.046649",
+                    "ticker_sentiment_label": "Neutral"
+                }
+            ]
+        },
+        {
+            "title": "Rollins lines up April 23 investor call after Q1 results arrive",
+            "url": "https://www.stocktitan.net/news/ROL/rollins-inc-schedules-date-for-release-of-first-quarter-2026-9n68p8jv9y4s.html",
+            "time_published": "20260407T200507",
+            "authors": [],
+            "summary": "Rollins, Inc. (NYSE: ROL) announced that it will release its first-quarter 2026 financial results after market close on April 22, 2026. The company will host a conference call on April 23, 2026, at 8:30 a.m. ET to review these results, with dial-in options and a live webcast available. A replay of the call will be accessible on the company's website for 180 days.",
+            "banner_image": "https://mma.prnewswire.com/media/2257900/Rollins___Logo.jpg",
+            "source": "Stock Titan",
+            "category_within_source": "General",
+            "source_domain": "Stock Titan",
+            "topics": [
+                {
+                    "topic": "earnings",
+                    "relevance_score": "0.936840"
+                },
+                {
+                    "topic": "finance",
+                    "relevance_score": "0.730873"
+                }
+            ],
+            "overall_sentiment_score": 0.035394,
+            "overall_sentiment_label": "Neutral",
+            "ticker_sentiment": [
+                {
+                    "ticker": "ROL",
+                    "relevance_score": "1.000000",
+                    "ticker_sentiment_score": "0.001045",
+                    "ticker_sentiment_label": "Neutral"
+                }
+            ]
+        },
+        {
+            "title": "American Coastal (ACIC) CEO converts stock units and withholds shares for taxes",
+            "url": "https://www.stocktitan.net/sec-filings/ACIC/form-4-american-coastal-insurance-corp-insider-trading-activity-4c8c2ec34842.html",
+            "time_published": "20260407T200432",
+            "authors": [],
+            "summary": "American Coastal Insurance Corp (ACIC) CEO Brad Martz converted 25,903 performance stock units, restricted stock units, and dividend equivalent units into common stock on April 3, 2026. To cover tax obligations related to this vesting, 10,365 common shares were withheld at $10.97 per share. Following these transactions, Martz directly holds 381,481 shares of ACIC common stock, reflecting a routine equity award vesting process rather than open-market trading.",
+            "banner_image": null,
+            "source": "Stock Titan",
+            "category_within_source": "General",
+            "source_domain": "Stock Titan",
+            "topics": [
+                {
+                    "topic": "finance",
+                    "relevance_score": "1.000000"
+                },
+                {
+                    "topic": "earnings",
+                    "relevance_score": "0.812132"
+                }
+            ],
+            "overall_sentiment_score": 0.007091,
+            "overall_sentiment_label": "Neutral",
+            "ticker_sentiment": [
+                {
+                    "ticker": "ACIC",
+                    "relevance_score": "1.000000",
+                    "ticker_sentiment_score": "0.022272",
+                    "ticker_sentiment_label": "Neutral"
+                }
+            ]
+        },
+        {
+            "title": "American Coastal Insurance (ACIC) COO exercises stock awards, shares withheld for tax",
+            "url": "https://www.stocktitan.net/sec-filings/ACIC/form-4-american-coastal-insurance-corp-insider-trading-activity-7d9f26bd7a98.html",
+            "time_published": "20260407T200432",
+            "authors": [],
+            "summary": "American Coastal Insurance Corp's COO, Christopher Griffith, exercised various equity awards including performance stock units, restricted stock units, and dividend equivalent units, converting them into common shares. To cover tax obligations, 4,241 common shares were withheld, rather than sold. Following these transactions, Griffith directly owns 113,075 shares of ACIC common stock.",
+            "banner_image": "https://static.stocktitan.net/company-logo/acic.png?v=5dbe76a809",
+            "source": "Stock Titan",
+            "category_within_source": "General",
+            "source_domain": "Stock Titan",
+            "topics": [
+                {
+                    "topic": "earnings",
+                    "relevance_score": "0.948641"
+                },
+                {
+                    "topic": "finance",
+                    "relevance_score": "0.818522"
+                }
+            ],
+            "overall_sentiment_score": 0.003983,
+            "overall_sentiment_label": "Neutral",
+            "ticker_sentiment": [
+                {
+                    "ticker": "ACIC",
+                    "relevance_score": "1.000000",
+                    "ticker_sentiment_score": "0.000339",
+                    "ticker_sentiment_label": "Neutral"
+                }
+            ]
+        },
+        {
+            "title": "Raymond James holds 1.39M shares of Nuveen SPXX (SPXX) in 13G filing",
+            "url": "https://www.stocktitan.net/sec-filings/SPXX/schedule-13g-nuveen-s-p-500-dynamic-overwrite-fund-passive-investment-f880666ad9d2.html",
+            "time_published": "20260407T200305",
+            "authors": [],
+            "summary": "Raymond James Financial Services Advisors, Inc. has filed a Schedule 13G indicating beneficial ownership of 1,392,911.49 shares of Nuveen S&P 500 Dynamic Overwrite Fund (SPXX), representing an 8.2% stake. This filing, as of March 31, 2026, reports sole dispositive power over the shares but no voting power, which is typical for brokerage or advisory custody arrangements. The disclosure provides transparency into significant ownership stakes in publicly traded companies.",
+            "banner_image": null,
+            "source": "Stock Titan",
+            "category_within_source": "General",
+            "source_domain": "Stock Titan",
+            "topics": [
+                {
+                    "topic": "financial_markets",
+                    "relevance_score": "1.000000"
+                },
+                {
+                    "topic": "finance",
+                    "relevance_score": "0.806677"
+                },
+                {
+                    "topic": "earnings",
+                    "relevance_score": "0.621458"
+                }
+            ],
+            "overall_sentiment_score": 0.139526,
+            "overall_sentiment_label": "Neutral",
+            "ticker_sentiment": [
+                {
+                    "ticker": "RJF",
+                    "relevance_score": "0.905740",
+                    "ticker_sentiment_score": "0.135088",
+                    "ticker_sentiment_label": "Neutral"
+                }
+            ]
+        },
+        {
+            "title": "Realty Income (NYSE: O) issues $800M 4.750% notes due 2033",
+            "url": "https://www.stocktitan.net/sec-filings/O/8-k-realty-income-corp-reports-material-event-df29b7ddadad.html",
+            "time_published": "20260407T200147",
+            "authors": [],
+            "summary": "Realty Income Corporation has successfully closed an offering of $800 million aggregate principal amount of its 4.750% Notes due 2033. This issuance, completed on April 7, 2026, expands the company's long-term fixed-rate debt profile under an existing indenture, with major investment banks acting as underwriters. The specific use of proceeds was not detailed in the filing.",
+            "banner_image": null,
+            "source": "Stock Titan",
+            "category_within_source": "General",
+            "source_domain": "Stock Titan",
+            "topics": [
+                {
+                    "topic": "finance",
+                    "relevance_score": "1.000000"
+                },
+                {
+                    "topic": "real_estate",
+                    "relevance_score": "0.807627"
+                }
+            ],
+            "overall_sentiment_score": 0.118863,
+            "overall_sentiment_label": "Neutral",
+            "ticker_sentiment": [
+                {
+                    "ticker": "O",
+                    "relevance_score": "1.000000",
+                    "ticker_sentiment_score": "0.020464",
+                    "ticker_sentiment_label": "Neutral"
+                },
+                {
+                    "ticker": "WFC",
+                    "relevance_score": "0.619717",
+                    "ticker_sentiment_score": "0.149336",
+                    "ticker_sentiment_label": "Neutral"
+                },
+                {
+                    "ticker": "BAC",
+                    "relevance_score": "0.623653",
+                    "ticker_sentiment_score": "0.123953",
+                    "ticker_sentiment_label": "Neutral"
+                },
+                {
+                    "ticker": "JPM",
+                    "relevance_score": "0.601438",
+                    "ticker_sentiment_score": "0.140756",
+                    "ticker_sentiment_label": "Neutral"
+                }
+            ]
+        },
+        {
+            "title": "Deutsche Bank Raises Coca-Cola (KO) Target, Flags CPG Pressures and Demand Risks",
+            "url": "https://www.insidermonkey.com/blog/deutsche-bank-raises-coca-cola-ko-target-flags-cpg-pressures-and-demand-risks-1733756/",
+            "time_published": "20260407T200038",
+            "authors": [
+                "Vardah Gill"
+            ],
+            "summary": "Deutsche Bank has increased its price target for The Coca-Cola Company (NYSE:KO) to $86 from $83, reiterating a Buy rating, despite acknowledging pressures in the consumer packaged goods industry due to geopolitical conflicts, inflation, and currency risks. Concurrently, Coca-Cola has launched a new marketing campaign to boost soda sales in restaurants, a crucial \"away-from-home\" segment that accounts for roughly half of its revenue. This initiative aims to combat declining restaurant traffic and spending by partnering with 13 chains.",
+            "banner_image": "https://d2w7kw43nye0pi.cloudfront.net/hqiw53aPcUxi8Wek3mFfGmmGo_RKNHiltgeGINQpBcE/resize:fit:480:309:0/plain/https://imonkeyblog.s3.us-east-1.amazonaws.com/blog/wp-content/uploads/2015/05/shutterstock_173073956.jpg",
+            "source": "Insider Monkey",
+            "category_within_source": "General",
+            "source_domain": "Insider Monkey",
+            "topics": [
+                {
+                    "topic": "earnings",
+                    "relevance_score": "0.807072"
+                },
+                {
+                    "topic": "financial_markets",
+                    "relevance_score": "0.916851"
+                },
+                {
+                    "topic": "economy_monetary",
+                    "relevance_score": "0.606329"
+                },
+                {
+                    "topic": "retail_wholesale",
+                    "relevance_score": "0.807837"
+                }
+            ],
+            "overall_sentiment_score": 0.270904,
+            "overall_sentiment_label": "Somewhat-Bullish",
+            "ticker_sentiment": [
+                {
+                    "ticker": "KO",
+                    "relevance_score": "1.000000",
+                    "ticker_sentiment_score": "0.273149",
+                    "ticker_sentiment_label": "Somewhat-Bullish"
+                }
+            ]
+        },
+        {
+            "title": "EPAM will post first-quarter results before an 8 a.m. ET May 7 call",
+            "url": "https://www.stocktitan.net/news/EPAM/epam-announces-date-for-first-quarter-earnings-release-and-cvk1ymdbj66r.html",
+            "time_published": "20260407T195955",
+            "authors": [],
+            "summary": "EPAM (NYSE: EPAM) has announced it will report its first-quarter 2026 financial results and host a conference call on Thursday, May 7, 2026, at 8:00 a.m. ET. A news release with the results will be issued prior to the call, and a live webcast will be available on the company's investor relations website, with a replay also available for those unable to attend live. Historically, similar earnings date announcements have seen a modest negative stock movement.",
+            "banner_image": "https://mma.prnewswire.com/media/2223594/EPAM_Logo.jpg",
+            "source": "Stock Titan",
+            "category_within_source": "General",
+            "source_domain": "Stock Titan",
+            "topics": [
+                {
+                    "topic": "earnings",
+                    "relevance_score": "1.000000"
+                },
+                {
+                    "topic": "financial_markets",
+                    "relevance_score": "0.702157"
+                }
+            ],
+            "overall_sentiment_score": -0.146679,
+            "overall_sentiment_label": "Neutral",
+            "ticker_sentiment": [
+                {
+                    "ticker": "EPAM",
+                    "relevance_score": "1.000000",
+                    "ticker_sentiment_score": "-0.147424",
+                    "ticker_sentiment_label": "Neutral"
+                }
+            ]
+        },
+        {
+            "title": "From Avocado Oil to YumYum: Hidden Valley\u00ae Ranch Answers Modern Consumer Cravings with Three New Flavors",
+            "url": "https://investors.thecloroxcompany.com/news/news-details/2026/From-Avocado-Oil-to-YumYum-Hidden-Valley-Ranch-Answers-Modern-Consumer-Cravings-with-Three-New-Flavors/default.aspx",
+            "time_published": "20260407T195929",
+            "authors": [],
+            "summary": "Hidden Valley Ranch has launched three new flavor innovations: Hidden Valley Ranch with Avocado Oil, YumYum Ranch, and Parmesan Ranch Seasoning. These new products aim to meet diverse consumer tastes, offering a mix of new ingredients and bold, restaurant-inspired flavors for various culinary applications. The new line is now available nationwide, with YumYum Ranch exclusively at Walmart.",
+            "banner_image": "https://mma.prnewswire.com/media/2951424/Hidden_Valley_Ranch_Logo.jpg",
+            "source": "The Clorox Company",
+            "category_within_source": "General",
+            "source_domain": "The Clorox Company",
+            "topics": [
+                {
+                    "topic": "retail_wholesale",
+                    "relevance_score": "1.000000"
+                }
+            ],
+            "overall_sentiment_score": 0.474953,
+            "overall_sentiment_label": "Bullish",
+            "ticker_sentiment": [
+                {
+                    "ticker": "CLX",
+                    "relevance_score": "1.000000",
+                    "ticker_sentiment_score": "0.495519",
+                    "ticker_sentiment_label": "Bullish"
+                }
+            ]
+        },
+        {
+            "title": "UBS Lowers Price Target for Keurig Dr Pepper (KDP) to $32 While Maintaining Buy Rating | KDP Stock News",
+            "url": "https://www.gurufocus.com/news/8779646/ubs-lowers-price-target-for-keurig-dr-pepper-kdp-to-32-while-maintaining-buy-rating-kdp-stock-news",
+            "time_published": "20260407T195632",
+            "authors": [
+                "GuruFocus News"
+            ],
+            "summary": "UBS has re-evaluated Keurig Dr Pepper (KDP), lowering its price target from $36 to $32 while upholding a \"Buy\" rating. This adjustment reflects a mixed landscape of recent analyst actions, though the consistent \"Buy\" rating signals a positive long-term outlook for the company. Keurig Dr Pepper is poised for significant changes with the anticipated acquisition of JDE Peet's and a subsequent split into two US-listed entities.",
+            "banner_image": "https://static.gurufocus.com/cdn-cgi/image/width=600,quality=100/logos/0C000013NW.png?20",
+            "source": "GuruFocus",
+            "category_within_source": "General",
+            "source_domain": "GuruFocus",
+            "topics": [
+                {
+                    "topic": "earnings",
+                    "relevance_score": "0.900532"
+                },
+                {
+                    "topic": "financial_markets",
+                    "relevance_score": "0.815624"
+                },
+                {
+                    "topic": "mergers_and_acquisitions",
+                    "relevance_score": "0.724274"
+                },
+                {
+                    "topic": "retail_wholesale",
+                    "relevance_score": "0.617297"
+                }
+            ],
+            "overall_sentiment_score": 0.11364,
+            "overall_sentiment_label": "Neutral",
+            "ticker_sentiment": [
+                {
+                    "ticker": "KDP",
+                    "relevance_score": "1.000000",
+                    "ticker_sentiment_score": "0.122426",
+                    "ticker_sentiment_label": "Neutral"
+                }
+            ]
+        },
+        {
+            "title": "Deere announces $99 million settlement in Right to Repair lawsuit",
+            "url": "https://pirg.org/articles/deere-announces-99-million-settlement-in-right-to-repair-lawsuit/",
+            "time_published": "20260407T195449",
+            "authors": [],
+            "summary": "John Deere has reached a $99 million settlement in a class-action lawsuit concerning restrictions on equipment repair, agreeing to reimburse farmers and make repair tools available for 10 years. While the financial penalty is relatively small compared to estimated annual costs to farmers, the agreement aims to improve farmers' ability to diagnose and fix their machinery independently. The company still faces an ongoing 2025 lawsuit from the Federal Trade Commission regarding its repair restrictions.",
+            "banner_image": "https://publicinterestnetwork.org/wp-content/uploads/2021/02/John-Deere-dealership-Ms-Jane-Campbell-via-shutterstock_554757451-1.jpg",
+            "source": "PIRG",
+            "category_within_source": "General",
+            "source_domain": "PIRG",
+            "topics": [
+                {
+                    "topic": "finance",
+                    "relevance_score": "0.829445"
+                },
+                {
+                    "topic": "manufacturing",
+                    "relevance_score": "0.908388"
+                }
+            ],
+            "overall_sentiment_score": -0.152431,
+            "overall_sentiment_label": "Somewhat-Bearish",
+            "ticker_sentiment": [
+                {
+                    "ticker": "DE",
+                    "relevance_score": "1.000000",
+                    "ticker_sentiment_score": "-0.158440",
+                    "ticker_sentiment_label": "Somewhat-Bearish"
+                }
+            ]
+        },
+        {
+            "title": "Here is why TransDigm Group Incorporated (TDG) is among the best aerospace stocks to buy right now",
+            "url": "https://www.msn.com/en-us/money/markets/here-is-why-transdigm-group-incorporated-tdg-is-among-the-best-aerospace-stocks-to-buy-right-now/ar-AA20lEk1",
+            "time_published": "20260407T195012",
+            "authors": [],
+            "summary": "This article will explain why TransDigm Group Incorporated (TDG) is considered one of the best aerospace stocks to purchase. It likely delves into the company's financial performance, market position, and future outlook to support this claim. Investors can expect an analysis of factors contributing to its strong potential in the aerospace sector.",
+            "banner_image": null,
+            "source": "MSN",
+            "category_within_source": "General",
+            "source_domain": "MSN",
+            "topics": [
+                {
+                    "topic": "financial_markets",
+                    "relevance_score": "0.826416"
+                },
+                {
+                    "topic": "manufacturing",
+                    "relevance_score": "0.737503"
+                },
+                {
+                    "topic": "energy_transportation",
+                    "relevance_score": "0.618590"
+                }
+            ],
+            "overall_sentiment_score": 0.421498,
+            "overall_sentiment_label": "Bullish",
+            "ticker_sentiment": [
+                {
+                    "ticker": "TDG",
+                    "relevance_score": "1.000000",
+                    "ticker_sentiment_score": "0.403981",
+                    "ticker_sentiment_label": "Bullish"
+                }
+            ]
+        },
+        {
+            "title": "Walmart Website Now Accepts CareCredit for Health and Wellness Products",
+            "url": "https://www.pymnts.com/credit-cards/2026/walmart-website-now-accepts-carecredit-for-health-and-wellness-products/",
+            "time_published": "20260407T194929",
+            "authors": [
+                "PYMNTS"
+            ],
+            "summary": "Synchrony's CareCredit credit card can now be used to purchase select health and wellness products on Walmart.com, expanding its existing acceptance in Walmart and Sam's Club stores. This integration allows online payments for categories like medical supplies, fitness equipment, and sleep essentials, with options for home delivery and in-store pickup. The move reflects Synchrony's commitment to providing credit options for health and wellness by connecting consumers with retailers.",
+            "banner_image": "https://www.pymnts.com/wp-content/uploads/2026/04/Walmart-CareCredit.png?w=768",
+            "source": "PYMNTS.com",
+            "category_within_source": "General",
+            "source_domain": "PYMNTS.com",
+            "topics": [
+                {
+                    "topic": "finance",
+                    "relevance_score": "1.000000"
+                },
+                {
+                    "topic": "life_sciences",
+                    "relevance_score": "0.940034"
+                },
+                {
+                    "topic": "retail_wholesale",
+                    "relevance_score": "0.835902"
+                }
+            ],
+            "overall_sentiment_score": 0.366488,
+            "overall_sentiment_label": "Bullish",
+            "ticker_sentiment": [
+                {
+                    "ticker": "SYF",
+                    "relevance_score": "1.000000",
+                    "ticker_sentiment_score": "0.430535",
+                    "ticker_sentiment_label": "Bullish"
+                },
+                {
+                    "ticker": "WMT",
+                    "relevance_score": "0.939949",
+                    "ticker_sentiment_score": "0.336309",
+                    "ticker_sentiment_label": "Somewhat-Bullish"
+                },
+                {
+                    "ticker": "FI",
+                    "relevance_score": "0.601880",
+                    "ticker_sentiment_score": "0.336073",
+                    "ticker_sentiment_label": "Somewhat-Bullish"
+                }
+            ]
+        },
+        {
+            "title": "RiverNorth (YHNA) holds 10.38% \u2014 445,000 shares reported in amended 13G",
+            "url": "https://www.stocktitan.net/sec-filings/YHNA/schedule-13g-a-yhn-acquisition-i-ltd-amended-passive-investment-discl-e679643b70a3.html",
+            "time_published": "20260407T194722",
+            "authors": [],
+            "summary": "RiverNorth Capital Management, LLC has filed an amended 13G revealing a beneficial ownership of 445,000 Ordinary Shares in YHN Acquisition I Ltd (YHNA), which represents 10.38% of the class. The filing, signed by Marcus Collins, General Counsel and Chief Compliance Officer, indicates that RiverNorth holds sole voting and dispositive power over these shares, signifying a passive investment. This update provides transparency on significant shareholder positions for YHN Acquisition I Ltd.",
+            "banner_image": null,
+            "source": "Stock Titan",
+            "category_within_source": "General",
+            "source_domain": "Stock Titan",
+            "topics": [
+                {
+                    "topic": "financial_markets",
+                    "relevance_score": "0.909448"
+                },
+                {
+                    "topic": "finance",
+                    "relevance_score": "0.837551"
+                }
+            ],
+            "overall_sentiment_score": 0.046462,
+            "overall_sentiment_label": "Neutral",
+            "ticker_sentiment": [
+                {
+                    "ticker": "YHNAR",
+                    "relevance_score": "0.337788",
+                    "ticker_sentiment_score": "0.042892",
+                    "ticker_sentiment_label": "Neutral"
+                }
+            ]
+        }
+    ]
+}
