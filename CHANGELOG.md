@@ -8,6 +8,133 @@ into development phases and dated from the git history.
 
 ---
 
+## [Unreleased] — Architecture v0.4 "Hybrid Lakehouse" · 2026-08-01
+
+The project's goals changed: alongside utility under hardware constraints, the repository
+is now explicitly a **portfolio piece** demonstrating Medallion architecture, open table
+formats, serverless orchestration and MLOps discipline. v0.3's "Postgres is the entire
+warehouse" remains correct for a utility-only build and is preserved as the documented
+fallback (ADR-001); v0.4 builds the lakehouse for real — on per-request-billed AWS
+services, at ~€1–2/month, with the on-prem constraints (0 new resident MB on TrueNAS,
+0 bytes to the ZFS pool) unchanged.
+
+### Added
+- **`docs/adr/`** — Architecture Decision Records: ADR-001 (a lakehouse for small data —
+  and why that is a deliberate, documented trade), ADR-002 (Iceberg over Delta: Athena
+  writes/MERGEs only Iceberg), ADR-003 (Athena + Step Functions over Databricks / MWAA /
+  Glue Spark — the idle-floor test).
+- **`infra/terraform/`** — the whole cloud footprint as code: S3 (versioned, lifecycle to
+  Glacier IR, public-access-blocked), four Glue databases, Athena workgroup with an
+  **enforced 1 GiB per-query scan cutoff**, least-privilege edge uploader (delete-DENIED
+  on raw/), SNS → n8n webhook subscription, €5 budget alarm, EventBridge Scheduler, and
+  the daily Step Functions state machine with logging.
+- **`infra/stepfunctions/daily_pipeline.asl.json`** — the daily DAG: silver MERGEs →
+  DQ gate → gold build → DQ gate (incl. the lookahead assertion) → scoring → alerting.
+  Native Athena integration (no Lambda in the transform path); DQ gates read
+  `ops.dq_results` and block promotion on any failed error-severity check; idempotent
+  for any `run_date`.
+- **`sql/athena/`** — the lakehouse as schemas-as-code: bronze external tables with
+  **partition projection** (zero crawlers), silver/gold/ops **Iceberg** DDL, prepared
+  statements for every MERGE and DQ suite, weekly `OPTIMIZE`/`VACUUM` maintenance.
+- **`infra/scripts/athena_apply.sh`** + `infra/Makefile` — applies DDL and prepared
+  statements idempotently (`make athena-apply LAKE_BUCKET=…`).
+- `ops.ml_runs` schema records the **Iceberg snapshot ID** of gold at training time —
+  exact model→data lineage via time travel.
+
+### Changed
+- **Warehouse: MP9 Postgres → Apache Iceberg on S3.** The MP9 Postgres demotes to a
+  30-day landing buffer (news awaiting sync + edge control tables, ≤1 GB cap); market
+  data streams straight to S3 without touching any local database.
+- **Transforms: Postgres window functions → Athena (Trino) SQL**, ported from
+  `sql/002_silver_to_gold.sql` (which remains in force as the v0.3 fallback).
+- **Cloud orchestration: none → EventBridge + Step Functions.** Edge scheduling stays
+  systemd; stages are now `ingest-daily`, `ingest-weekly`, `sync-lake`, `prune-landing`
+  (gold-build and train moved to the cloud).
+- **Data quality: assertions inside a transaction → named DQ gates between layers**,
+  each run audited as rows in `ops.dq_results` with severity semantics.
+- `README.md` — goals (adds the demonstration goal), status, hardware, architecture
+  (v0.1→v0.4 table), layout, roadmap (phases A–I), principles, technology stack.
+- `ARCHITECTURE.md` — rewritten as v0.4: verdict on the proposed 4-stage design,
+  Databricks→open-serverless mapping, cost model with the cost-traps table, medallion
+  spec, orchestration, the enterprise-patterns index, security.
+
+### Unchanged (carried forward deliberately)
+- All eleven catalogued code defects and their fixes; the ingestion-budget cuts
+  (~44,968 → ~2,500 calls/week); TrueNAS memory reclamation (`deploy/truenas/TUNING.md`);
+  local Ollama with pinned model + prompt hash; point-in-time rules; the
+  naive-baseline-first evaluation ethic.
+
+### Notes
+- Terraform, ASL and Athena SQL are **written and structurally validated but not yet
+  applied against a live AWS account** — no AWS access from the authoring environment.
+  The ASL passed a referential-integrity check (19 states, no dangling targets); the SQL
+  follows Athena engine v3 syntax but must be smoke-tested on first `make athena-apply`.
+- The `ai-sp500-score` Lambda referenced by the state machine is Phase H; deploy a stub
+  (or remove the state) until then.
+
+---
+
+## [Unreleased] — Architecture v0.3 "Lite" · 2026-08-01
+
+A hardware audit showed v0.2 was not deployable. The TrueNAS node's 16 GB DDR3 is fully
+committed to the existing homelab, and the ZFS pool sits at 81% — past the threshold where
+OpenZFS switches its block allocator and write performance degrades. Airflow, MLflow and
+DuckDB would have required ~4–8 GB of resident memory that does not exist.
+
+The redesign removes a tier rather than shrinking one.
+
+### Added
+- **`deploy/`** — full infrastructure configuration.
+  - `deploy/mp9/docker-compose.yml` — analytics Postgres (3 GB cap) plus a `migrated`
+    profile for three stateless UIs moved off the TrueNAS.
+  - `deploy/mp9/postgresql.lite.conf` — tuned for 16 GB and analytical queries; low global
+    `work_mem` with a per-session override in the Gold transform.
+  - `deploy/mp9/systemd/` — four timer/service pairs plus a templated `sp500-alert@`
+    failure handler. Every unit carries a `MemoryMax=` cgroup ceiling, `Nice=10` and
+    `IOSchedulingClass=idle`.
+  - `deploy/truenas/TUNING.md` — ZFS ARC and MongoDB WiredTiger cache caps, pool health
+    triage, dataset properties for database workloads.
+  - `deploy/README.md` — deployment and operations guide.
+- **`sql/001_schema.sql`** — `platform` / `silver` / `gold` / `ml` schemas, plus
+  `v_feed_health` and `v_staleness` views that replace what the Airflow UI would have shown.
+- **`sql/002_silver_to_gold.sql`** — technical indicators and features computed in
+  PostgreSQL window functions. Replaces both the DuckDB layer and the 51 Alpha Vantage
+  technical-indicator endpoints. Includes the lookahead assertion as a hard failure.
+
+### Changed
+- **Orchestration: Airflow → systemd timers + n8n.** Zero resident memory; `Persistent=true`
+  survives reboots; `OnFailure=` posts to an n8n webhook; `MemoryMax=` is a real kernel
+  ceiling rather than an advisory pool slot.
+- **Processing: DuckDB + Parquet lakehouse → PostgreSQL alone.** At ~3.5 M rows fully
+  backfilled and ~2 MB/day incremental, Postgres window functions complete in seconds. The
+  Parquet tier is deleted, not relocated — which also removes every pipeline write from the
+  81% ZFS pool.
+- **Warehouse: TrueNAS Postgres → dedicated Postgres on the HP MP9 G2.** All analytical
+  load leaves the constrained node.
+- **Experiment tracking: MLflow → `ml.experiment_run` table.**
+- **LLM enrichment: OpenRouter/Gemini → local Ollama on the RTX 3060.** Zero API cost, no
+  rate limits, full reproducibility. Must be switched *before* backfilling — changing model
+  mid-series creates a discontinuity a model will read as a genuine market signal.
+- **Training: EC2 GPU burst → MP9 CPU.** Tree models on 2.6 M rows train in seconds.
+- `README.md` — added a Hardware section; architecture, roadmap, layout, design principles
+  and technology stack updated to v0.3.
+- `ARCHITECTURE.md` — rewritten as v0.3. Point-in-time correctness, the ingestion budget,
+  the n8n integration requirements and the rejection of Spark/Delta/Unity/Aurora all carry
+  over from v0.2 unchanged.
+
+### Deprecated
+- `AI_SP500_Airflow/` — superseded by `deploy/mp9/systemd/`. It never held a DAG.
+
+### Notes
+- The SQL has **not** been executed against a live PostgreSQL — no daemon was available in
+  the authoring environment. It was reviewed instead, which caught one genuine defect: the
+  labels query nested a window function inside another window function's arguments, which
+  PostgreSQL rejects. Fixed by materialising the daily return in a CTE first.
+- `pipeline/` does not exist yet. The systemd units reference the entry point specified in
+  ARCHITECTURE.md Phase E; install them once that module lands.
+
+---
+
 ## [Unreleased] — Documentation & architecture reset · 2026-08-01
 
 The project had been dormant since 2026-01-31. This entry records the work done to
@@ -161,4 +288,4 @@ Models: OpenRouter Chat Model and Google Gemini.
 Adopted as a **primary data feed** in architecture v0.2. Integration work — numeric
 sentiment scores, `published_at`/`ingested_at` separation, ticker/entity extraction,
 and writing to the shared `platform.ingestion_log` — is tracked in
-[ARCHITECTURE.md § Next Steps](ARCHITECTURE.md#11-next-steps).
+[ARCHITECTURE.md § Next Steps](ARCHITECTURE.md#12-roadmap).

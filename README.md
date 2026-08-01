@@ -4,8 +4,11 @@
 
 It is a personal research platform, deliberately built to run at near-zero marginal cost on **hardware that is already switched on 24/7** — a TrueNAS Scale home server — using AWS only where the cloud genuinely earns its keep (durable off-site raw archive, and burst compute on demand).
 
-> **Status: active — rebuilding after a dormant period.**
-> The ingestion layer is the only production component today. The transformation, feature and modelling layers are not built yet. See [Current State](#current-state) for an honest breakdown and [Known Issues](#known-issues) for what is currently broken.
+> **Status: active — rebuilding on the v0.4 "Hybrid Lakehouse" architecture.**
+> The ingestion layer is the only production component today; everything downstream is being
+> rebuilt as a capped on-prem edge feeding a serverless AWS lakehouse (S3 + Iceberg + Athena +
+> Step Functions, ~€1–2/mo). See [Hardware](#hardware), [Current State](#current-state), and
+> [Known Issues](#known-issues) for what is currently broken.
 
 ---
 
@@ -13,6 +16,7 @@ It is a personal research platform, deliberately built to run at near-zero margi
 
 - [Goals](#goals)
 - [Current State](#current-state)
+- [Hardware](#hardware)
 - [Architecture](#architecture)
 - [Repository Layout](#repository-layout)
 - [Data Sources](#data-sources)
@@ -30,8 +34,9 @@ It is a personal research platform, deliberately built to run at near-zero margi
 2. **Refine** it into a point-in-time-correct daily feature table suitable for supervised learning.
 3. **Model** S&P 500 index behaviour — direction, volatility, and market regime — with honest, backtested evaluation.
 4. **Serve** insights through lightweight dashboards and alerting.
+5. **Demonstrate** — as a first-class goal since v0.4 — production-grade Data Engineering and MLOps practice: Medallion architecture on an open table format, serverless orchestration with DQ gates, snapshot-pinned model lineage, IaC, and decision records. The repo is a portfolio piece as much as a platform.
 
-Explicit non-goals: beating professional quant funds, running an enterprise-scale platform, or paying for always-on cloud compute.
+Explicit non-goals: beating professional quant funds, running an enterprise-scale platform, or paying for always-on or hourly-billed cloud compute.
 
 ---
 
@@ -68,24 +73,63 @@ Raw data flows into S3 and is logged. **Nothing reads it back.** The project's c
 
 ---
 
+## Hardware
+
+The platform runs on two always-on machines plus a serverless cloud footprint. The nodes' asymmetry — and the ZFS pool at 81% — drives the whole design.
+
+| Where | Spec | Role (v0.4) |
+|---|---|---|
+| **TrueNAS Scale** | i7-6700 (4C/8T) · **16 GB DDR3** · RTX 3060 12 GB · ZFS pool **81% used** | n8n + Ollama (LLM enrichment) only. **The pipeline adds 0 resident MB and 0 pool bytes** |
+| **HP MP9 G2** | Ubuntu Server · **16 GB, largely idle** · 128 GB SSD | Edge node: capped ingest/sync jobs, 30-day landing Postgres buffer (≤1 GB), optional Streamlit |
+| **AWS** | serverless only | The lakehouse: S3 + Iceberg + Glue + Athena + Step Functions + Lambda. Nothing hourly-billed |
+| **MacBook Air M1** | 8 GB | Development and ad-hoc analysis. Nothing scheduled |
+
+Two constraints shape every decision below. The TrueNAS has **no spare RAM** — 16 GB already
+carries Jellyfin, Immich, Ollama, n8n, MongoDB, Postgres, three Django workers and ZFS ARC.
+And the pool sits at **81%**, past the point where OpenZFS switches its block allocator and
+write performance begins to degrade.
+
+The MP9 has as much RAM as the node that is drowning, and almost nothing running on it — it
+became the edge node. The warehouse itself moved off-prem entirely in v0.4, so neither node
+carries analytical load. Memory reclamation on the TrueNAS is covered in
+[deploy/truenas/TUNING.md](deploy/truenas/TUNING.md).
+
+---
+
 ## Architecture
 
-The original design (`InfaArquitecture_V0.1.png`) targeted Spark, Delta Lake, Unity Catalog, Amazon Aurora and always-on EC2. That stack is disproportionate to this project's data volume and cost budget.
+Four revisions. **v0.4 "Hybrid Lakehouse" is the current target**, documented in
+**[ARCHITECTURE.md](ARCHITECTURE.md)** with decision records in **[docs/adr/](docs/adr/)**.
 
-**Architecture v0.2** — the current target — is documented in **[ARCHITECTURE.md](ARCHITECTURE.md)**. Summary of the shift:
+The evolution, honestly told: v0.1 was an enterprise stack (Spark, Delta, Unity Catalog,
+Aurora) for a 2 MB/day workload. v0.2 fixed the tooling but assumed TrueNAS RAM that does not
+exist. v0.3 went minimal — Postgres as the entire warehouse on the idle HP MP9 — and that
+remains the documented fallback for a utility-only build
+([ADR-001](docs/adr/ADR-001-lakehouse-for-small-data.md)). **v0.4 adds the goal v0.3 could
+not serve: demonstrating lakehouse and MLOps practice.** The Medallion architecture is built
+for real — on serverless, per-request-billed AWS services, so the cost stays at ~€1–2/month
+and the on-prem constraints stay inviolate.
 
-| Concern | v0.1 (original) | v0.2 (current target) |
-|---|---|---|
-| Compute engine | Spark on EC2 | **DuckDB** on TrueNAS |
-| Table format | Delta Lake | Hive-partitioned **Parquet** |
-| Catalog | Unity Catalog | Postgres control-plane tables |
-| Warehouse | Amazon Aurora | **Existing TrueNAS Postgres** |
-| Orchestration | Airflow on EC2 | **Airflow on TrueNAS** (n8n retained for agentic news) |
-| Always-on cloud | EC2 24/7 | **None** — EC2 on demand only |
-| News feed | Not modelled | **n8n pipeline as a first-class source** |
-| Monthly cost | ~€60–150 | **~€1** (S3 storage only) |
+| Concern | v0.1 | v0.2 | v0.3 Lite | **v0.4 Hybrid Lakehouse** |
+|---|---|---|---|---|
+| Warehouse | Aurora | TrueNAS Postgres | MP9 Postgres | **Apache Iceberg on S3** |
+| Transform engine | Spark on EC2 | DuckDB | Postgres SQL | **Athena (Trino) SQL** |
+| Catalog | Unity Catalog | — | — | **Glue Data Catalog** (no crawlers — schemas are code) |
+| Orchestration | Airflow on EC2 | Airflow on TrueNAS | systemd + n8n | **EventBridge + Step Functions** (edge: systemd) |
+| Data quality | — | — | assertions in SQL | **DQ gates that block promotion**, audited in `ops.dq_results` |
+| Experiment tracking | — | MLflow | Postgres table | **`ops.ml_runs` + Iceberg snapshot lineage** |
+| LLM enrichment | Cloud | Cloud | Local Ollama | Local Ollama (RTX 3060) |
+| Training | EC2 GPU | EC2 GPU burst | MP9 CPU | **Lambda batch** (SageMaker job optional) |
+| IaC / ADRs / CI | — | — | — | **Terraform · docs/adr · Actions** |
+| New RAM on TrueNAS | n/a | 4–8 GB ✗ | 0 | **0** |
+| New ZFS writes | n/a | growing ✗ | 0 | **0** |
+| Monthly cloud cost | ~€150 | ~€0.50 | ~€0.50 | **~€1–2** |
 
-The guiding rule: *TrueNAS is the platform; S3 is the archive; EC2 is a rented burst.*
+The guiding rule: *the edge is capped and buffered; the lakehouse is serverless and
+per-request; nothing anywhere is hourly-billed.*
+
+Infrastructure lives in **[infra/](infra/)** (Terraform, Step Functions, apply scripts),
+lakehouse SQL in **[sql/athena/](sql/athena/)**, edge deployment in **[deploy/](deploy/)**.
 
 ---
 
@@ -107,11 +151,30 @@ AI_SP500/
 │   ├── Logs_OLTP/ddl_queries.sql   # s3_ingestion_logger schema
 │   ├── Dockerfile
 │   └── docker-compose.yaml
-├── AI_SP500_Airflow/               # Airflow scaffold — dags/ is EMPTY
+├── infra/                          # ← v0.4 cloud lakehouse (IaC)
+│   ├── terraform/                  # S3, Glue, Athena workgroup, IAM, SNS, scheduler, SFN
+│   ├── stepfunctions/              # daily_pipeline.asl.json — the DAG with DQ gates
+│   ├── scripts/athena_apply.sh     # Schemas-as-code deployment (no crawlers)
+│   └── Makefile
+├── sql/
+│   ├── athena/                     # ← the lakehouse: DDL + prepared statements
+│   │   ├── 10_bronze_ddl.sql       # External tables, partition projection
+│   │   ├── 20_silver_ddl.sql       # Iceberg (typed, MERGE targets)
+│   │   ├── 30_gold_ddl.sql         # features / labels / predictions / ops
+│   │   ├── 50_maintenance.sql      # OPTIMIZE + VACUUM
+│   │   └── prepared/               # One file per prepared statement (MERGEs, DQ)
+│   ├── 001_schema.sql              # Landing Postgres (apply platform + silver.news only)
+│   └── 002_silver_to_gold.sql      # v0.3 Postgres transform — retained as fallback
+├── docs/adr/                       # Architecture Decision Records
+├── deploy/                         # On-prem edge
+│   ├── README.md                   # Deployment guide
+│   ├── mp9/                        # Edge node: landing Postgres + systemd timers
+│   └── truenas/TUNING.md           # ARC + WiredTiger caps, pool health
+├── AI_SP500_Airflow/               # Airflow scaffold — SUPERSEDED by systemd timers
 ├── BronzeLayer/                    # EMPTY
 ├── Silver_Layer/                   # One exploratory PySpark script
 ├── AI_SP500_Source/                # Historical CSVs (FRED macro, 1913–2024)
-├── ARCHITECTURE.md                 # ← v0.2 design
+├── ARCHITECTURE.md                 # ← v0.4 "Hybrid Lakehouse" design
 ├── CHANGELOG.md
 ├── InfaArquitecture_V0.1.png       # Original (superseded) diagram
 └── pyproject.toml                  # Poetry
@@ -132,7 +195,7 @@ AI_SP500/
 | **News RSS (via n8n)** | RSS + LLM | Daily | 4 topics: Financial/Macro, Geopolitical, Technology, Portugal Local | TrueNAS Postgres (bronze + silver) |
 | **FRED historical CSVs** | Static files | One-off | GDP, CPI, PPI, unemployment level & rate, interest rates (1913–2024) | `AI_SP500_Source/` |
 
-> **Rate-limit reality check.** 511 tickers × 88 functions = **44,968 calls per full pass**. At the current `sleep_time=15` that is ~7.8 days of continuous running, so the "weekly" cadence is not currently achievable. About 82% of those calls are avoidable — see [issue 11](#5-index-level-endpoints-are-fetched-once-per-ticker) and [ARCHITECTURE.md § Ingestion budget](ARCHITECTURE.md#8-ingestion-budget).
+> **Rate-limit reality check.** 511 tickers × 88 functions = **44,968 calls per full pass**. At the current `sleep_time=15` that is ~7.8 days of continuous running, so the "weekly" cadence is not currently achievable. About 82% of those calls are avoidable — see [issue 11](#5-index-level-endpoints-are-fetched-once-per-ticker) and [ARCHITECTURE.md § Ingestion budget](ARCHITECTURE.md#11-what-carries-over-unchanged).
 
 ---
 
@@ -251,7 +314,7 @@ In `getRequesterDailyAI.py:64`, `getRequesterWeekly.py:78` and `getRequesterWeek
 
 That is **10,731 API calls doing the work of 21**, plus the storage and the Silver-layer dedup burden that follows. Fix: add an `entity_level` field (`"index"` or `"ticker"`) to each endpoint in `alpha_vantage_urls.json` and only loop tickers where it says `ticker`.
 
-Combined with the 26,061 calls spent fetching technical indicators that could be computed locally from prices, **~82% of the current API budget is avoidable**. See [ARCHITECTURE.md § Ingestion budget](ARCHITECTURE.md#8-ingestion-budget).
+Combined with the 26,061 calls spent fetching technical indicators that could be computed locally from prices, **~82% of the current API budget is avoidable**. See [ARCHITECTURE.md § Ingestion budget](ARCHITECTURE.md#11-what-carries-over-unchanged).
 
 ### 6. `getRequesterWeekly.py` re-runs with no cooldown
 
@@ -267,11 +330,11 @@ It is a pasted AWS console snippet using `{"key": value}` syntax inside position
 
 ### 9. Duplicate PostgreSQL instances
 
-`DataIngestion/docker-compose.yaml` provisions a `postgres-logging` container on host port 5433, while TrueNAS already runs a Postgres used by n8n. Two databases means two places to look when something breaks, and the news feed and the API feed cannot be joined. Consolidate onto the TrueNAS instance.
+`DataIngestion/docker-compose.yaml` provisions a `postgres-logging` container on host port 5433, while TrueNAS already runs a Postgres used by n8n. Two databases means two places to look when something breaks, and the news feed and the API feed cannot be joined. Under v0.3 both consolidate onto the **MP9** analytics Postgres, not the TrueNAS one — see [deploy/README.md](deploy/README.md).
 
 ### 10. `s3_ingestion_logger` is under-specified for a control plane
 
-`log_message VARCHAR(255)` truncates real stack traces. There is no `status` enum, no `run_id`, and no `duration_ms`, so "did last night's run succeed?" cannot be answered with a single query. Superseded by the `platform.ingestion_log` design in ARCHITECTURE.md.
+`log_message VARCHAR(255)` truncates real stack traces. There is no `status` enum, no `run_id`, and no `duration_ms`, so "did last night's run succeed?" cannot be answered with a single query. Superseded by `platform.ingestion_log` in [`sql/001_schema.sql`](sql/001_schema.sql).
 
 ### 11. Repository location is ambiguous
 
@@ -286,41 +349,51 @@ The second is dead weight and several scripts still reference paths under it. De
 
 ## Roadmap
 
-| Phase | Objective | Exit criterion |
-|---|---|---|
-| **0. Stabilise** | Fix the defects above; consolidate onto one Postgres | Every ingestion script runs a full pass without crashing; one query shows the health of all feeds |
-| **1. Read path** | S3 raw JSON → typed Parquet Silver via DuckDB | `silver.prices_daily` and `silver.macro_daily` queryable locally |
-| **2. Integrate n8n** | Normalise the news feed into the platform schema | `silver.news` carries numeric sentiment with `published_at` **and** `ingested_at` |
-| **3. Gold / feature store** | One point-in-time-correct row per `(date, ticker)` and per `date` | `gold.features_daily` materialised in Postgres |
-| **4. Backtest harness** | Walk-forward evaluation before any modelling | A naive baseline is scored honestly; leakage tests pass |
-| **5. Models** | Logistic → XGBoost → sequence models | A model that beats the naive baseline out-of-sample |
-| **6. Serving** | Streamlit dashboard + Grafana pipeline health | Predictions and pipeline status visible without SSH |
+v0.4 phases. **Phase A is unchanged, independent of the pipeline, and still first.**
 
-Detailed, sequenced tasks live in **[ARCHITECTURE.md § Next Steps](ARCHITECTURE.md#11-next-steps)**.
+| Phase | Work | Exit criterion |
+|---|---|---|
+| **A. Reclaim TrueNAS RAM** | ARC + WiredTiger caps; migrate 3 stateless UIs | >4 GB available; ARC hit ratio >85% |
+| **B. Cloud foundation** | `terraform apply`; `make athena-apply` | Athena queries an empty lakehouse; budget alarm armed |
+| **C. Fix ingestion defects** | The eleven [known issues](#known-issues) | Every script completes a pass |
+| **D. Edge rebuild** | Streaming ingest → raw+bronze; landing PG as 30-day buffer; sync + prune units | A day of data queryable in bronze; ZFS pool untouched |
+| **E. Silver + DQ + orchestration** | MERGEs, DQ suite, daily state machine | Green run in the SFN console; a red DQ check blocks gold |
+| **F. Gold + lookahead** | Features, labels, as-of joins, technicals in Athena SQL | `gold_no_lookahead` passes |
+| **G. News + LLM** | Ollama scoring (pinned model), sync path, news features | `silver.news` carries `llm_model` + `prompt_hash` |
+| **H. ML** | Naive baseline → logistic → XGBoost; `ops.ml_runs` with snapshot IDs; daily scoring | A model beats the baseline out-of-sample |
+| **I. Portfolio polish** | Streamlit, CI, model cards, ADR pass, skills index | A stranger can evaluate the repo in ten minutes |
+
+Detailed tasks: **[ARCHITECTURE.md § Roadmap](ARCHITECTURE.md#12-roadmap)**. Edge deployment:
+**[deploy/README.md](deploy/README.md)**. Cloud deployment: `infra/Makefile`.
 
 ---
 
 ## Design Principles
 
-1. **Use the hardware that is already on.** TrueNAS runs 24/7 regardless. Every workload that can run there, should.
-2. **Right-size the engine.** This platform's daily volume is megabytes, not terabytes. DuckDB on one node beats a Spark cluster on every axis that matters here.
-3. **The cloud is for durability and burst, not for uptime.** S3 holds the immutable raw archive. EC2 is rented by the hour when a model needs a GPU, then terminated.
-4. **Raw data is immutable.** Never mutate `raw/`. Every layer is reproducible by replaying from it.
-5. **Point-in-time correctness is non-negotiable.** A feature must only ever use information that existed at prediction time. Lookahead bias is the fastest way to build a model that backtests beautifully and loses money.
-6. **Configuration over code.** New endpoints are JSON entries, not new modules.
-7. **One control plane.** Every feed — Python or n8n — logs to the same table.
+1. **Use the hardware that is already on — but put each workload where it fits.** Both nodes run 24/7 regardless. Batch work goes to the idle MP9; only the GPU and the homelab stay on the saturated TrueNAS.
+2. **Right-size the bill, and say why out loud.** ~3.5 M rows / ~2 MB per day does not *require* a lakehouse — [ADR-001](docs/adr/ADR-001-lakehouse-for-small-data.md) says so in writing. The lakehouse exists to demonstrate the patterns at production fidelity, on services that bill per request; nothing anywhere is hourly-billed or always-on in the cloud.
+3. **The constrained node gets nothing new.** Any design that adds resident memory to the TrueNAS is wrong by construction, however elegant.
+4. **Minimise writes to a pool at 81%.** Raw data and the warehouse live in S3; the edge buffer lives on the MP9's SSD. The pipeline adds zero bytes to ZFS.
+5. **Raw data is immutable.** Never mutate `raw/`. Every layer is reproducible by replaying from it.
+6. **Point-in-time correctness is non-negotiable.** A feature must only ever use information that existed at prediction time. Lookahead bias is the fastest way to build a model that backtests beautifully and loses money.
+7. **Configuration over code.** New endpoints are JSON entries, not new modules.
+8. **One audit trail per plane, one alert path overall.** Edge feeds log to the landing Postgres; the lakehouse logs to `ops.dq_results` and `ops.ml_runs`; every failure — systemd or SNS — terminates at the same n8n webhook.
+9. **Every stage runs standalone.** No step may require the scheduler to be up in order to be tested or backfilled; the state machine re-runs any `run_date` idempotently.
+10. **Quality gates block promotion.** Silver never becomes gold on a red check, and `gold_no_lookahead` can never be waived.
 
 ---
 
 ## Technology Stack
 
-**Ingestion:** Python (`requests`, `boto3`, `yfinance`, `beautifulsoup4`), n8n
-**Storage:** AWS S3 (raw archive), local Parquet (lakehouse), PostgreSQL (control plane + serving)
-**Processing:** DuckDB, pandas
-**Orchestration:** Apache Airflow (batch), n8n (agentic news)
-**ML:** scikit-learn, XGBoost, PyTorch; MLflow for tracking
-**Serving:** Streamlit, Grafana
-**Infrastructure:** TrueNAS Scale, Docker, Poetry
+**Edge (on-prem):** Python (`requests`, `boto3`), n8n, Ollama on RTX 3060, systemd timers, landing PostgreSQL (30-day buffer)
+**Lakehouse (AWS, all per-request):** S3 (raw + bronze + Iceberg), Apache Iceberg, Glue Data Catalog, Athena engine v3, Step Functions, EventBridge Scheduler, Lambda, SNS
+**ML:** scikit-learn, XGBoost in Lambda batch; `ops.ml_runs` with Iceberg snapshot lineage; model cards
+**Serving:** Streamlit on the MP9 (queries Athena), n8n email digest
+**Engineering:** Terraform, GitHub Actions (Phase I), ADRs, schemas-as-code (`make athena-apply`)
+
+Deliberately absent — each rejected in an [ADR](docs/adr/) with a revisit trigger: Spark,
+Delta Lake, Databricks clusters, MWAA, Glue crawlers and Spark ETL, Redshift, SageMaker
+endpoints, Kinesis, streaming of any kind.
 
 ---
 

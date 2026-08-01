@@ -1,0 +1,19 @@
+[Unit]
+Description=AI_SP500 daily ingestion — 06:15 UTC, before the US pre-market
+Documentation=https://github.com/Tiago-B-C-Reis/AI_SP500
+
+[Timer]
+OnCalendar=*-*-* 06:15:00 UTC
+
+# Avoid hitting Alpha Vantage at exactly the same second every day.
+RandomizedDelaySec=300
+
+# If the MP9 was powered off at 06:15, run once on next boot. This is what makes
+# a home-lab schedule survive reboots without Airflow's catchup machinery.
+Persistent=true
+
+# Do not start while another sp500 job is mid-flight.
+AccuracySec=1min
+
+[Install]
+WantedBy=timers.target

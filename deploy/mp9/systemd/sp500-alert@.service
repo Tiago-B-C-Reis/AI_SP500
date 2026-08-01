@@ -1,0 +1,37 @@
+# Templated failure handler. Referenced by every pipeline unit as:
+#     OnFailure=sp500-alert@%n.service
+# systemd expands %n to the failing unit name, which arrives here as %i.
+#
+# This is the systemd equivalent of Airflow's on_failure_callback, and it reuses
+# the n8n instance already running on the TrueNAS rather than adding a notifier.
+#
+# Requires: curl, jq  ->  sudo apt install -y curl jq
+
+[Unit]
+Description=Notify n8n that %i failed
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=sp500
+EnvironmentFile=/opt/ai_sp500/.env
+
+# Include the tail of the failing unit's log so the alert carries the actual
+# error rather than just a unit name.
+ExecStart=/bin/bash -c 'jq -n \
+    --arg unit "%i" \
+    --arg host "$(hostname)" \
+    --arg ts   "$(date -Is)" \
+    --arg logs "$(journalctl -u %i -n 25 --no-pager -o cat 2>/dev/null | tail -c 1500)" \
+    "{unit:\$unit, host:\$host, ts:\$ts, logs:\$logs}" \
+  | curl -fsS --max-time 30 -X POST "$N8N_ALERT_WEBHOOK" \
+      -H "Content-Type: application/json" --data-binary @- \
+  || logger -t sp500-alert "could not notify n8n about %i"'
+
+# The alerter must never become a problem of its own.
+TimeoutStartSec=60
+MemoryMax=64M
+
+[Install]
+WantedBy=multi-user.target

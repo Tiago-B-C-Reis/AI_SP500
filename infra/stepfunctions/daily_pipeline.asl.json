@@ -1,0 +1,229 @@
+{
+  "Comment": "AI_SP500 daily medallion pipeline. All transforms are Athena prepared statements (SQL lives in sql/athena/, applied by `make athena-apply`). DQ gates block promotion; any failure routes to SNS -> n8n. Idempotent for any run_date.",
+  "StartAt": "ResolveRunDate",
+  "States": {
+
+    "ResolveRunDate": {
+      "Type": "Pass",
+      "Comment": "Derive today's date from execution start time (ISO 8601 -> date part).",
+      "Parameters": {
+        "run_date.$": "$.run_date",
+        "derived_date.$": "States.ArrayGetItem(States.StringSplit($$.Execution.StartTime, 'T'), 0)"
+      },
+      "Next": "DefaultRunDate"
+    },
+
+    "DefaultRunDate": {
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Variable": "$.run_date",
+          "StringEquals": "",
+          "Next": "UseDerivedDate"
+        }
+      ],
+      "Default": "MergeSilverPrices"
+    },
+
+    "UseDerivedDate": {
+      "Type": "Pass",
+      "Parameters": { "run_date.$": "$.derived_date" },
+      "Next": "MergeSilverPrices"
+    },
+
+    "MergeSilverPrices": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::athena:startQueryExecution.sync",
+      "Parameters": {
+        "WorkGroup": "${workgroup}",
+        "QueryString.$": "States.Format('EXECUTE silver_merge_prices USING \\'{}\\'', $.run_date)"
+      },
+      "ResultPath": "$.last",
+      "Retry": [
+        { "ErrorEquals": ["States.ALL"], "IntervalSeconds": 30, "MaxAttempts": 2, "BackoffRate": 2.0 }
+      ],
+      "Catch": [{ "ErrorEquals": ["States.ALL"], "ResultPath": "$.error", "Next": "Alert" }],
+      "Next": "MergeSilverNews"
+    },
+
+    "MergeSilverNews": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::athena:startQueryExecution.sync",
+      "Parameters": {
+        "WorkGroup": "${workgroup}",
+        "QueryString.$": "States.Format('EXECUTE silver_merge_news USING \\'{}\\'', $.run_date)"
+      },
+      "ResultPath": "$.last",
+      "Retry": [
+        { "ErrorEquals": ["States.ALL"], "IntervalSeconds": 30, "MaxAttempts": 2, "BackoffRate": 2.0 }
+      ],
+      "Catch": [{ "ErrorEquals": ["States.ALL"], "ResultPath": "$.error", "Next": "Alert" }],
+      "Next": "RecordDQSilver"
+    },
+
+    "RecordDQSilver": {
+      "Type": "Task",
+      "Comment": "Runs every silver check and INSERTs one row per check into ops.dq_results (the audit trail).",
+      "Resource": "arn:aws:states:::athena:startQueryExecution.sync",
+      "Parameters": {
+        "WorkGroup": "${workgroup}",
+        "QueryString.$": "States.Format('EXECUTE dq_silver_record USING \\'{}\\'', $.run_date)"
+      },
+      "ResultPath": "$.last",
+      "Retry": [
+        { "ErrorEquals": ["States.ALL"], "IntervalSeconds": 30, "MaxAttempts": 2, "BackoffRate": 2.0 }
+      ],
+      "Catch": [{ "ErrorEquals": ["States.ALL"], "ResultPath": "$.error", "Next": "Alert" }],
+      "Next": "CountDQSilver"
+    },
+
+    "CountDQSilver": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::athena:startQueryExecution.sync",
+      "Parameters": {
+        "WorkGroup": "${workgroup}",
+        "QueryString.$": "States.Format('EXECUTE dq_silver_count USING \\'{}\\'', $.run_date)"
+      },
+      "ResultPath": "$.last",
+      "Catch": [{ "ErrorEquals": ["States.ALL"], "ResultPath": "$.error", "Next": "Alert" }],
+      "Next": "FetchDQSilver"
+    },
+
+    "FetchDQSilver": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::aws-sdk:athena:getQueryResults",
+      "Parameters": {
+        "QueryExecutionId.$": "$.last.QueryExecution.QueryExecutionId",
+        "MaxResults": 2
+      },
+      "ResultPath": "$.dq",
+      "Next": "GateDQSilver"
+    },
+
+    "GateDQSilver": {
+      "Type": "Choice",
+      "Comment": "Row 0 is the header; row 1 holds the failed-check count. Non-zero blocks promotion to gold.",
+      "Choices": [
+        {
+          "Variable": "$.dq.ResultSet.Rows[1].Data[0].VarCharValue",
+          "StringEquals": "0",
+          "Next": "BuildGoldFeatures"
+        }
+      ],
+      "Default": "Alert"
+    },
+
+    "BuildGoldFeatures": {
+      "Type": "Task",
+      "Comment": "Full deterministic recompute (no parameter): cheaper than incremental logic below ~50M rows, and idempotent by construction.",
+      "Resource": "arn:aws:states:::athena:startQueryExecution.sync",
+      "Parameters": {
+        "WorkGroup": "${workgroup}",
+        "QueryString": "EXECUTE gold_build_features"
+      },
+      "ResultPath": "$.last",
+      "Retry": [
+        { "ErrorEquals": ["States.ALL"], "IntervalSeconds": 30, "MaxAttempts": 2, "BackoffRate": 2.0 }
+      ],
+      "Catch": [{ "ErrorEquals": ["States.ALL"], "ResultPath": "$.error", "Next": "Alert" }],
+      "Next": "BuildGoldLabels"
+    },
+
+    "BuildGoldLabels": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::athena:startQueryExecution.sync",
+      "Parameters": {
+        "WorkGroup": "${workgroup}",
+        "QueryString": "EXECUTE gold_build_labels"
+      },
+      "ResultPath": "$.last",
+      "Retry": [
+        { "ErrorEquals": ["States.ALL"], "IntervalSeconds": 30, "MaxAttempts": 2, "BackoffRate": 2.0 }
+      ],
+      "Catch": [{ "ErrorEquals": ["States.ALL"], "ResultPath": "$.error", "Next": "Alert" }],
+      "Next": "RecordDQGold"
+    },
+
+    "RecordDQGold": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::athena:startQueryExecution.sync",
+      "Parameters": {
+        "WorkGroup": "${workgroup}",
+        "QueryString.$": "States.Format('EXECUTE dq_gold_record USING \\'{}\\'', $.run_date)"
+      },
+      "ResultPath": "$.last",
+      "Retry": [
+        { "ErrorEquals": ["States.ALL"], "IntervalSeconds": 30, "MaxAttempts": 2, "BackoffRate": 2.0 }
+      ],
+      "Catch": [{ "ErrorEquals": ["States.ALL"], "ResultPath": "$.error", "Next": "Alert" }],
+      "Next": "CountDQGold"
+    },
+
+    "CountDQGold": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::athena:startQueryExecution.sync",
+      "Parameters": {
+        "WorkGroup": "${workgroup}",
+        "QueryString.$": "States.Format('EXECUTE dq_gold_count USING \\'{}\\'', $.run_date)"
+      },
+      "ResultPath": "$.last",
+      "Catch": [{ "ErrorEquals": ["States.ALL"], "ResultPath": "$.error", "Next": "Alert" }],
+      "Next": "FetchDQGold"
+    },
+
+    "FetchDQGold": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::aws-sdk:athena:getQueryResults",
+      "Parameters": {
+        "QueryExecutionId.$": "$.last.QueryExecution.QueryExecutionId",
+        "MaxResults": 2
+      },
+      "ResultPath": "$.dq",
+      "Next": "GateDQGold"
+    },
+
+    "GateDQGold": {
+      "Type": "Choice",
+      "Comment": "Includes gold_no_lookahead — a leaking feature set is never published.",
+      "Choices": [
+        {
+          "Variable": "$.dq.ResultSet.Rows[1].Data[0].VarCharValue",
+          "StringEquals": "0",
+          "Next": "Score"
+        }
+      ],
+      "Default": "Alert"
+    },
+
+    "Score": {
+      "Type": "Task",
+      "Comment": "Phase H. Deploy ai-sp500-score (a stub that returns success is fine until then). Reads latest gold row via Athena, MERGEs into gold.predictions, posts the digest payload to n8n.",
+      "Resource": "arn:aws:states:::lambda:invoke",
+      "Parameters": {
+        "FunctionName": "ai-sp500-score",
+        "Payload": { "run_date.$": "$.run_date" }
+      },
+      "ResultPath": "$.score",
+      "Retry": [
+        { "ErrorEquals": ["States.ALL"], "IntervalSeconds": 60, "MaxAttempts": 1 }
+      ],
+      "Catch": [{ "ErrorEquals": ["States.ALL"], "ResultPath": "$.error", "Next": "Alert" }],
+      "Next": "Done"
+    },
+
+    "Done": { "Type": "Succeed" },
+
+    "Alert": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::sns:publish",
+      "Parameters": {
+        "TopicArn": "${alerts_topic}",
+        "Subject": "AI_SP500 daily pipeline failed",
+        "Message.$": "States.Format('Execution {} failed for run_date {}. Error: {}', $$.Execution.Name, $.run_date, States.JsonToString($))"
+      },
+      "Next": "FailState"
+    },
+
+    "FailState": { "Type": "Fail", "Error": "PipelineFailed", "Cause": "See ops.dq_results and the state machine execution history." }
+  }
+}

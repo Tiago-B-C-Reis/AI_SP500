@@ -1,0 +1,13 @@
+[Unit]
+Description=AI_SP500 weekly ingestion — Saturday 03:00 UTC
+Documentation=https://github.com/Tiago-B-C-Reis/AI_SP500
+
+[Timer]
+# Saturday: markets closed, the week's data is final, and the box is quiet.
+OnCalendar=Sat *-*-* 03:00:00 UTC
+RandomizedDelaySec=600
+Persistent=true
+AccuracySec=1min
+
+[Install]
+WantedBy=timers.target

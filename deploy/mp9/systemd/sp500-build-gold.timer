@@ -1,0 +1,15 @@
+[Unit]
+Description=AI_SP500 Gold rebuild — 06:45 UTC, 30 min after daily ingest
+Documentation=https://github.com/Tiago-B-C-Reis/AI_SP500
+
+[Timer]
+# Deliberately clock-based rather than chained to the ingest unit: if ingestion
+# fails, Gold should still rebuild from whatever Silver holds rather than being
+# skipped entirely. The 30 min gap covers the daily job's ~2 min runtime with room.
+OnCalendar=*-*-* 06:45:00 UTC
+RandomizedDelaySec=120
+Persistent=true
+AccuracySec=1min
+
+[Install]
+WantedBy=timers.target
