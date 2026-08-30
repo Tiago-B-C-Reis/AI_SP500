@@ -39,7 +39,10 @@ README states the mapping explicitly for reviewers.
 
 - (+) Total cloud cost ~€1–2/month with guardrails enforced in config.
 - (+) The Step Functions console gives the visual DAG/backfill story interviews ask about.
-- (−) No Spark on the résumé from this project alone; mitigated by the documented
-  mapping and (optionally) Databricks Free Edition for UI literacy.
+- (−) No Spark in the daily path. **Superseded in part by
+  [ADR-004](ADR-004-spark-for-bulk-backfill.md)**, which restores PySpark on EMR
+  Serverless for the bulk historical backfill — the one workload where a
+  distributed engine genuinely wins, and still €0 when idle. The rejection of
+  Spark *as the daily transform engine* stands.
 - (−) Athena has no `QUALIFY`, prepared-statement quirks, and per-query latency of
   seconds — all acceptable at this scale.

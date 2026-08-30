@@ -14,6 +14,7 @@
 - [3. Node and cloud roles](#3-node-and-cloud-roles)
 - [4. Q1 — TrueNAS resource protection](#4-q1--truenas-resource-protection)
 - [5. Q2 — Cloud tooling selection and cost](#5-q2--cloud-tooling-selection-and-cost)
+- [5b. Where the lake, the catalog and Spark actually are](#5b-where-the-lake-the-catalog-and-spark-actually-are)
 - [6. The medallion specification](#6-the-medallion-specification)
 - [7. Orchestration — EventBridge + Step Functions](#7-orchestration--eventbridge--step-functions)
 - [8. Q3 — Enterprise patterns at small scale](#8-q3--enterprise-patterns-at-small-scale)
@@ -86,6 +87,7 @@ flowchart TB
         EB["EventBridge Scheduler"]
         LAM["Lambda<br/><i>score · train · assert</i>"]
         SNS["SNS alerts"]
+        SPARK["<b>PySpark</b> · EMR Serverless<br/><i>bulk backfill only · €0 idle</i>"]
     end
 
     subgraph SERVE["④ CONSUMERS"]
@@ -113,6 +115,9 @@ flowchart TB
     ATH --> ICE
     SFN -.-> LAM
     LAM -->|"predictions"| ICE
+    S3RAW -->|"one-off bulk load"| SPARK
+    SPARK -->|"MERGE via Glue"| ICE
+    SPARK --- GLUE
     SFN -.->|"failure"| SNS
     SNS -.->|"HTTPS webhook"| N8N
 
@@ -126,7 +131,7 @@ flowchart TB
 
     class N8N,OLLAMA nas
     class TIMERS,INGEST,LPG,SYNC,DASH mp9
-    class S3RAW,S3BRZ,ICE,GLUE,ATH,SFN,EB,LAM,SNS aws
+    class S3RAW,S3BRZ,ICE,GLUE,ATH,SFN,EB,LAM,SNS,SPARK aws
     class AV,YF,RSS src
 ```
 
@@ -185,9 +190,11 @@ The proposal said "Databricks imitation." Here is the explicit correspondence �
 
 | Databricks concept | This stack | Skill transfer |
 |---|---|---|
+| DBFS / cloud storage | **S3 `raw/` + `bronze/`** — the data lake itself | Immutable landing, replay boundary |
 | Delta Lake tables | Apache Iceberg on S3 | ACID, MERGE, schema evolution, time travel — 1:1 |
-| Unity Catalog | Glue Data Catalog | Central metastore, table-level grants |
-| Managed Spark clusters | Athena serverless SQL (Trino) | Same SQL patterns, no cluster to size |
+| Unity Catalog | Glue Data Catalog (+ Lake Formation if row/column ACLs are ever needed) | Central metastore, table-level grants |
+| Managed Spark clusters | Athena serverless SQL (Trino) for the daily path | Same SQL patterns, no cluster to size |
+| Spark DataFrame jobs | **PySpark on EMR Serverless** for the bulk backfill ([ADR-004](docs/adr/ADR-004-spark-for-bulk-backfill.md)) | DataFrame API, Iceberg MERGE from Spark, compaction — €0 idle |
 | Workflows / Jobs | EventBridge + Step Functions | DAGs, retries, failure routing |
 | MLflow tracking | `ops.ml_runs` Iceberg table + S3 artifacts + model cards | Params/metrics/lineage, queryable in SQL |
 | DBSQL dashboards | Streamlit querying Athena | — |
@@ -205,6 +212,7 @@ The proposal said "Databricks imitation." Here is the explicit correspondence �
 | Step Functions (standard) | ~700 transitions | €0 (4,000 free) |
 | Lambda | ~100 invocations, small | €0 (free tier) |
 | EventBridge Scheduler, SNS | trivial | €0 |
+| EMR Serverless (backfill) | ~0 runs/month steady state; no pre-initialised capacity | **€0 idle**, a few cents per run |
 | CloudWatch Logs (30-day retention) | ~1 GB | ~€0.30 |
 | **Total** | | **~€0.60 — call it €1–2 with heavy ad-hoc querying** |
 
@@ -216,7 +224,7 @@ Each of these was considered and rejected — naming them in the repo is itself 
 |---|---|---|
 | MWAA (managed Airflow) | **~€330+/mo** | Step Functions (free tier) |
 | Micro-Databricks cluster | ~€30–60/mo | Athena + Iceberg |
-| Glue Spark ETL jobs | ~€7–15/mo (2-DPU min) | Athena SQL; Lambda for imperative steps |
+| Glue Spark ETL **as the daily path** | 2-DPU floor on every run | Athena SQL; Lambda for imperative steps. (Spark is kept for the rare bulk backfill on EMR Serverless — [ADR-004](docs/adr/ADR-004-spark-for-bulk-backfill.md)) |
 | Glue crawlers | ~€0.44/hr + nondeterminism | **Schemas are code**: DDL in git, partition projection for bronze |
 | Redshift Serverless | ~€3+/hr when active (8-RPU floor) | Athena |
 | SageMaker real-time endpoint | ~€50+/mo | Batch scoring Lambda → `gold.predictions` |
@@ -229,6 +237,81 @@ Each of these was considered and rejected — naming them in the repo is itself 
 - S3 lifecycle: raw → Glacier IR at 90 days; Athena results expire at 30 days; incomplete multipart uploads aborted at 7 days.
 - CloudWatch log retention 30 days.
 - An AWS Budget alarm at €5/mo wired to the same SNS → n8n alert path.
+
+---
+
+## 5b. Where the lake, the catalog and Spark actually are
+
+The v0.1 diagram named three things by their vendor labels. All three still exist — two were
+renamed, one was scoped down. Worth stating plainly, because "we dropped it" and "we renamed
+it" are very different claims.
+
+### The data lake — present, and it is the bottom of the same bucket
+
+"Lakehouse" is not a replacement for a data lake; it is a **data lake plus three things**:
+
+```
+  data lake      S3 raw/   (verbatim API bytes, immutable, delete-denied)
+               + S3 bronze/ (normalized JSONL, append-only)
+  + table format   Apache Iceberg      -> ACID, MERGE, schema evolution, time travel
+  + catalog        Glue Data Catalog   -> one metastore for every engine
+  + engine         Athena (Trino)      -> serverless SQL
+  ───────────────────────────────────────────────────────────────────
+  = lakehouse
+```
+
+`raw/` and `bronze/` **are** the data lake, and they are the system of record: every Iceberg
+table above them is a derived artifact, rebuildable by replay. Nothing was removed — the
+lake gained the three properties that make a warehouse trustworthy.
+
+### Unity Catalog → Glue Data Catalog
+
+Same role: the central metastore that lets multiple engines agree on what a table is. In this
+build, Athena **and** Spark both commit through Glue, which is precisely why a Spark backfill
+and an Athena daily MERGE write one table with one schema rather than two views of it.
+
+What Unity Catalog has that Glue does not, and whether it matters here:
+
+| Unity Catalog capability | Glue equivalent | Matters at one user? |
+|---|---|---|
+| Central metastore, schema registry | Glue Data Catalog | Present |
+| Table/database-level grants | IAM policies | Present |
+| Row- and column-level ACLs, data masking | **AWS Lake Formation** (layers on Glue) | No — one principal. Add Lake Formation if a multi-user governance story is wanted |
+| Automated column-level lineage UI | none | No — lineage here is explicit and stronger: `ops.ml_runs` pins the Iceberg **snapshot ID** |
+| Managed volumes, notebooks, model registry | S3 + local Jupyter + `ops.ml_runs` | No |
+| Cross-workspace / multi-cloud federation | none | No |
+
+Glue is the metastore; Lake Formation is the governance layer if it is ever needed. That
+split is the AWS-native shape of what Databricks bundles into one product.
+
+### Spark — removed from the daily path, restored where it wins
+
+This was a genuine gap, not a rename. [ADR-003](docs/adr/ADR-003-serverless-over-cluster.md)
+rejected Spark on the idle-floor test, and that reasoning still holds for the 2 MB daily
+increment. But rejecting it *everywhere* cost something real: PySpark is the single most
+frequently listed skill in data-engineering postings, and "I used a distributed SQL engine"
+does not answer "have you written Spark?"
+
+[ADR-004](docs/adr/ADR-004-spark-for-bulk-backfill.md) restores it for the one workload that
+is genuinely Spark-shaped:
+
+| | Daily increment | Historical backfill |
+|---|---|---|
+| Volume | ~2 MB, ~1 K rows | Entire `raw/` archive — tens of thousands of small gzipped JSON files |
+| Shape | Already-flat rows | Dynamic map keyed by date; Athena's JSON SerDe needs a static column per key |
+| Cadence | Every day | Initial load + after a parsing change |
+| Engine | **Athena SQL** | **PySpark on EMR Serverless** |
+| Cost | ~€0.08/mo | a few cents per run, **€0 idle** |
+
+The split — **bulk historical load on Spark, incremental merge on SQL** — is what production
+systems actually do, so it is defensible on its merits rather than as a résumé gesture.
+
+[`jobs/spark/backfill_prices.py`](jobs/spark/backfill_prices.py) exercises the DataFrame API,
+window-function deduplication, `MERGE INTO` on Iceberg **from Spark**, and
+`rewrite_data_files` compaction. It is vanilla OSS Spark, so the file runs unmodified
+locally, on EMR, or on Databricks. EMR Serverless is configured with **no pre-initialised
+capacity**, which is what keeps the idle cost at zero — see
+[`infra/terraform/spark.tf`](infra/terraform/spark.tf).
 
 ---
 
@@ -302,6 +385,7 @@ The volume is small; the patterns are real. Each row names where the pattern is 
 | **Model–data lineage** | `ops.ml_runs` records the **Iceberg snapshot ID** of gold at training time | "Every model is reproducible against the exact table version it saw — that's time travel doing MLOps work." |
 | **Schemas as code** | DDL in git; partition projection; zero crawlers | "Schema changes are pull requests, not runtime surprises." |
 | **Immutable raw + replay** | `raw/` verbatim, versioned, delete-denied | "The lakehouse is a derived artifact; source bytes are the system of record." |
+| **Distributed processing** | [`jobs/spark/backfill_prices.py`](jobs/spark/backfill_prices.py) on EMR Serverless | "Bulk historical load on Spark, incremental merge on SQL — each engine where it wins." |
 | **IaC** | [`infra/terraform/`](infra/terraform/) — bucket, lifecycle, catalog, workgroup, IAM, SNS, scheduler, state machine | "The whole cloud footprint is `terraform apply`." |
 | **Least privilege** | Edge uploader can `PutObject` to two prefixes and nothing else; deny-delete on raw; per-role policies | — |
 | **FinOps** | Cost model + traps table in this doc; `bytes_scanned_cutoff`; budget alarm | "Cost ceilings are enforced by config, not intentions." |
@@ -364,7 +448,7 @@ Deliberately deferred, each with its trigger: **dbt-athena** (adopt when the SQL
 |---|---|---|---|---|
 | Goal | Utility | Utility | Utility under hardware limits | **Utility + skills demonstration** |
 | Warehouse | Aurora | TrueNAS Postgres | MP9 Postgres | **Iceberg on S3** |
-| Transform engine | Spark/EC2 | DuckDB | Postgres SQL | **Athena (Trino) SQL** |
+| Transform engine | Spark/EC2 | DuckDB | Postgres SQL | **Athena (Trino) SQL** + **PySpark/EMR Serverless** for bulk backfill |
 | Orchestration | Airflow/EC2 | Airflow/TrueNAS | systemd + n8n | **EventBridge + Step Functions** (edge: systemd) |
 | Catalog | Unity | — | — | **Glue Data Catalog** |
 | Experiment tracking | — | MLflow | Postgres table | **`ops.ml_runs` Iceberg + snapshot lineage** |

@@ -64,6 +64,24 @@ services, at ~€1–2/month, with the on-prem constraints (0 new resident MB on
   local Ollama with pinned model + prompt hash; point-in-time rules; the
   naive-baseline-first evaluation ethic.
 
+### Added — Spark (follow-up to the initial v0.4 entry)
+- **`jobs/spark/backfill_prices.py`** — PySpark bulk backfill: reads the full `raw/`
+  archive (tens of thousands of small nested-JSON files), flattens Alpha Vantage's
+  date-keyed map with one `explode`, deduplicates via a window function, and
+  `MERGE`s into Iceberg `silver.prices_daily` **from Spark** through the same Glue
+  catalog Athena uses. Calls `rewrite_data_files` to compact its own output.
+- **`infra/terraform/spark.tf`** — EMR Serverless application with **no
+  pre-initialised capacity** (so idle cost stays at zero), a capacity ceiling, 5-minute
+  auto-stop, and a least-privilege job role scoped to the lake bucket and Glue commits.
+- **`docs/adr/ADR-004-spark-for-bulk-backfill.md`** — records the split: bulk historical
+  load on Spark, incremental merge on SQL. Partially supersedes ADR-003, whose rejection
+  of Spark *as the daily transform engine* stands.
+- **ARCHITECTURE.md §5b** — "Where the lake, the catalog and Spark actually are":
+  states explicitly that S3 `raw/` + `bronze/` **is** the data lake (lakehouse = lake +
+  table format + catalog + engine), maps Unity Catalog → Glue Data Catalog with an
+  honest capability gap table (row/column ACLs would need Lake Formation), and explains
+  the Spark scoping.
+
 ### Notes
 - Terraform, ASL and Athena SQL are **written and structurally validated but not yet
   applied against a live AWS account** — no AWS access from the authoring environment.
@@ -71,6 +89,9 @@ services, at ~€1–2/month, with the on-prem constraints (0 new resident MB on
   follows Athena engine v3 syntax but must be smoke-tested on first `make athena-apply`.
 - The `ai-sp500-score` Lambda referenced by the state machine is Phase H; deploy a stub
   (or remove the state) until then.
+- `backfill_prices.py` compiles and its structure was checked, but it has **not been run
+  against real data or a live Spark**. The Iceberg runtime JAR in the run command must
+  match the EMR release (`emr-7.1.0` ships Spark 3.5 → `iceberg-spark-runtime-3.5_2.12`).
 
 ---
 

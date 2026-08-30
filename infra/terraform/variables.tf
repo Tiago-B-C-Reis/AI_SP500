@@ -15,6 +15,12 @@ variable "n8n_webhook_url" {
   default     = ""
 }
 
+variable "emr_release_label" {
+  description = "EMR Serverless release. Must match the Iceberg runtime JAR passed in spark.jars.packages (emr-7.x ships Spark 3.5 -> iceberg-spark-runtime-3.5_2.12)."
+  type        = string
+  default     = "emr-7.1.0"
+}
+
 variable "monthly_budget_eur" {
   description = "Monthly cost alarm threshold"
   type        = string

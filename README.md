@@ -113,8 +113,10 @@ and the on-prem constraints stay inviolate.
 | Concern | v0.1 | v0.2 | v0.3 Lite | **v0.4 Hybrid Lakehouse** |
 |---|---|---|---|---|
 | Warehouse | Aurora | TrueNAS Postgres | MP9 Postgres | **Apache Iceberg on S3** |
-| Transform engine | Spark on EC2 | DuckDB | Postgres SQL | **Athena (Trino) SQL** |
-| Catalog | Unity Catalog | — | — | **Glue Data Catalog** (no crawlers — schemas are code) |
+| Transform engine | Spark on EC2 | DuckDB | Postgres SQL | **Athena (Trino) SQL** — daily |
+| Bulk processing | Spark on EC2 (always-on) | — | — | **PySpark on EMR Serverless** — backfill only, €0 idle |
+| Catalog | Unity Catalog | — | — | **Glue Data Catalog** (no crawlers — schemas are code; Lake Formation if row/column ACLs are ever wanted) |
+| Data lake | S3 | S3 | S3 | **S3 `raw/` + `bronze/`** — still the system of record beneath the Iceberg tables |
 | Orchestration | Airflow on EC2 | Airflow on TrueNAS | systemd + n8n | **EventBridge + Step Functions** (edge: systemd) |
 | Data quality | — | — | assertions in SQL | **DQ gates that block promotion**, audited in `ops.dq_results` |
 | Experiment tracking | — | MLflow | Postgres table | **`ops.ml_runs` + Iceberg snapshot lineage** |
@@ -152,7 +154,7 @@ AI_SP500/
 │   ├── Dockerfile
 │   └── docker-compose.yaml
 ├── infra/                          # ← v0.4 cloud lakehouse (IaC)
-│   ├── terraform/                  # S3, Glue, Athena workgroup, IAM, SNS, scheduler, SFN
+│   ├── terraform/                  # S3, Glue, Athena workgroup, IAM, SNS, scheduler, SFN, EMR Serverless
 │   ├── stepfunctions/              # daily_pipeline.asl.json — the DAG with DQ gates
 │   ├── scripts/athena_apply.sh     # Schemas-as-code deployment (no crawlers)
 │   └── Makefile
@@ -165,7 +167,9 @@ AI_SP500/
 │   │   └── prepared/               # One file per prepared statement (MERGEs, DQ)
 │   ├── 001_schema.sql              # Landing Postgres (apply platform + silver.news only)
 │   └── 002_silver_to_gold.sql      # v0.3 Postgres transform — retained as fallback
-├── docs/adr/                       # Architecture Decision Records
+├── jobs/spark/                     # PySpark — bulk backfill (EMR Serverless)
+│   └── backfill_prices.py          # raw/ JSON → Iceberg silver via Spark MERGE
+├── docs/adr/                       # Architecture Decision Records (4)
 ├── deploy/                         # On-prem edge
 │   ├── README.md                   # Deployment guide
 │   ├── mp9/                        # Edge node: landing Postgres + systemd timers
@@ -386,14 +390,17 @@ Detailed tasks: **[ARCHITECTURE.md § Roadmap](ARCHITECTURE.md#12-roadmap)**. Ed
 ## Technology Stack
 
 **Edge (on-prem):** Python (`requests`, `boto3`), n8n, Ollama on RTX 3060, systemd timers, landing PostgreSQL (30-day buffer)
-**Lakehouse (AWS, all per-request):** S3 (raw + bronze + Iceberg), Apache Iceberg, Glue Data Catalog, Athena engine v3, Step Functions, EventBridge Scheduler, Lambda, SNS
+**Data lake (AWS):** S3 `raw/` (verbatim, immutable, delete-denied) + `bronze/` (normalized JSONL) — the system of record
+**Lakehouse (AWS, all per-request):** Apache Iceberg, Glue Data Catalog, Athena engine v3, Step Functions, EventBridge Scheduler, Lambda, SNS
+**Distributed processing:** PySpark on EMR Serverless — bulk historical backfill only, €0 idle ([ADR-004](docs/adr/ADR-004-spark-for-bulk-backfill.md))
 **ML:** scikit-learn, XGBoost in Lambda batch; `ops.ml_runs` with Iceberg snapshot lineage; model cards
 **Serving:** Streamlit on the MP9 (queries Athena), n8n email digest
 **Engineering:** Terraform, GitHub Actions (Phase I), ADRs, schemas-as-code (`make athena-apply`)
 
-Deliberately absent — each rejected in an [ADR](docs/adr/) with a revisit trigger: Spark,
-Delta Lake, Databricks clusters, MWAA, Glue crawlers and Spark ETL, Redshift, SageMaker
-endpoints, Kinesis, streaming of any kind.
+Deliberately absent — each rejected in an [ADR](docs/adr/) with a revisit trigger: Delta Lake,
+Databricks clusters, MWAA, Glue crawlers, Glue Spark as the *daily* engine, Redshift,
+SageMaker endpoints, Kinesis, streaming of any kind. Spark is present but scoped: bulk
+backfill only, never the daily path.
 
 ---
 
